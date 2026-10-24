@@ -64,6 +64,7 @@ cache=out/'mirror-data';shutil.copytree(ROOT/'upstream/api',cache,dirs_exist_ok=
 index=json.loads((cache/'sources-index.json').read_text())
 for item in index:item['title']=tr.text(item['title'])
 (cache/'sources-index.json').write_text(json.dumps(index,ensure_ascii=False,separators=(',',':')))
+(cache/'source-links.json').write_text(json.dumps({item['id']:item['url']for item in index if item.get('url')},ensure_ascii=False,separators=(',',':')))
 # Cache all rendering documents in Italian for the original reader's read-only polling.
 (cache/'documents.json').write_text(json.dumps(documents,ensure_ascii=False,separators=(',',':')))
 (cache/'annotations.json').write_text(json.dumps(evidence,ensure_ascii=False,separators=(',',':')))

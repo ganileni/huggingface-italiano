@@ -34,3 +34,7 @@ Tutte le 228 citazioni degli agenti, compresi messaggi pubblicati e ragionamenti
 - Diagrammi: etichette su più righe e posizioni corrette; controllati gli SVG delle tre figure a 300, 390 e 600 px in una fixture che riproduce il markup originale. Nessuna etichetta sovrapposta o tagliata nei nove casi.
 - Toggle «Link in italiano»: attivo per impostazione predefinita, reversibile, compatibile con collegamenti e barre aggiunti dinamicamente. PDF e altri file restano in originale. La verifica della pagina finale di Google Translate è stata impedita da un controllo anti-bot; sono stati verificati il formato dei collegamenti, il ripristino degli originali e il comportamento dell’interruttore.
 - Scelte ulteriori: «morte definitiva» uniforme per permadeath; SACRIFICE_FINAL_NOW reso «sacrificio finale, adesso» nella citazione italiana.
+
+## Ultimi appunti di lettura
+
+Resi espliciti il contenuto del dataset riservato e il riferimento ad Artifactory. La descrizione del caricamento del dataset e della modifica in bozza è stata riscritta in forma più naturale. Il ripristino dei collegamenti al glossario comprende anche il formato delle citazioni nel lettore principale. Il toggle viene esteso ai collegamenti alle fonti web del lettore interno; il primo richiamo alla footnote continua a mostrare l’estratto italiano.
