@@ -229,6 +229,7 @@ def translate_js(source,tr,filename=''):
   if value=='/_next/':translated=BASE+'/_next/'
   elif framework or token['protected'] or token.get('isKey') or token['property'] in CODE_KEYS|{'class','rel','style','fontFamily'}:continue
   elif value in CODE_IDENTIFIERS and token['property'] not in VISIBLE_ATTRS|{'children','label','name','text','summary','description','detail'}:continue
+  elif value.strip()=='more'and token['property']=='children':translated=value[:len(value)-len(value.lstrip())]+'in più'+value[len(value.rstrip()):]
   elif value in ['en-US','en-GB']:translated='it-IT'
   elif value.startswith('/')and value.split('?')[0]in ['/about','/quotes','/sources','/print','/icon.svg','/audio/hugging-face-incident.mp3','/pdf/the-hugging-face-incident.pdf']:translated=root_path(value)
   elif value=='/'and token['property']=='href'and token.get('direct'):translated=BASE+'/'
