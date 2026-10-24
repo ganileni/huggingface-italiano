@@ -46,9 +46,11 @@
     if (!link || link.hasAttribute('download') || link.target === '_blank') return;
     const url=new URL(link.href,location.href);
     if (url.origin !== location.origin) return;
+    if (url.pathname === BASE) url.pathname=BASE+'/';
     if (!url.pathname.startsWith(BASE+'/') && /^\/(about|quotes|sources|print)\/?$/.test(url.pathname)) url.pathname=BASE+url.pathname;
     if (!url.pathname.startsWith(BASE+'/')) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return;
+    url.searchParams.set('it',VERSION);
     event.preventDefault(); event.stopImmediatePropagation();
     location.assign(url.href);
   },true);
@@ -85,6 +87,10 @@
     // Public readers do not edit the source site or submit analytics from this mirror.
     const tidy=()=>{
       const currentBar=document.querySelector('.it-edition-bar');if(currentBar)document.documentElement.style.setProperty('--it-bar-height',currentBar.offsetHeight+'px');
+      for(const time of document.querySelectorAll('time')){
+        const match=time.textContent.trim().match(/^(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre) (\d+)(?:st|nd|rd|th)$/i);
+        if(match)time.textContent=match[2]+' '+match[1];
+      }
       for(const button of document.querySelectorAll('button')){
         const label=(button.getAttribute('aria-label')||button.textContent||'').trim();
         if(['Start editing','Inizia a modificare','Inizia modifica','Modifica la pagina','Start editing this page','Modifica questa pagina'].includes(label))button.hidden=true;
