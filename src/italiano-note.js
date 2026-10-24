@@ -143,7 +143,7 @@
         if([...root.querySelectorAll('[data-message-id]')].some(child=>child.getAttribute('data-message-id')===id))continue;
         const scope=root.closest('[data-embedded-quotes]')||root;
         const originalSelected=[...scope.querySelectorAll('button[aria-pressed="true"]')].some(button=>button.textContent.trim()==='Originale');
-        const body=root.querySelector(':is(.quote-transcript,.quote-marked,.spoken-quote,[data-quote-body]):not(.it-quote-translation)');
+        const body=root.querySelector(':is(.quote-transcript,.quote-marked,.spoken-quote,[data-quote-body],[data-editable-text="document"][data-editable-id^="message-plain-english-"]):not(.it-quote-translation)');
         const current=body?quoteKey(body.textContent):'';
         const known=[quote.originalPlain,quote.englishPlain,quote.legacyItalianPlain,quote.italianPlain].map(quoteKey);
         let translated=body?.parentElement.querySelector(':scope > .it-quote-translation')||root.querySelector('.it-quote-translation');
