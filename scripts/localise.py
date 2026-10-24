@@ -85,6 +85,8 @@ def load_dictionary(require_complete=True):
  if manual.exists():mapping.update(json.loads(manual.read_text()))
  review=ROOT/'translations/review-story.json'
  if review.exists():mapping.update(json.loads(review.read_text()))
+ for path in sorted((ROOT/'translations').glob('second-pass-*.json')):
+  mapping.update(json.loads(path.read_text()))
  return mapping,missing
 
 def root_path(value):

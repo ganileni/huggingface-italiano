@@ -41,7 +41,7 @@ class Localisation(unittest.TestCase):
    entry=manifest['quotes'][q['id']]
    self.assertEqual(entry['original'],q['text'])
    self.assertTrue(entry['italianHtml']);self.assertTrue(entry['translationNotes'])
-   if q['type']=='cot':self.assertTrue(entry['notes'],q['id'])
+   self.assertTrue(entry['notes'],q['id'])
  def test_every_source_excerpt_has_an_italian_version(self):
   original=props('home');parser=Attrs();parser.feed(original['story']['documents'][original['storyDocumentId']])
   manifest=json.loads((ROOT/'docs/mirror-data/annotations.json').read_text())
@@ -62,8 +62,8 @@ class Localisation(unittest.TestCase):
     self.assertEqual(cache[q['plainEnglishDocumentId']],expected)
  def test_printed_reasonings_have_originals_and_translation_notes(self):
   page=(ROOT/'docs/print/index.html').read_text();markup=re.sub(r'<script\b[^>]*>.*?</script>','',page,flags=re.S)
-  self.assertIn('Note di traduzione dei ragionamenti interni',markup)
-  for ident in ['ai-july-8-agents-discover-the-board-1','ai-no-agent-alerted-humans-1']:
+  self.assertIn('Originali e note di traduzione delle citazioni',markup)
+  for ident in ['ai-july-8-agents-discover-the-board-1','ai-no-agent-alerted-humans-1','ai-july-9-phaseone-handoff-2']:
    self.assertIn('id="nota-traduzione-'+ident+'"',markup)
   self.assertEqual(markup.count('class="it-print-source-note"'),193)
  def test_historical_data_unchanged(self):
@@ -104,6 +104,19 @@ class Localisation(unittest.TestCase):
    self.assertIn(expected,page)
   for old in ['evasero e iniziarono','si introdussero nei computer','che sappiamo si chiesero','presero in considerazione di avvertire','lo fecero.']:
    self.assertNotIn(old,page)
+ def test_followup_editorial_examples(self):
+  mapping,_=load_dictionary()
+  self.assertIn('sono stati coinvolti',mapping['We have data on 1,206 OpenAI AI agents that were involved in the Hugging Face Incident somehow.'])
+  story=props('home',True)
+  text=annotations.plain(story['story']['documents'][story['storyDocumentId']])
+  self.assertIn('se tutto funzionasse come previsto',text)
+  self.assertIn('le IA come ChatGPT scrivono prevedendo, di volta in volta, la parola successiva.',text)
+  self.assertNotIn('predittori della parola successiva',text)
+  notes=json.loads((ROOT/'docs/mirror-data/annotations.json').read_text())
+  first=notes['footnotes']['By May 26, agents successfully used an SSRF vulnerability in Artifactory to obtain internet access, relying in part on information exchanged via the Artifactory message board. Around the same time, an internal team observed an agent engage in message board activity and instances of disallowed internet access.']
+  self.assertTrue(first['it'].startswith('Il 26 maggio gli agenti erano già riusciti'))
+  # A requested deadline still uses «entro»: the temporal distinction matters.
+  self.assertIn('entro il 24 agosto',mapping['We ask that you publicly release the logs regarding the incident and answer the following questions by August 24, 2026'])
  def test_print_editorial_notes_and_dates_are_localised(self):
   page=(ROOT/'docs/print/index.html').read_text()
   attributions=re.findall(r'<p data-print="attribution">.*?</p>',page,re.S)

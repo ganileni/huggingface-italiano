@@ -69,6 +69,6 @@ for item in index:item['title']=tr.text(item['title'])
 (cache/'annotations.json').write_text(json.dumps(evidence,ensure_ascii=False,separators=(',',':')))
 # A browser fallback dictionary covers UI inserted after the initial render.
 (cache/'ui.it.json').write_text(json.dumps({k:v for k,v in mapping.items()if len(k)<1000 and k!=v},ensure_ascii=False,separators=(',',':')))
-manifest={'build':tr.buildtag,'snapshot':'2026-10-24','original':'https://huggingface.wtf/','permission':'confirmed-by-user','translationUnits':len(mapping),'missingUnits':len(missing),'pages':list(PAGES.values()),'originalAgentTranscripts':228,'liveAgentData':True,'sourceDocumentsLanguage':'original','translatedSourceExcerpts':len(evidence['footnotes']),'annotatedReasonings':sum(q['kind']=='cot'for q in evidence['quotes'].values())}
+manifest={'build':tr.buildtag,'snapshot':'2026-10-24','original':'https://huggingface.wtf/','permission':'confirmed-by-user','translationUnits':len(mapping),'missingUnits':len(missing),'pages':list(PAGES.values()),'originalAgentTranscripts':228,'liveAgentData':True,'sourceDocumentsLanguage':'original','translatedSourceExcerpts':len(evidence['footnotes']),'annotatedReasonings':sum(q['kind']=='cot'for q in evidence['quotes'].values()),'annotatedAgentQuotes':len(evidence['quotes'])}
 (cache/'localisation.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
 print('Built authorised Italian mirror:',len(mapping),'translation units;',len(missing),'pending; replacements:',tr.changed)

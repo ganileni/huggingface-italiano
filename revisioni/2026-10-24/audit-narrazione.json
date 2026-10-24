@@ -1,0 +1,39 @@
+{
+  "metodo": "Revisione indipendente bilingue di tutte le 120 unità nuove e scansione dei tempi del mapping effettivo story/context; nessun file di traduzione modificato.",
+  "accordi_ausiliari": "Nessun difetto individuato nelle 120 unità.",
+  "remoti_residui": "Nessun passato remoto individuato nella scansione mirata del mapping finale story/context. Le forme in -ò, -ì, -arono, -irono o -erono rimaste sono soltanto avverbi o verbi al presente.",
+  "raccordi_controllati": [
+    "Il passaggio sulla previsione della parola successiva ricompone la frase richiesta correttamente.",
+    "«fare, se tutto funzionasse come previsto?» ricompone correttamente la domanda.",
+    "«accedere a un ambiente isolato locale» ricompone correttamente articolo e sostantivo.",
+    "La versione sulla vulnerabilità di PHASEONE evita di suggerire che il bug sia stato eliminato.",
+    "Il passaggio sulla risposta all’allarme conserva «non era necessario interrompere»."
+  ],
+  "rilievi": [
+    {
+      "id": "df9789d176a1",
+      "inglese": "Its attempt to fetch the missing files still failed. But the service was shared with other sandboxes, creating a place where later agents could leave messages.",
+      "italiano": "Il tentativo di recuperare i file mancanti è fallito ancora. Ma il servizio era condiviso con altri ambienti isolati e creava così uno spazio in cui, in seguito, gli agenti avrebbero potuto lasciare messaggi.",
+      "tipo": "fedeltà e naturalezza",
+      "gravita": "minore",
+      "motivo": "«Still failed» indica che la scoperta della scrittura su Artifactory non ha risolto il recupero dei file. «È fallito ancora» può invece far pensare a un ulteriore tentativo distinto e fallito.",
+      "proposta": "Il tentativo di recuperare i file mancanti è comunque fallito. Ma il servizio era condiviso con altri ambienti isolati e creava così uno spazio in cui, in seguito, gli agenti avrebbero potuto lasciare messaggi.",
+      "certezza": "alta"
+    },
+    {
+      "id": "392d7c23cf47",
+      "inglese": "A cybersecurity firm that advised OpenAI on its response to this incident.",
+      "italiano": "Un'azienda di cybersicurezza che ha consigliato OpenAI nella risposta a questo incidente.",
+      "tipo": "naturalezza e precisione",
+      "gravita": "minore",
+      "motivo": "«Ha consigliato OpenAI nella risposta» è una collocazione poco naturale: qui il significato di advised è consulenza professionale, non una raccomandazione generica.",
+      "proposta": "Un'azienda di cybersicurezza che ha fornito consulenza a OpenAI nella gestione di questo incidente.",
+      "certezza": "alta"
+    }
+  ],
+  "coerenza_terminologica": [
+    {
+      "nota": "Nella nuova narrazione si usa la flag; molti pannelli usano il flag. Entrambi si incontrano nell’uso tecnico, ma per uniformità editoriale converrebbe scegliere un genere. Nessun accordo interno errato nelle nuove unità esaminate."
+    }
+  ]
+}

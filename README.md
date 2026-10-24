@@ -40,7 +40,8 @@ GitHub Actions costruisce, verifica e pubblica il sito ad ogni modifica a `main`
 - `translations/catalogue.json`: unità di traduzione con testo originale e contesto.
 - `translations/output-*.json`: traduzioni per identificativo.
 - `translations/manual.json` e `review-story*.json`: scelte condivise e correzioni di revisione.
-- `translations/astra-style.json`: revisione dei tempi verbali e dello stile delle schede degli agenti e dei tooltip.
+- `translations/astra-style.json`: prima revisione dei tempi verbali e dello stile delle schede degli agenti e dei tooltip.
+- `translations/second-pass-*.json`: seconda revisione dei tempi verbali, della naturalezza e delle espressioni temporali.
 - `scripts/localise.py`: trasformazioni che separano traduzione, dati e prove originali.
 - `src/italiano-boot.js`: adattamento della navigazione e delle letture di dati a un sito statico, più lettura vocale italiana.
 - l’archivio suddiviso in `upstream/snapshot.tar.gz.part-*`: copia congelata delle risorse pubbliche utilizzate, acquisita il 24 ottobre 2026 per la riproduzione autorizzata.
@@ -51,8 +52,12 @@ Questa versione è predisposta per la revisione con Orazio e per proporre agli a
 
 ## Originali e note di traduzione
 
-Gli estratti delle footnote sono disponibili in italiano, con l’originale inglese espandibile e il collegamento alla fonte conservato. Ogni ragionamento interno degli agenti ha un richiamo «Originale e note di traduzione»: distingue trascrizioni, parafrasi ed esempi ricostruiti e documenta le scelte linguistiche. Le stesse note compaiono nella versione per la stampa.
+Gli estratti delle footnote sono disponibili in italiano, con l’originale inglese espandibile e il collegamento alla fonte conservato. Ognuna delle 228 citazioni degli agenti, inclusi messaggi pubblicati e ragionamenti interni, ha un richiamo «Originale e note di traduzione»: distingue trascrizioni, parafrasi ed esempi ricostruiti e documenta le scelte linguistiche. Le stesse note compaiono nella versione per la stampa.
 
 - `translations/footnotes-*.it.json`: 192 estratti, con originali esatti e traduzioni.
-- `translations/quote-annotations.json`: revisione delle citazioni e commenti alle traduzioni dei 111 ragionamenti interni.
+- `translations/quote-annotations.json`: revisione delle citazioni e commenti alle traduzioni di tutte le 228 citazioni, compresi i 111 ragionamenti interni.
 - `scripts/annotations.py` e `src/italiano-note.js`: collegamento tra resa italiana, originale e note.
+
+## Seconda revisione
+
+I report della lettura monolingue, svolta prima di consultare gli originali, e le decisioni successive sono raccolti in [revisioni/2026-10-24](revisioni/2026-10-24/README.md).

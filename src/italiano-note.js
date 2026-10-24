@@ -102,8 +102,10 @@
             translated.dataset.itQuote=id;translated.append(safeFragment(quote.italianHtml));body.before(translated);
           }
         }else{if(body)body.hidden=false;translated?.remove();}
-        if(quote.kind==='cot'&&!root.querySelector(':scope > .it-quote-note-ref')){
-          const reference=element('sup',{'class':'it-quote-note-ref'});
+        let reference=root.querySelector(':scope > .it-quote-note-ref');
+        if(reference&&reference.dataset.itQuote!==id){reference.remove();reference=null;}
+        if(!reference){
+          reference=element('sup',{'class':'it-quote-note-ref'});reference.dataset.itQuote=id;
           reference.append(element('a',{href:'#nota-traduzione-'+id,'aria-haspopup':'dialog','aria-controls':'it-translation-dialog'},'Originale e note di traduzione'));
           root.append(reference);
         }

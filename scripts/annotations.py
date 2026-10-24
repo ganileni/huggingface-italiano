@@ -50,7 +50,7 @@ def manifest(story,documents,tr):
   old_rendering=story['documents'].get(q['plainEnglishDocumentId'],'')or original
   entry={'id':q['id'],'kind':q['type'],'original':original,'originalPlain':plain(original),'italianHtml':rendering,'italianPlain':plain(rendering),'englishPlain':plain(old_rendering),'legacyItalianPlain':plain(tr.html(old_rendering)),'paraphrased':q.get('paraphrased',False),'madeUp':q.get('madeUp',False),'notes':editorial.get(q['id'],{}).get('notes',[]),'sourceTitle':tr.text(source.get('title')or source.get('name')or q.get('sourceId','')),'sourceUrl':source.get('url')or next((n.get('url')for n in q.get('notes',[])if n.get('url')),''),'locator':q.get('locator','')}
   entry['translationNotes']=render_quote_notes(entry)
-  if q['type']=='cot'and q['id']not in editorial:raise ValueError('Missing CoT annotation: '+q['id'])
+  if not editorial.get(q['id'],{}).get('notes'):raise ValueError('Missing quote annotation: '+q['id'])
   quotes[q['id']]=entry
  return {'quotes':quotes,'footnotes':load_passages()}
 
@@ -88,10 +88,9 @@ def annotate_print_quotes(value,quotes):
     rendered='<blockquote data-print="quote">'+q['italianHtml']
     if len(parts)>1:rendered+='<p data-print="attribution">'+parts[1]
     else:rendered+='</blockquote>'
-    if q['kind']=='cot':
-     used.append(q)
-     ref='<p class="it-print-note-ref"><a href="#nota-traduzione-'+q['id']+'">Originale e note di traduzione</a></p>'
-     rendered=rendered.replace('</blockquote>',ref+'</blockquote>')
+    used.append(q)
+    ref='<p class="it-print-note-ref"><a href="#nota-traduzione-'+q['id']+'">Originale e note di traduzione</a></p>'
+    rendered=rendered.replace('</blockquote>',ref+'</blockquote>')
     return rendered
   return match[0]
  value=re.sub(r'<blockquote data-print="quote">.*?</blockquote>',quote,value,flags=re.S)
@@ -100,5 +99,5 @@ def annotate_print_quotes(value,quotes):
  for q in {q['id']:q for q in used}.values():
   notes=''.join('<li>'+html.escape(n)+'</li>'for n in q['translationNotes'])
   items.append('<li id="nota-traduzione-'+q['id']+'"><h3>Nota di traduzione</h3><ul>'+notes+'</ul><p>Testo inglese della fonte:</p><blockquote lang="en">'+html.escape(q['original'])+'</blockquote></li>')
- section='<section class="it-print-translation-notes"><h2>Note di traduzione dei ragionamenti interni</h2><ol>'+''.join(items)+'</ol></section>'
+ section='<section class="it-print-translation-notes"><h2>Originali e note di traduzione delle citazioni</h2><ol>'+''.join(items)+'</ol></section>'
  return value.replace('</article>',section+'</article>',1)if '</article>'in value else value+section
