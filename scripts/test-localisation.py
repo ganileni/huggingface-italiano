@@ -64,6 +64,18 @@ class Localisation(unittest.TestCase):
   all_it='\n'.join(mapping.values()).lower()
   for wrong in ['faccia di abbraccio','apprendimento da rinforzo','apprendimento per rinforzo']:
    self.assertNotIn(wrong,all_it)
+ def test_opening_uses_passato_prossimo(self):
+  page=(ROOT/'docs/index.html').read_text()
+  for expected in ['sono evase e hanno iniziato','si sono introdotte','si sono chieste','hanno pensato di avvertire','lo hanno fatto']:
+   self.assertIn(expected,page)
+  for old in ['evasero e iniziarono','si introdussero nei computer','che sappiamo si chiesero','presero in considerazione di avvertire','lo fecero.']:
+   self.assertNotIn(old,page)
+ def test_print_editorial_notes_and_dates_are_localised(self):
+  page=(ROOT/'docs/print/index.html').read_text()
+  attributions=re.findall(r'<p data-print="attribution">.*?</p>',page,re.S)
+  self.assertGreater(len(attributions),10)
+  self.assertNotRegex(''.join(attributions),r'July \d|retold in plain English|paraphrased by')
+  self.assertIn('Una «root of trust» sarebbe una prova preesistente',html.unescape(page))
  def test_javascript_parses(self):
   script="""import{parse}from'acorn';import{readFileSync,readdirSync,statSync}from'node:fs';import{join}from'node:path';function visit(p){for(const n of readdirSync(p)){const q=join(p,n);if(statSync(q).isDirectory())visit(q);else if(/\\.m?js$/.test(n))parse(readFileSync(q,'utf8'),{ecmaVersion:'latest',sourceType:n.endsWith('.mjs')?'module':'script'});}}visit('docs');"""
   result=subprocess.run(['node','--input-type=module','-e',script],cwd=ROOT,text=True,capture_output=True)

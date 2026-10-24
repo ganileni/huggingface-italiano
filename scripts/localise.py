@@ -95,12 +95,22 @@ def root_path(value):
 
 class Translator:
  def __init__(self,mapping):self.mapping=mapping;self.normalised={re.sub(r'\s+',' ',k):v for k,v in mapping.items()};self.changed=0;self.page='home';self.buildtag=hashlib.sha256((json.dumps(mapping,sort_keys=True,ensure_ascii=False)+''.join((ROOT/p).read_text()for p in ['scripts/localise.py','scripts/js-tokens.mjs','scripts/build-mirror.py','src/italiano-boot.js','src/italiano.css'])).encode()).hexdigest()[:12]
+ def print_prefixes(self):return sorted((k for k in self.mapping if len(k)>30),key=len,reverse=True)
  def text(self,value):
   stripped=value.strip()
   if not stripped:return value
   if stripped.startswith(('http://','https://','mailto:','data:')):return value
   translated=self.mapping.get(stripped)
   if translated is None:translated=self.normalised.get(re.sub(r'\s+',' ',stripped))
+  if translated is None:
+   punctuation=re.fullmatch(r'([,;:.!?]\s+)(.*)',stripped,re.S)
+   if punctuation:
+    body=self.mapping.get(punctuation[2])
+    if body is not None:translated=punctuation[1]+body
+  if translated is None and self.page=='print' and '“'in stripped:
+   for before in self.print_prefixes():
+    if stripped.startswith(before)and stripped[len(before):].lstrip().startswith('“'):
+     translated=self.mapping[before]+stripped[len(before):];break
   if translated is None:
    match=re.fullmatch(r'(\d+)(?:st|nd|rd|th) agent in METR figure 8',stripped)
    if match:translated=f'Agente {match[1]} della figura 8 di METR'
@@ -109,13 +119,23 @@ class Translator:
   translated=re.sub(r'\b(\d+)\.(\d+)(?=\s*(?:milion|miliard|%))',r'\1,\2',translated)
   if translated==stripped:return value
   self.changed+=1
-  return value[:len(value)-len(value.lstrip())]+translated+value[len(value.rstrip()):]
+  leading=''if translated and translated[0]in ',;:.!?'else value[:len(value)-len(value.lstrip())]
+  return leading+translated+value[len(value.rstrip()):]
  def html(self,value):
   p=HtmlTranslator(self);p.feed(value);out=''.join(p.out)
   out=re.sub(r'(definirsi [“«\"](?:<[^>]+>)*)compromesso',r'\1compromessi',out)
   joins=ROOT/'translations/review-story-joins.json'
   if joins.exists():
    for old,new in json.loads(joins.read_text()).items():out=out.replace(old,new)
+  if self.page=='print':
+   months={'January':'gennaio','February':'febbraio','March':'marzo','April':'aprile','May':'maggio','June':'giugno','July':'luglio','August':'agosto','September':'settembre','October':'ottobre','November':'novembre','December':'dicembre'}
+   def attribution(match):
+    value=match[0]
+    value=re.sub(r'\b('+('|'.join(months))+r') (\d+)(?:st|nd|rd|th)?\b',lambda d:d[2]+' '+months[d[1]],value)
+    value=value.replace('retold in plain English','versione semplificata in italiano')
+    value=re.sub(r'paraphrased by ([^;)]+)',r'parafrasi di \1',value)
+    return value
+   out=re.sub(r'<p data-print="attribution">.*?</p>',attribution,out,flags=re.S)
   return out
  def json(self,value,parent=None,key=None):
   if isinstance(value,dict):
