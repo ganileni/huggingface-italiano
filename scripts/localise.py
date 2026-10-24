@@ -189,6 +189,12 @@ def translate_js(source,tr,filename=''):
  tokens=json.loads(parsed.stdout)
  framework=filename.startswith(('1255-','4bd1b696-','6815-','54a60aa6-','6be7e44c-','polyfills-','main-app-'))
  changes=[]
+ def embedded(value,key=None):
+  if isinstance(value,dict):return {k:embedded(v,k)for k,v in value.items()}
+  if isinstance(value,list):return [embedded(v,key)for v in value]
+  if isinstance(value,str)and key in ['name','label','title','role','detail','summary','description','note']:return tr.text(value)
+  if isinstance(value,str)and key=='src':return root_path(value)
+  return value
  for token in tokens:
   value=token['value'];translated=value
   if value=='/_next/':translated=BASE+'/_next/'
@@ -196,7 +202,11 @@ def translate_js(source,tr,filename=''):
   elif value in ['en-US','en-GB']:translated='it-IT'
   elif value.startswith('/')and value.split('?')[0]in ['/about','/quotes','/sources','/print','/icon.svg','/audio/hugging-face-incident.mp3','/pdf/the-hugging-face-incident.pdf']:translated=root_path(value)
   elif value=='/'and token['property']=='href'and token.get('direct'):translated=BASE+'/'
-  else:translated=tr.text(value)
+  else:
+   try:decoded=json.loads(value)
+   except ValueError:decoded=None
+   if isinstance(decoded,(dict,list)):translated=json.dumps(embedded(decoded),ensure_ascii=False,separators=(',',':'))
+   else:translated=tr.text(value)
   if translated!=value:changes.append((token['start'],token['end'],json.dumps(translated,ensure_ascii=False)))
  # Acorn offsets count UTF-16 code units. Slice through a UTF-16 representation to preserve emoji.
  raw=source.encode('utf-16-le')

@@ -24,5 +24,13 @@
   "OpenAI realized the call was coming from inside the house": "OpenAI scopre che l’attacco arriva da casa propria",
   "They reverse-engineered their flags": "Hanno capito come generare le flag",
   "Hugging Face published their autopsy": "Hugging Face pubblica la propria ricostruzione",
-  "Hugging Face published their autopsy.": "Hugging Face pubblica la propria ricostruzione."
+  "Hugging Face published their autopsy.": "Hugging Face pubblica la propria ricostruzione.",
+  "Not yet observed": "Non ancora osservato",
+  "No dated activity": "Nessuna attività datata",
+  "model unconfirmed; illustrative position": "modello non confermato; posizione illustrativa",
+  "Agent timeline": "Cronologia degli agenti",
+  "Reading…": "Caricamento…",
+  "The story could not be loaded": "Impossibile caricare il racconto",
+  "The saved information is unavailable. Please try again.": "Le informazioni salvate non sono disponibili. Riprova.",
+  "Try again": "Riprova"
 }
