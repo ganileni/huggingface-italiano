@@ -68,5 +68,12 @@ class Localisation(unittest.TestCase):
   script="""import{parse}from'acorn';import{readFileSync,readdirSync,statSync}from'node:fs';import{join}from'node:path';function visit(p){for(const n of readdirSync(p)){const q=join(p,n);if(statSync(q).isDirectory())visit(q);else if(/\\.m?js$/.test(n))parse(readFileSync(q,'utf8'),{ecmaVersion:'latest',sourceType:n.endsWith('.mjs')?'module':'script'});}}visit('docs');"""
   result=subprocess.run(['node','--input-type=module','-e',script],cwd=ROOT,text=True,capture_output=True)
   self.assertEqual(result.returncode,0,result.stderr[:1000])
+ def test_hydrated_interface_is_localised(self):
+  tr=Translator(load_dictionary()[0])
+  result=translate_js('const ui={children:"About",label:"Plain English",quote:"About",className:"About"};',tr,'interface.js')
+  self.assertIn('children:"Il progetto"',result)
+  self.assertIn('label:"Italiano"',result)
+  self.assertIn('quote:"About"',result)
+  self.assertIn('className:"About"',result)
 
 if __name__=='__main__':unittest.main(verbosity=2)

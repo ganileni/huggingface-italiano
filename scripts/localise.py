@@ -92,7 +92,7 @@ def root_path(value):
  return value
 
 class Translator:
- def __init__(self,mapping):self.mapping=mapping;self.normalised={re.sub(r'\s+',' ',k):v for k,v in mapping.items()};self.changed=0;self.page='home';self.buildtag=hashlib.sha256((json.dumps(mapping,sort_keys=True,ensure_ascii=False)+Path(__file__).read_text()+(ROOT/'src/italiano-boot.js').read_text()+(ROOT/'src/italiano.css').read_text()).encode()).hexdigest()[:12]
+ def __init__(self,mapping):self.mapping=mapping;self.normalised={re.sub(r'\s+',' ',k):v for k,v in mapping.items()};self.changed=0;self.page='home';self.buildtag=hashlib.sha256((json.dumps(mapping,sort_keys=True,ensure_ascii=False)+''.join((ROOT/p).read_text()for p in ['scripts/localise.py','scripts/js-tokens.mjs','scripts/build-mirror.py','src/italiano-boot.js','src/italiano.css'])).encode()).hexdigest()[:12]
  def text(self,value):
   stripped=value.strip()
   if not stripped:return value

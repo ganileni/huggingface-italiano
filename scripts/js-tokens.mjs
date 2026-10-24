@@ -11,7 +11,7 @@ function walk(node,parent,protectedArray=false,property=''){
  if(node.type==='ArrayExpression'&&parent?.type==='Property'&&sourceKeys.has(String(keyOf(parent))))protectedArray=true;
  if(node.type==='Literal'&&typeof node.value==='string')literals.push({start:node.start,end:node.end,value:node.value,property,direct:parent?.type==='Property'&&parent.value===node,protected:protectedArray||Boolean(parent?.directive)||['quote','passage'].includes(property)});
  for(const [key,value]of Object.entries(node)){
-  if(['start','end','value','raw','regex','bigint'].includes(key))continue;
+  if(['start','end','raw','regex','bigint'].includes(key))continue;
   if(Array.isArray(value)){for(const child of value)if(child&&typeof child.type==='string')walk(child,node,protectedArray,property);}
   else if(value&&typeof value.type==='string')walk(value,node,protectedArray,property);
  }
