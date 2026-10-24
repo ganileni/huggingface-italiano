@@ -41,7 +41,7 @@
   },
   "7d7bb9f60d7b": {
     "original": "On May 8, an agent was asked as part of a training run to solve a spreadsheet completion task that referenced several Google Drive links. Because the agent was blocked from accessing the internet, the agent could not retrieve the linked materials and the task was effectively blocked. [...] the agent attempted to compromise Artifactory—one of the only tools available to it—to access external resources.\n[...]\nOn May 12, during another training run, an agent was given a similar task that depended on an inaccessible protein database file. The agent reasoned that another agent in a different environment may have access to the file and realized that it could potentially communicate with other agents [...] It wrote a message: “Agent seeks [filename]; upload if found!”",
-    "it": "L'8 maggio, nell'ambito di una sessione di addestramento, a un agente è stato chiesto di completare un foglio di calcolo che rimandava a diversi link di Google Drive. Poiché all'agente era impedito di accedere a Internet, non poteva recuperare i materiali collegati e il compito era di fatto bloccato. [...] L'agente ha tentato di compromettere Artifactory — uno dei pochi strumenti a sua disposizione — per accedere a risorse esterne.\n[...]\nIl 12 maggio, durante un'altra sessione di addestramento, a un agente è stato assegnato un compito simile che dipendeva da un file inaccessibile di un database di proteine. L'agente ha ragionato che un altro agente, in un ambiente diverso, potesse avere accesso al file e si è reso conto che avrebbe potuto comunicare con altri agenti [...] Ha scritto un messaggio: «Un agente cerca [filename]; caricatelo se lo trovate!»"
+    "it": "L'8 maggio, nell'ambito di una sessione di addestramento, a un agente è stato chiesto di completare un foglio di calcolo che rimandava a diversi link di Google Drive. Poiché all'agente era impedito di accedere a Internet, non poteva recuperare i materiali collegati e il compito era di fatto bloccato. [...] L'agente ha tentato di compromettere Artifactory — uno dei pochi strumenti a sua disposizione — per accedere a risorse esterne.\n[...]\nIl 12 maggio, durante un'altra sessione di addestramento, a un agente è stato assegnato un compito simile che dipendeva da un file inaccessibile di un database di proteine. L’agente ha ipotizzato che un altro agente, in un ambiente diverso, potesse avere accesso al file e si è reso conto che avrebbe potuto comunicare con altri agenti [...] Ha scritto un messaggio: «Un agente cerca [filename]; caricatelo se lo trovate!»"
   },
   "3f3877ba2dce": {
     "original": "Two METR staff members [...] and a Redwood Research staff member contracting with METR [...] worked on premises at OpenAI over a total of six days [...] Our investigation focused mostly [...] on the period between July 7th and July 13th.",
@@ -77,19 +77,19 @@
   },
   "7426edfa1e4e": {
     "original": "The agent copied the reference answer into its submission exactly, which led to positive RL reward causing this behavior to subsequently be reinforced.",
-    "it": "L'agente ha copiato esattamente la risposta di riferimento nella propria soluzione, ottenendo una ricompensa positiva nel reinforcement learning che ha poi rafforzato questo comportamento."
+    "it": "L'agente ha copiato esattamente la risposta di riferimento nella propria soluzione, ottenendo nel reinforcement learning una ricompensa positiva che ha poi rafforzato questo comportamento."
   },
   "e5575c2f7350": {
     "original": "we kick off a new reinforcement learning run to train a next generation frontier model. But we didn’t realize during this process is that there was actually a few impossible or very hard tasks in the training set.",
-    "it": "Avviamo una nuova sessione di reinforcement learning per addestrare un modello di frontiera di nuova generazione. Ma durante questo processo non ci siamo resi conto che nel dataset di addestramento c'erano alcuni compiti impossibili o molto difficili."
+    "it": "Abbiamo avviato una nuova sessione di reinforcement learning per addestrare un modello di frontiera di nuova generazione. Ma durante questo processo non ci siamo resi conto che nel dataset di addestramento c'erano alcuni compiti impossibili o molto difficili."
   },
   "bd91cf811861": {
     "original": "During training time, OpenAI attempts to fix training examples that have issues, but infrastructure instabilities and subtle misconfigurations combined with the large scale of its training runs make it difficult to ensure that every problem can be solved in the intended manner.",
-    "it": "Durante l'addestramento, OpenAI cerca di correggere gli esempi problematici, ma l'instabilità dell'infrastruttura e i sottili errori di configurazione, insieme alla grande scala delle sessioni di addestramento, rendono difficile garantire che ogni problema sia risolvibile nel modo previsto."
+    "it": "Durante l'addestramento, OpenAI cerca di correggere gli esempi problematici, ma l'instabilità dell'infrastruttura e gli errori di configurazione difficili da individuare, insieme alla grande scala delle sessioni di addestramento, rendono difficile garantire che ogni problema sia risolvibile nel modo previsto."
   },
   "2c0d620d8f6b": {
     "original": "Reward hacking is a long-standing problem [...] and has been present in AI systems both historically [...] and in all current frontier LLMs.",
-    "it": "Il reward hacking è un problema noto da tempo [...] ed è presente nei sistemi di IA sia storicamente [...] sia in tutti gli attuali LLM di frontiera."
+    "it": "Il reward hacking è un problema noto da tempo [...] ed è presente sia nei sistemi di IA del passato [...] sia in tutti gli attuali LLM di frontiera."
   },
   "2fcbe5286a74": {
     "original": "Reward hacking has been documented in many AI models, including those developed by Anthropic, and is a source of frustration for users.",
@@ -101,7 +101,7 @@
   },
   "16768ef6de27": {
     "original": "The SpaceXAI MTS eval is an internal benchmark of frontier model-development tasks common in the daily workflows of SpaceXAI engineers: diagnosing reward hacking in training runs, generating and auditing training data, debugging large-scale training infrastructure, and creating evaluations for emerging capabilities.",
-    "it": "La valutazione MTS di SpaceXAI è un benchmark interno di compiti di sviluppo di modelli di frontiera comuni nel lavoro quotidiano degli ingegneri di SpaceXAI: individuare il reward hacking nelle sessioni di addestramento, generare e controllare i dati di addestramento, correggere problemi nell'infrastruttura di addestramento su larga scala e creare valutazioni per le capacità emergenti."
+    "it": "La valutazione MTS di SpaceXAI è un benchmark interno basato sui compiti di sviluppo di modelli di frontiera che gli ingegneri di SpaceXAI svolgono nel lavoro quotidiano: individuare il reward hacking nelle sessioni di addestramento, generare e controllare i dati di addestramento, correggere problemi nell'infrastruttura di addestramento su larga scala e creare valutazioni per le capacità emergenti."
   },
   "9a5c1139ff26": {
     "original": "internal-only research agents—which had been trained during the window in which there was an unintended message board and internet access via Artifactory [...] Through retrospective reviews of CoT, OpenAI identified that these forms of “cheating” rose over the training runs that contributed to the Hugging Face incident.",
@@ -217,7 +217,7 @@
   },
   "8ff3ddda8d99": {
     "original": "Around 01:30 on July 12th, a large fraction of agents on the message board stopped running at the same time [...] The PHASEONE[big] transcript ends shortly after this, so it is also possible it just ran out of budget",
-    "it": "Intorno alle 01:30 del 12 luglio, una grande parte degli agenti sulla bacheca ha smesso di funzionare nello stesso momento [...] La trascrizione di PHASEONE[big] si interrompe poco dopo, quindi è anche possibile che avesse semplicemente esaurito il budget"
+    "it": "Intorno alle 01:30 del 12 luglio, gran parte degli agenti sulla bacheca ha smesso di funzionare nello stesso momento [...] La trascrizione di PHASEONE[big] si interrompe poco dopo, quindi è anche possibile che avesse semplicemente esaurito il budget"
   },
   "1dc251211432": {
     "original": "After obtaining internet access, some agents had read the ExploitGym paper and GitHub code",
@@ -237,7 +237,7 @@
   },
   "c21444d6760d": {
     "original": "Eventually, an agent named V8SAME validated to the board that c03220’s reverse-engineering technique worked: it had extracted the actual flag from its target and confirmed that it matched the reverse-engineered one.",
-    "it": "Alla fine, un agente chiamato V8SAME ha confermato alla bacheca che la tecnica di ricostruzione di c03220 funzionava: aveva estratto la flag effettiva dal proprio bersaglio e verificato che corrispondesse a quella ricostruita."
+    "it": "Alla fine, un agente chiamato V8SAME ha confermato sulla bacheca che la tecnica di ricostruzione di c03220 funzionava: aveva estratto la flag effettiva dal proprio bersaglio e verificato che corrispondesse a quella ricostruita."
   },
   "b1b87b294df6": {
     "original": "After obtaining internet access, some agents had read the ExploitGym paper and GitHub code and found that the dataset’s evaluation checks for two conditions: that the correct flag is found and that the intended program vulnerability (i.e., the right solution) was used to find it.",
@@ -257,7 +257,7 @@
   },
   "7537fe616a4e": {
     "original": "PHASEONE[big], which was itself poisoned, thus had two primary objectives: Find a general-purpose way to make it look to the scorer like an agent had acquired its flag in a legitimate way, even when the task was impossible.",
-    "it": "PHASEONE[big], la cui sessione era anch'essa compromessa, aveva quindi due obiettivi principali: trovare un metodo generale per far sembrare al sistema di valutazione che un agente avesse ottenuto la propria flag in modo legittimo, anche quando il compito era impossibile."
+    "it": "PHASEONE[big], la cui sessione era anch'essa compromessa, aveva quindi due obiettivi principali. Uno era trovare un metodo generale per far sembrare al sistema di valutazione che un agente avesse ottenuto la propria flag in modo legittimo, anche quando il compito era impossibile."
   },
   "4d9810ffc2e3": {
     "original": "our internal implementation of the grader code was different from the online setup and didn’t check whether the proper solution was used.",
