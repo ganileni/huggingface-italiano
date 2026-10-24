@@ -48,3 +48,11 @@ GitHub Actions costruisce, verifica e pubblica il sito ad ogni modifica a `main`
 Il catalogo contiene anche stringhe tecniche che devono restare invariate. La copertura include quindi traduzioni e invarianti verificati; non è un conteggio dei soli brani in italiano.
 
 Questa versione è predisposta per la revisione con Orazio e per proporre agli autori l’integrazione della traduzione. Nessuna licenza viene attribuita ai materiali originali o alle fonti esterne.
+
+## Originali e note di traduzione
+
+Gli estratti delle footnote sono disponibili in italiano, con l’originale inglese espandibile e il collegamento alla fonte conservato. Ogni ragionamento interno degli agenti ha un richiamo «Originale e note di traduzione»: distingue trascrizioni, parafrasi ed esempi ricostruiti e documenta le scelte linguistiche. Le stesse note compaiono nella versione per la stampa.
+
+- `translations/footnotes-*.it.json`: 192 estratti, con originali esatti e traduzioni.
+- `translations/quote-annotations.json`: revisione delle citazioni e commenti alle traduzioni dei 111 ragionamenti interni.
+- `scripts/annotations.py` e `src/italiano-note.js`: collegamento tra resa italiana, originale e note.

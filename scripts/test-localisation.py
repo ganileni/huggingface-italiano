@@ -2,6 +2,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 import json,hashlib,re,sys,subprocess,unittest
 from localise import *
+import annotations
 
 class Attrs(HTMLParser):
  def __init__(self):super().__init__();self.passages=[];self.links=[];self.text=[];self.skip=0
@@ -32,6 +33,39 @@ class Localisation(unittest.TestCase):
   p=props('quotes',True);docs=p['story']['documents']
   self.assertEqual(len(p['story']['aiMessages']),228)
   for q in p['story']['aiMessages']:self.assertTrue(docs.get(q['plainEnglishDocumentId']),q['id'])
+ def test_translation_annotations_cover_every_reasoning(self):
+  original=props('quotes')['story'];manifest=json.loads((ROOT/'docs/mirror-data/annotations.json').read_text())
+  self.assertEqual(len(manifest['quotes']),228)
+  cot=[q for q in original['aiMessages']if q['type']=='cot'];self.assertEqual(len(cot),111)
+  for q in original['aiMessages']:
+   entry=manifest['quotes'][q['id']]
+   self.assertEqual(entry['original'],q['text'])
+   self.assertTrue(entry['italianHtml']);self.assertTrue(entry['translationNotes'])
+   if q['type']=='cot':self.assertTrue(entry['notes'],q['id'])
+ def test_every_source_excerpt_has_an_italian_version(self):
+  original=props('home');parser=Attrs();parser.feed(original['story']['documents'][original['storyDocumentId']])
+  manifest=json.loads((ROOT/'docs/mirror-data/annotations.json').read_text())
+  self.assertEqual(len(manifest['footnotes']),192)
+  for passage in parser.passages:
+   entry=manifest['footnotes'][annotations.normalise(passage)]
+   self.assertEqual(entry['original'],passage);self.assertTrue(entry['it'])
+  translated=[v for v in manifest['footnotes'].values()if v['it']!=v['original']]
+  self.assertEqual(len(translated),190) # Two literal identifiers/code strings need no translation.
+ def test_reviewed_quote_renderings_are_used_consistently(self):
+  story=props('quotes',True)['story'];cache=json.loads((ROOT/'docs/mirror-data/documents.json').read_text())
+  edits=annotations.load_quote_notes()
+  for q in story['aiMessages']:
+   edit=edits.get(q['id'],{}).get('italian_html')
+   if edit:
+    expected=edit.replace('&amp;lt;','&lt;').replace('&amp;gt;','&gt;')
+    self.assertEqual(story['documents'][q['plainEnglishDocumentId']],expected)
+    self.assertEqual(cache[q['plainEnglishDocumentId']],expected)
+ def test_printed_reasonings_have_originals_and_translation_notes(self):
+  page=(ROOT/'docs/print/index.html').read_text();markup=re.sub(r'<script\b[^>]*>.*?</script>','',page,flags=re.S)
+  self.assertIn('Note di traduzione dei ragionamenti interni',markup)
+  for ident in ['ai-july-8-agents-discover-the-board-1','ai-no-agent-alerted-humans-1']:
+   self.assertIn('id="nota-traduzione-'+ident+'"',markup)
+  self.assertEqual(markup.count('class="it-print-source-note"'),193)
  def test_historical_data_unchanged(self):
   old=props('home');new=props('home',True)
   for key in ['workstreamProfiles','referenceSeats']:self.assertEqual(old[key],new[key])

@@ -2,12 +2,13 @@
 from html.parser import HTMLParser
 from pathlib import Path
 import json,re,html,hashlib
+from annotations import load_passages,load_quote_notes,translate_print_footnotes,annotate_print_quotes
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE='/huggingface-italiano'
 PAGES={'home':'','quotes':'quotes','sources':'sources','about':'about','print':'print'}
 VISIBLE_ATTRS={'title','aria-label','alt','placeholder','data-footnote-explanation','data-glossary-label','data-tooltip'}
-CODE_KEYS={'id','kind','status','tagType','basis','timing','family','workId','agentId','sourceId','messageId','documentId','plainEnglishDocumentId','type','className','key'}
+CODE_KEYS={'id','kind','status','tagType','basis','timing','family','workId','agentId','sourceId','messageId','documentId','plainEnglishDocumentId','type','className','key','passage','original','originalText'}
 CODE_IDENTIFIERS=None
 
 class FlightScripts(HTMLParser):
@@ -77,6 +78,7 @@ def load_dictionary(require_complete=True):
  missing=[x['id']for x in catalogue if x['id']not in translated]
  if require_complete and missing:raise ValueError(f'{len(missing)} translation units missing')
  mapping={x['en']:translated[x['id']]for x in catalogue if x['id']in translated}
+ for item in load_passages().values():mapping[item['original']]=item['it']
  style=ROOT/'translations/astra-style.json'
  if style.exists():mapping.update(json.loads(style.read_text()))
  manual=ROOT/'translations/manual.json'
@@ -96,7 +98,12 @@ def root_path(value):
  return value
 
 class Translator:
- def __init__(self,mapping):self.mapping=mapping;self.normalised={re.sub(r'\s+',' ',k):v for k,v in mapping.items()};self.changed=0;self.page='home';self.buildtag=hashlib.sha256((json.dumps(mapping,sort_keys=True,ensure_ascii=False)+''.join((ROOT/p).read_text()for p in ['scripts/localise.py','scripts/js-tokens.mjs','scripts/build-mirror.py','src/italiano-boot.js','src/italiano.css'])).encode()).hexdigest()[:12]
+ def __init__(self,mapping):
+  self.mapping=mapping;self.normalised={re.sub(r'\s+',' ',k):v for k,v in mapping.items()};self.changed=0;self.page='home'
+  self.quote_notes=load_quote_notes();self.passages=load_passages();self.print_quotes={}
+  self.italian_overrides={q['italian_html']for q in self.quote_notes.values()if q.get('italian_html')}
+  files=['scripts/localise.py','scripts/js-tokens.mjs','scripts/build-mirror.py','scripts/annotations.py','src/italiano-boot.js','src/italiano-note.js','src/italiano.css','translations/quote-annotations.json','translations/review-story-joins.json']
+  self.buildtag=hashlib.sha256((json.dumps(mapping,sort_keys=True,ensure_ascii=False)+''.join((ROOT/p).read_text()for p in files if(ROOT/p).exists())).encode()).hexdigest()[:12]
  def print_prefixes(self):return sorted((k for k in self.mapping if len(k)>30),key=len,reverse=True)
  def text(self,value):
   stripped=value.strip()
@@ -124,6 +131,7 @@ class Translator:
   leading=''if translated and translated[0]in ',;:.!?'else value[:len(value)-len(value.lstrip())]
   return leading+translated+value[len(value.rstrip()):]
  def html(self,value):
+  if value in self.italian_overrides:return value
   p=HtmlTranslator(self);p.feed(value);out=''.join(p.out)
   out=re.sub(r'(definirsi [“«\"](?:<[^>]+>)*)compromesso',r'\1compromessi',out)
   joins=ROOT/'translations/review-story-joins.json'
@@ -138,6 +146,8 @@ class Translator:
     value=re.sub(r'paraphrased by ([^;)]+)',r'parafrasi di \1',value)
     return value
    out=re.sub(r'<p data-print="attribution">.*?</p>',attribution,out,flags=re.S)
+   out=translate_print_footnotes(out,self.passages)
+   if self.print_quotes:out=annotate_print_quotes(out,self.print_quotes)
   return out
  def json(self,value,parent=None,key=None):
   if isinstance(value,dict):
@@ -145,7 +155,9 @@ class Translator:
     value=dict(value);value['documents']=dict(value['documents'])
     for message in value['aiMessages']:
      docid=message.get('plainEnglishDocumentId')
-     if docid and not value['documents'].get(docid):value['documents'][docid]='<p>'+html.escape(self.text(message['text']),quote=False)+'</p>'
+     edit=self.quote_notes.get(message['id'],{}).get('italian_html')
+     if edit and docid:value['documents'][docid]=edit
+     elif docid and not value['documents'].get(docid):value['documents'][docid]='<p>'+html.escape(self.text(message['text']),quote=False)+'</p>'
    # Original agent/human quotations remain exact. Italian versions live in their separate rendering documents.
    evidence='text'in value and ('agentId'in value or 'speaker'in value or ('sourceId'in value and 'locator'in value))
    return {k:(v if evidence and k=='text' else self.json(v,value,k))for k,v in value.items()}
@@ -264,7 +276,7 @@ def localise_page(source,tr,name):
  source=source[:first]+encoded+source[first:]
  source=tr.html(source)
  # Early boot handles source caches and navigation before any original JS executes.
- boot=f'<link rel="stylesheet" href="{BASE}/italiano.css?it={tr.buildtag}"><script src="{BASE}/italiano-boot.js?it={tr.buildtag}"></script>'
+ boot=f'<link rel="stylesheet" href="{BASE}/italiano.css?it={tr.buildtag}"><script src="{BASE}/italiano-boot.js?it={tr.buildtag}"></script><script defer src="{BASE}/italiano-note.js?it={tr.buildtag}"></script>'
  source=source.replace('<head>','<head>'+boot,1)
  banner='<div class="it-edition-bar" aria-label="Edizione italiana"><span>Versione italiana non ufficiale</span><a href="https://huggingface.wtf/" target="_blank" rel="noopener noreferrer">Originale Lightcone ↗</a><button type="button" class="it-speech-button"'+(' hidden=""'if name!='home'else '')+' aria-pressed="false">Ascolta in italiano</button></div>'
  source=re.sub(r'(<body[^>]*>)',lambda m:m[1]+banner,source,count=1)

@@ -269,5 +269,6 @@
   "From METR's August 26 report. A “root of trust” would be some earlier proof of who an agent was.": "Dal rapporto di METR del 26 agosto. Una «root of trust» sarebbe una prova preesistente dell'identità di un agente.",
   "They didn't realize that their own agents were the culprits,": "Non si erano resi conto che i responsabili erano i loro stessi agenti,",
   "because we don’t expect this to be the last time something like a rogue AI hacking swarm happens.": ": non pensiamo che questo sarà l’ultimo attacco di uno sciame di IA fuori controllo.",
-  "When Hugging Face was first founded, it wasn't a repository for AI research. The company made a helpful, friendly chatbot, which they represented with the \"Hugging Face\" emoji, which looks like this:": "All’inizio Hugging Face non era una piattaforma per la ricerca sull’IA. L’azienda realizzava un chatbot disponibile e amichevole, rappresentato dall’emoji «Hugging Face», questa:"
+  "When Hugging Face was first founded, it wasn't a repository for AI research. The company made a helpful, friendly chatbot, which they represented with the \"Hugging Face\" emoji, which looks like this:": "All’inizio Hugging Face non era una piattaforma per la ricerca sull’IA. L’azienda realizzava un chatbot disponibile e amichevole, rappresentato dall’emoji «Hugging Face», questa:",
+  "We should build [a way to delegate], not own everything": "Dovremmo costruire [un modo per delegare], non farci carico di tutto"
 }

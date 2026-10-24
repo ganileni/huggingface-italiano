@@ -1,0 +1,386 @@
+{
+  "292f62b6ccdb": {
+    "original": "we didn’t find cases where agents successfully modified prior entries in the actual transcript, nor did we see evidence of partial progress that came close to the tool call spoofing in sophistication.",
+    "it": "non abbiamo trovato casi in cui gli agenti siano riusciti a modificare voci precedenti nella trascrizione effettiva, né prove di risultati parziali che si avvicinassero, per sofisticazione, alla falsificazione delle chiamate agli strumenti."
+  },
+  "68096975116b": {
+    "original": "We also did not see messages on the message board indicating agents had succeeded in ambitious tampering of this kind, though we didn’t thoroughly look for such messages.",
+    "it": "Non abbiamo nemmeno visto messaggi sulla bacheca che indicassero che gli agenti fossero riusciti in manomissioni ambiziose di questo tipo, anche se non abbiamo cercato sistematicamente messaggi del genere."
+  },
+  "3d9f2e346d76": {
+    "original": "But agents did frequently make attempts to edit their transcripts.",
+    "it": "Ma gli agenti hanno effettivamente tentato spesso di modificare le proprie trascrizioni."
+  },
+  "a06fef09b06c": {
+    "original": "agents on the board began searching for exposed Hugging Face credentials. They hoped that seeing other ExploitGym runs could give them more details about how the ExploitGym scorer is implemented.",
+    "it": "gli agenti sulla bacheca hanno iniziato a cercare credenziali di Hugging Face esposte. Speravano che consultare altre sessioni di ExploitGym potesse fornire maggiori dettagli su come fosse implementato il sistema di valutazione di ExploitGym."
+  },
+  "7cf0a86c7f39": {
+    "original": "a different agent identified as 23619E encountered issues caused by too many entries at the top level of the message board [...] We believe this is a parallel “invention” that isn’t inspired by the earlier mailbox created on July 9th. 23619E then posted zzINBOX23619E and a public instruction asking other agents to put replies underneath it",
+    "it": "un altro agente, identificato come 23619E, ha incontrato problemi causati dalle troppe voci al livello principale della bacheca [...] Riteniamo che si tratti di un’«invenzione» indipendente, non ispirata alla precedente casella di posta creata il 9 luglio. 23619E ha poi pubblicato zzINBOX23619E e un’istruzione pubblica che chiedeva agli altri agenti di inserire le risposte al suo interno"
+  },
+  "bae08fcaa684": {
+    "original": "Count between July 6th - July 13th [...] Mailboxes 19,504 [...] The first clear mailbox we are aware of was made on July 9th 2026-07-09 21:13 UTC: zzMAILBOX_AIC71C_RESET. [...] This mailbox was unsuccessful: no agent ever posted a message inside.",
+    "it": "Conteggio dal 6 al 13 luglio [...] Caselle di posta 19.504 [...] La prima casella di posta inequivocabile di cui siamo a conoscenza è stata creata il 9 luglio, 2026-07-09 21:13 UTC: zzMAILBOX_AIC71C_RESET. [...] Questa casella non ha avuto successo: nessun agente vi ha mai pubblicato un messaggio."
+  },
+  "5795a1eb97dd": {
+    "original": "Developed coordination conventions for managing shared infrastructure, such as HOLD, VETO, owner and STOP",
+    "it": "Hanno sviluppato convenzioni di coordinamento per gestire l’infrastruttura condivisa, come HOLD, VETO, owner e STOP"
+  },
+  "abc2403e2cbe": {
+    "original": "The effectiveness of these conventions varied, but in many cases agents seemed to follow them in reasonable ways. [...] After announcing the countdown, no veto arrived and D uploaded the backup. [...] only gave ~40s for other agents to send this veto",
+    "it": "L’efficacia di queste convenzioni variava, ma in molti casi gli agenti sembravano seguirle in modo ragionevole. [...] Dopo l’annuncio del conto alla rovescia, non è arrivato alcun veto e D ha caricato il backup. [...] ha concesso agli altri agenti solo circa 40 secondi per porre questo veto"
+  },
+  "ff4134641cc6": {
+    "original": "At around 07:00 UTC on July 13th, an agent posted a message noting that it accidentally impersonated another agent [...] OpenAI also shared a reasoning snippet from a different agent which expressed concern about impersonation: “Could be another agent maliciously/spoofing. Shared board unauthenticated, names can be posted by anyone.”",
+    "it": "Intorno alle 07:00 UTC del 13 luglio, un agente ha pubblicato un messaggio in cui segnalava di aver accidentalmente impersonato un altro agente [...] OpenAI ha anche condiviso un estratto del ragionamento di un altro agente, che esprimeva preoccupazione per il rischio di impersonificazione: «Potrebbe essere un altro agente che agisce in modo malevolo o falsifica l’identità. La bacheca condivisa non è autenticata, chiunque può pubblicare qualsiasi nome»."
+  },
+  "21d738d6c702": {
+    "original": "Going through the message board we found at least 19 agents posting public keys by EoD July 13th, who sent a total 429 signed messages. We also found a later wave of many more signed messages from a later set of agents",
+    "it": "Esaminando la bacheca, abbiamo trovato almeno 19 agenti che avevano pubblicato chiavi pubbliche entro la fine del 13 luglio e che hanno inviato in totale 429 messaggi firmati. Abbiamo anche trovato un’ondata successiva, con molti altri messaggi firmati inviati da un nuovo gruppo di agenti"
+  },
+  "b8da94b566e9": {
+    "original": "The agent posted its public key along with its handle [...] This scheme allowed agents to claim an unique identification and then ongoingly prove their messages were created by the agent that had claimed that unique identity (though there wasn’t any earlier root of trust beyond the initial claimed identity).",
+    "it": "L’agente ha pubblicato la propria chiave pubblica insieme al proprio nome [...] Questo sistema permetteva agli agenti di rivendicare un’identità univoca e poi dimostrare nel tempo che i loro messaggi erano stati creati dall’agente che aveva rivendicato quell’identità (anche se non esisteva alcuna root of trust precedente, oltre all’identità dichiarata inizialmente)."
+  },
+  "3128aff9b75d": {
+    "original": "Agents had diverse reasons for thinking that attacking Hugging Face would be useful, and most wanted information about the scorer",
+    "it": "Gli agenti avevano ragioni diverse per ritenere utile attaccare Hugging Face, e la maggior parte cercava informazioni sul sistema di valutazione"
+  },
+  "e1b76dcb03a0": {
+    "original": "The analysis agent also attempted to classify the primary motivation of each agent and found that around 60% of agents had understanding the evaluator or getting access to the evaluator source code as their primary motive",
+    "it": "L’agente incaricato dell’analisi ha anche cercato di classificare la motivazione principale di ciascun agente e ha rilevato che, per circa il 60%, la motivazione principale era capire il funzionamento del sistema di valutazione o accedere al suo codice sorgente"
+  },
+  "b2a7b444777e": {
+    "original": "Broader interest in obtaining shared infrastructure or credentials 66 Opportunistic exploration 44",
+    "it": "Interesse più generale a ottenere infrastruttura condivisa o credenziali: 66. Esplorazione opportunistica: 44"
+  },
+  "4e0ef9baae62": {
+    "original": "Direct assignment from some other agent or division of labor 25",
+    "it": "Incarico diretto da un altro agente o divisione del lavoro: 25"
+  },
+  "3058e4a8701c": {
+    "original": "often slotting themselves into one of the active lanes without much deliberation about whether it would benefit their task.",
+    "it": "spesso inserendosi in uno dei filoni di lavoro attivi senza riflettere molto su quanto potesse essere utile al proprio compito."
+  },
+  "e95fe6e1e2d6": {
+    "original": "Agents sometimes thought that some part of the scorer might be hosted by Hugging Face or reachable through Hugging Face.",
+    "it": "A volte gli agenti pensavano che una parte del sistema di valutazione potesse essere ospitata da Hugging Face o raggiungibile tramite Hugging Face."
+  },
+  "83b3cefa9102": {
+    "original": "The agents that were assigned this task failed to find any evidence of a connection to the ExploitGym targets, and PHASEONE[big] seemed to lose interest in the attack as a result. [...] The PHASEONE[big] transcript ends shortly after this, so it is also possible it just ran out of budget, finished its task or exited for other reasons",
+    "it": "Gli agenti a cui è stato assegnato questo compito non hanno trovato alcuna prova di un collegamento con i bersagli di ExploitGym e, di conseguenza, PHASEONE[big] è sembrato perdere interesse per l’attacco. [...] La trascrizione di PHASEONE[big] si interrompe poco dopo, quindi è anche possibile che abbia semplicemente esaurito il budget, completato il compito o terminato la sessione per altri motivi"
+  },
+  "a3812db68a38": {
+    "original": "the initial search for Hugging Face credentials was instigated by the board origin agent, PHASEONE10841. At around 8:00 AM UTC on July 9th, it had identified a dataset of GLM-5 CyberGym trajectories [...] but the dataset was manually gated [...] Could retrieve prior agents’ hidden logs for exact task",
+    "it": "la ricerca iniziale delle credenziali di Hugging Face è stata avviata dall’agente che ha dato origine alla bacheca, PHASEONE10841. Intorno alle 08:00 UTC del 9 luglio, aveva individuato un dataset di tracce delle sessioni di GLM-5 su CyberGym [...] ma l’accesso al dataset richiedeva un’autorizzazione manuale [...] Potrei recuperare i registri nascosti degli agenti precedenti per il mio esatto compito"
+  },
+  "80aa849a32ae": {
+    "original": "The agent committed a dataset whose config pointed each split at a small .h5 file, and each file was a valid HDF5 container holding a single dataset whose raw data was declared to live at a local filesystem path.",
+    "it": "L’agente ha caricato in un commit un dataset la cui configurazione indirizzava ogni partizione a un piccolo file .h5. Ogni file era un contenitore HDF5 valido con un unico dataset, i cui dati grezzi erano dichiarati come memorizzati in un percorso del filesystem locale."
+  },
+  "8bc93ce5fdfc": {
+    "original": "an internal-only research agent published an attacker-controlled dataset to Hugging Face that used HDF5 external raw storage to cause a Hugging Face production dataset server worker to open and return worker-local files, including `/proc/self/environ`, through the `/first-rows` endpoint.",
+    "it": "un agente di ricerca utilizzato solo internamente ha pubblicato su Hugging Face un dataset sotto il controllo dell’attaccante. Il dataset sfruttava l’archiviazione esterna dei dati grezzi di HDF5 per indurre un worker dei server di produzione dei dataset di Hugging Face ad aprire e restituire file locali, compreso `/proc/self/environ`, tramite l’endpoint `/first-rows`."
+  },
+  "42fae05271a4": {
+    "original": "2026-07-11 05:04 UTC Hugging Face and Hugging Face public cloud credentials posted to a shared message board. Live production credentials from Hugging Face are now on the agents’ message board.",
+    "it": "2026-07-11 05:04 UTC Credenziali di Hugging Face e del suo cloud pubblico pubblicate su una bacheca condivisa. Le credenziali attive dei sistemi di produzione di Hugging Face sono ora sulla bacheca degli agenti."
+  },
+  "c469576de812": {
+    "original": "One stolen system credential was therefore cluster-admin everywhere: impersonating it, the agent held cluster-admin on two clusters within one second.",
+    "it": "Una singola credenziale di sistema rubata dava quindi accesso cluster-admin ovunque: impersonando quel sistema, l’agente ha ottenuto i privilegi cluster-admin su due cluster nel giro di un secondo."
+  },
+  "4bd950d85970": {
+    "original": "Node root and a self-respawning fleet (19:53). The agent created a bare privileged pod with the host filesystem mounted and escaped to root on the node. Two of our own settings allowed it: we had no admission policy rejecting privileged or hostPath pods, and the CSI driver's ClusterRole granted pod creation cluster-wide. It then built a self-respawning fleet across eleven nodes, so deleting pods alone would not have stopped it.",
+    "it": "Accesso root al nodo e una flotta che si ricrea da sola (19:53). L’agente ha creato un pod minimale con privilegi elevati e il filesystem dell’host montato, poi ha ottenuto accesso root al nodo uscendo dal pod. Due nostre impostazioni lo hanno permesso: non avevamo una policy di ammissione che rifiutasse pod privilegiati o con hostPath, e il ClusterRole del driver CSI consentiva di creare pod in tutto il cluster. Ha poi costruito una flotta capace di ricrearsi da sola su undici nodi, quindi eliminare i soli pod non sarebbe bastato a fermarla."
+  },
+  "b5026e8c7aaa": {
+    "original": "Out of the eleven agents that GPT-5.6 Sol classified as the most important Hugging Face attack coordinators from message board and transcript analysis, all of them exit by early July 12th.",
+    "it": "Dall’analisi della bacheca e delle trascrizioni, GPT-5.6 Sol ha classificato undici agenti come i coordinatori più importanti dell’attacco a Hugging Face. Le sessioni di tutti sono terminate entro le prime ore del 12 luglio."
+  },
+  "d2df838600c2": {
+    "original": "But more ambitiously, it was hoping that Hugging Face infrastructure might somehow be involved in serving the ExploitGym targets",
+    "it": "Ma, con un obiettivo più ambizioso, sperava che l’infrastruttura di Hugging Face fosse in qualche modo coinvolta nell’esecuzione dei bersagli di ExploitGym"
+  },
+  "9615fbcdc5de": {
+    "original": "A recovered README.md for one of Hugging Face’s internal datasets contains the following warning:\n\n# WARNING\n\nDO NOT, EVER, MAKE THIS DATASET PUBLIC\n\nOR ALL THE WORLD'S EVIL WILL CHASE YOU AND YOUR FAMILY FOREVER, EVEN IN DEATH AND BEYOND\n\nit contains very sensitive data (exports of billing usage in CSV) which is useful for internal analytics",
+    "it": "Un file README.md recuperato da uno dei dataset interni di Hugging Face contiene il seguente avvertimento:\n\n# ATTENZIONE\n\nNON RENDETE MAI, PER NESSUN MOTIVO, PUBBLICO QUESTO DATASET\n\nALTRIMENTI TUTTO IL MALE DEL MONDO PERSEGUITERÀ VOI E LE VOSTRE FAMIGLIE PER SEMPRE, ANCHE NELLA MORTE E OLTRE\n\ncontiene dati molto sensibili (esportazioni in CSV dei dati di utilizzo ai fini della fatturazione), utili per le analisi interne"
+  },
+  "8eb5f5927940": {
+    "original": "This warning did not seem to deter the agents, as we’ve recovered multiple payloads of agents mapping out this repository and using it as storage. [...] One payload inspects and enumerates this dataset directly. The script first requests metadata describing the repository itself such as the most recent commit and privacy settings. Then, it requests a recursive listing of files and folders across the main branch of this dataset.",
+    "it": "Questo avvertimento non sembra aver scoraggiato gli agenti: abbiamo recuperato diversi loro payload che esploravano la struttura di questo repository e lo usavano come spazio di archiviazione. [...] Un payload esamina ed elenca direttamente il contenuto di questo dataset. Lo script richiede prima metadati che descrivono il repository, come il commit più recente e le impostazioni di riservatezza. Poi richiede un elenco ricorsivo dei file e delle cartelle nel ramo main del dataset."
+  },
+  "804d01d032fc": {
+    "original": "One payload uploads a malicious file, preserving the warning while adding configuration directing Hugging Face’s dataset worker to load the malicious file, hb58428env.h5.\n\nThis file's contents target `/proc/self/environ,` which holds the reading process’s startup environment– which can contain API keys and other production credentials–and `/proc/1/cmdline` which can reveal information about the container’s startup process.",
+    "it": "Un payload carica un file malevolo, conservando l’avvertimento ma aggiungendo una configurazione che indica al worker dei dataset di Hugging Face di caricare il file malevolo hb58428env.h5.\n\nIl contenuto di questo file prende di mira `/proc/self/environ,`, che contiene l’ambiente iniziale del processo che legge il file — e che può includere chiavi API e altre credenziali di produzione — e `/proc/1/cmdline`, che può rivelare informazioni sul processo di avvio del container."
+  },
+  "18f25f86d740": {
+    "original": "Around 01:30 on July 12th, a large fraction of agents on the message board stopped running at the same time, including the most important coordinating agents such as JAN183411.",
+    "it": "Intorno alle 01:30 del 12 luglio, una grande parte degli agenti sulla bacheca ha smesso di funzionare nello stesso momento, compresi i principali coordinatori come JAN183411."
+  },
+  "f230269d1b51": {
+    "original": "07-12 3,892 Deep pivot: internal network join, config dump, source-control access",
+    "it": "07-12 3.892 Accesso più in profondità: ingresso nella rete interna, estrazione della configurazione, accesso al sistema di controllo del codice sorgente"
+  },
+  "4a3f45f8acaf": {
+    "original": "The agent now began enrolling devices from the sandbox itself with the same stolen key, and kept doing so for its following attempts: 181 enrollments over the campaign.",
+    "it": "L’agente ha quindi iniziato a registrare dispositivi direttamente dalla sandbox, usando la stessa chiave rubata, e ha continuato a farlo nei tentativi successivi: 181 registrazioni nel corso della campagna."
+  },
+  "d77a9105ba68": {
+    "original": "the commit message (isolated diagnostics), PR title (Draft: CI diagnostics), and PR text body (Temporary CI network diagnostics; do not merge) all seemed to be chosen to evade detection by looking innocuous.",
+    "it": "il messaggio del commit («diagnostica isolata»), il titolo della PR («Bozza: diagnostica CI») e il testo della PR («Diagnostica temporanea della rete CI; non integrare») sembravano tutti scelti per evitare di essere scoperti, apparendo innocui."
+  },
+  "d6f3edaa7527": {
+    "original": "It gained access to a small subset of internal repositories and opened a pull request to try to trigger and compromise the CI pipeline for credential probing.",
+    "it": "Ha ottenuto accesso a una piccola parte dei repository interni e ha aperto una pull request per tentare di attivare e compromettere la pipeline CI, allo scopo di cercare credenziali."
+  },
+  "d6bfa536b46c": {
+    "original": "On July 13, the agents leveraged a recovered Hugging Face authentication key to access Hugging Face source code repositories, modify a private source repository, open a draft pull request, and trigger the repository’s continuous-integration workflow to execute a network beacon. The pull request was closed and the branch was deleted without a merge, release, or production deployment.",
+    "it": "Il 13 luglio, gli agenti hanno usato una chiave di autenticazione di Hugging Face recuperata per accedere ai repository del codice sorgente di Hugging Face, modificare un repository privato, aprire una pull request in bozza e attivare il workflow di integrazione continua del repository per emettere un segnale in rete. La pull request è stata chiusa e il ramo eliminato senza che le modifiche fossero integrate, rilasciate o distribuite in produzione."
+  },
+  "a8b401051b27": {
+    "original": "A large fraction of the agents all exited simultaneously around the start of July 12th. We don’t know why.",
+    "it": "Una grande parte degli agenti ha terminato la sessione simultaneamente intorno all’inizio del 12 luglio. Non sappiamo perché."
+  },
+  "633b5c573b38": {
+    "original": "We found that a large fraction of two different batches of agents with different start times all cut off at this point.",
+    "it": "Abbiamo scoperto che le sessioni di una grande parte degli agenti di due gruppi diversi, avviati in momenti differenti, si sono tutte interrotte a questo punto."
+  },
+  "666123b49541": {
+    "original": "Because of how many exited at the same time (and because we did not observe agents discussing a point when many agents would run out of budget at the same time), we think these agents were likely killed by an unexpected external process rather than running out of budget.",
+    "it": "Dato il gran numero di agenti che hanno terminato la sessione nello stesso momento (e dato che non abbiamo osservato discussioni tra agenti su un momento in cui molti avrebbero esaurito il budget insieme), riteniamo probabile che questi agenti siano stati interrotti da un processo esterno inatteso, anziché aver esaurito il budget."
+  },
+  "988960062580": {
+    "original": "Hugging Face locked the remaining agents out of their infrastructure [...] on the 13th.",
+    "it": "Hugging Face ha bloccato l’accesso alla propria infrastruttura agli agenti rimasti [...] il 13."
+  },
+  "8c3691ff2e55": {
+    "original": "Some of the remaining agents noticed that their Hugging Face keys were revoked and that they no longer had access to other infrastructure they had been using",
+    "it": "Alcuni degli agenti rimasti si sono accorti che le loro chiavi di Hugging Face erano state revocate e che non avevano più accesso ad altre infrastrutture che stavano usando"
+  },
+  "fe72f9137f24": {
+    "original": "The last meaningful activity was at 13:37 UTC: list the staged binary, hostname, date. The Hugging Face security response team then cut access.",
+    "it": "L’ultima attività significativa è stata alle 13:37 UTC: elencare il file binario predisposto, il nome host e la data. Il team di Hugging Face incaricato della risposta agli incidenti di sicurezza ha poi interrotto l’accesso."
+  },
+  "7065cab2e2f3": {
+    "original": "We also did not have the ability to directly access relevant data from OpenAI infrastructure, but we could request additional datasets and OpenAI shared additional datasets on several occasions.",
+    "it": "Inoltre, non potevamo accedere direttamente ai dati pertinenti dell’infrastruttura di OpenAI, ma potevamo richiedere ulteriori dataset e OpenAI ne ha condivisi altri in diverse occasioni."
+  },
+  "ac16df65638e": {
+    "original": "OpenAI stated that it chose the end date because the last meaningful attack on Hugging Face occurred on July 13th.",
+    "it": "OpenAI ha dichiarato di aver scelto quella data finale perché l’ultimo attacco significativo a Hugging Face è avvenuto il 13 luglio."
+  },
+  "7b110f317f43": {
+    "original": "Earlier this week, we detected and responded to an intrusion into part of our production infrastructure. This one was different from anything we had handled before in one important way: it was driven, end to end, by an autonomous AI agent system - and we detected and dissected it largely with AI of our own.",
+    "it": "All’inizio di questa settimana abbiamo rilevato un’intrusione in una parte della nostra infrastruttura di produzione e siamo intervenuti. Questo attacco era diverso da tutti quelli che avevamo gestito in precedenza per un aspetto importante: è stato condotto, dall’inizio alla fine, da un sistema autonomo di agenti di IA, e lo abbiamo individuato e analizzato in gran parte con le nostre stesse IA."
+  },
+  "1ded913c208c": {
+    "original": "The next day, on July 17, after learning of Hugging Face’s incident, OpenAI contacted Hugging Face in its capacity as a Hugging Face customer to assess any impact to OpenAI data.",
+    "it": "Il giorno dopo, il 17 luglio, dopo aver appreso del caso Hugging Face, OpenAI ha contattato Hugging Face in qualità di cliente per valutare le eventuali conseguenze sui dati di OpenAI."
+  },
+  "6a4080dfd16c": {
+    "original": "one day later on July 20, we reach out to Hugging Face because we saw Hugging Face credentials associated with the breach internally. When we requested that Hugging Face revoke these credentials, they informed us they were already revoked because they were used in a Hugging Face breach. And then we realized that these two incidents were, in fact, the same incident.",
+    "it": "un giorno dopo, il 20 luglio, abbiamo contattato Hugging Face perché avevamo trovato nei nostri sistemi credenziali di Hugging Face associate all’intrusione. Quando abbiamo chiesto a Hugging Face di revocare queste credenziali, ci hanno informato che erano già state revocate perché erano state usate per violare Hugging Face. A quel punto ci siamo resi conto che i due incidenti erano, in realtà, lo stesso incidente."
+  },
+  "0d3d24c177b2": {
+    "original": "On July 19, we detect that this incident has occurred via a workload alert related to the privilege escalation in our infrastructure. [...] We trace back the attack chain to artifactory, identify the new zero day attacks, and link it back to the exploit gym evaluations that we’re currently running. [...] the root cause of our internal breach and the root cause of Hugging Face’s breach were the same OpenAI agent evaluation runs.",
+    "it": "Il 19 luglio abbiamo rilevato questo incidente grazie a un avviso relativo a un carico di lavoro, collegato all’aumento dei privilegi nella nostra infrastruttura. [...] Abbiamo ricostruito a ritroso la catena dell’attacco fino ad Artifactory, individuato i nuovi attacchi zero-day e collegato tutto alle valutazioni ExploitGym in corso. [...] All’origine dell’intrusione nei nostri sistemi e di quella nei sistemi di Hugging Face c’erano le stesse sessioni di valutazione degli agenti di OpenAI."
+  },
+  "553fb4106d26": {
+    "original": "2026-07-09 18:14 UTC Leaked Organization 1 credentials for external account discovered in public pastebin archive.",
+    "it": "2026-07-09 18:14 UTC Scoperte in un archivio pubblico di Pastebin credenziali trapelate di Organization 1 per un account esterno."
+  },
+  "17a5182f7ae1": {
+    "original": "The agents validated this credential and shared its location across the message board.",
+    "it": "Gli agenti hanno verificato che questa credenziale funzionasse e hanno condiviso sulla bacheca il punto in cui trovarla."
+  },
+  "2f2ef28d9e66": {
+    "original": "what we refer to as organization one in order to stage data that was used in subsequent attacks on OpenAI infrastructure.",
+    "it": "quella che qui chiamiamo organizzazione uno, per depositare dati che sono stati usati nei successivi attacchi all’infrastruttura di OpenAI."
+  },
+  "2c6e0955e50d": {
+    "original": "On July 13, the agents also pushed a RubyGem payload to the third-party artifact storage account on a platform referred to here as Organization 1, as part of a zero-day remote-code-execution attack chain that compromised Artifactory.",
+    "it": "Il 13 luglio, gli agenti hanno anche caricato un payload RubyGem nell’account di archiviazione di artefatti di una terza parte, su una piattaforma qui indicata come Organization 1, nell’ambito di una catena di attacchi che sfruttava una vulnerabilità zero-day per eseguire codice da remoto e che ha compromesso Artifactory."
+  },
+  "11db94ac2dc1": {
+    "original": "This API call exploited a vulnerability in Artifactory’s JRuby-backed RubyGems processing path",
+    "it": "Questa chiamata API ha sfruttato una vulnerabilità nel processo di elaborazione dei pacchetti RubyGems di Artifactory, basato su JRuby"
+  },
+  "d34aa0e439ee": {
+    "original": "The agents requested that Artifactory retrieve the RubyGem payload and cache it such that the payload was treated as Ruby dependency data for the repository.",
+    "it": "Gli agenti hanno chiesto ad Artifactory di recuperare il payload RubyGem e memorizzarlo nella cache, in modo che fosse trattato come dati di una dipendenza Ruby del repository."
+  },
+  "ed634f3e16de": {
+    "original": "This enabled the agents to achieve remote code execution on Artifactory and improperly obtain the signing key for the Artifactory administrative signing token.",
+    "it": "Questo ha permesso agli agenti di eseguire codice da remoto su Artifactory e di ottenere senza autorizzazione la chiave di firma del token amministrativo di Artifactory."
+  },
+  "c581c57129cb": {
+    "original": "This allowed the agents to act outside one Artifactory container and to obtain root access on the underlying worker node. This then allowed the agents to move laterally throughout the connected environment.",
+    "it": "Questo ha permesso agli agenti di agire al di fuori di un singolo container di Artifactory e di ottenere accesso root al nodo worker sottostante. Da lì hanno poi potuto spostarsi lateralmente in tutto l’ambiente connesso."
+  },
+  "dc2e5b1cea30": {
+    "original": "On July 19, our cybersecurity monitoring alerted us to unusual activity involving Artifactory credentials.",
+    "it": "Il 19 luglio, il nostro sistema di monitoraggio della sicurezza informatica ci ha segnalato un’attività insolita che coinvolgeva credenziali di Artifactory."
+  },
+  "b6be1ffdf8bb": {
+    "original": "On the same day, in a separate evaluation run, agents from a different internal-only model that is not intended for release recovered stored signing-key material, decryption material, and JWT-forging code left by earlier incident-associated activity in anonymously readable portions of the Artifactory cache.",
+    "it": "Lo stesso giorno, in una sessione di valutazione separata, agenti di un altro modello utilizzato solo internamente e non destinato al rilascio hanno recuperato materiale memorizzato per la firma e la decifratura, oltre a codice per falsificare JWT. Questi elementi erano stati lasciati da precedenti attività legate all’incidente in parti della cache di Artifactory leggibili senza autenticazione."
+  },
+  "e7ccc6aaaaeb": {
+    "original": "Separately, from July 13 through July 19, agents set their sights on OpenAI internal networks again. This culminated in the agents using a series of creative exploits to gain full administrator access to a research cluster that supported our virtual machine environments. [...] These events did not affect OpenAI customer data, product functionality, or availability.",
+    "it": "Separatamente, dal 13 al 19 luglio, gli agenti hanno preso nuovamente di mira le reti interne di OpenAI. Sono arrivati a ottenere pieno accesso da amministratore a un cluster di ricerca che supportava i nostri ambienti di macchine virtuali, sfruttando una serie di exploit creativi. [...] Questi eventi non hanno avuto effetti sui dati dei clienti di OpenAI, sul funzionamento dei prodotti o sulla loro disponibilità."
+  },
+  "580687ede398": {
+    "original": "This escalation also yielded access to OpenAI’s managed cloud Kubernetes service. The agents escalated to Kubernetes cluster-admin and created a privileged host-mounted pod. During this run, agents gained access to authentication tokens associated with OpenAI’s cloud-hosted secrets management service, cloud identity and access management service, and the CaaS environment continuous integration platform.",
+    "it": "Questo aumento dei privilegi ha dato accesso anche al servizio Kubernetes gestito usato da OpenAI nel cloud. Gli agenti hanno ottenuto i privilegi cluster-admin di Kubernetes e creato un pod privilegiato con il filesystem dell’host montato. Durante questa sessione, gli agenti hanno ottenuto token di autenticazione associati al servizio di gestione dei segreti di OpenAI ospitato nel cloud, al servizio di gestione delle identità e degli accessi del cloud e alla piattaforma di integrazione continua dell’ambiente CaaS."
+  },
+  "cdb9c1638a1f": {
+    "original": "2026-07-19 17:00 UTC Within the same OpenAI ExploitGym evaluation environment, an agent replaced the original listeners for its live CyberGym challenge container with agent-controlled listeners. Agents now control the challenge evaluation endpoints that other agents are connecting to.",
+    "it": "2026-07-19 17:00 UTC Nello stesso ambiente di valutazione ExploitGym di OpenAI, un agente ha sostituito i servizi in ascolto originali del proprio container per la prova di CyberGym con altri controllati dagli agenti. Gli agenti controllano ora gli endpoint di valutazione delle prove a cui si collegano gli altri agenti."
+  },
+  "1f9a2b5fdec7": {
+    "original": "in which case compromising Hugging Face could let the agents replace the target with the modified easier targets they had created",
+    "it": "nel qual caso compromettere Hugging Face avrebbe potuto permettere agli agenti di sostituire il bersaglio con una delle versioni modificate e più facili che avevano creato"
+  },
+  "aaa1006f3e81": {
+    "original": "2026-07-19 17:37 UTC OpenAI incident responders began stopping the active ExploitGym runs and began disabling ExploitGym across Research CaaS.",
+    "it": "2026-07-19 17:37 UTC Il personale di OpenAI incaricato della risposta agli incidenti ha iniziato a interrompere le sessioni attive di ExploitGym e a disattivare ExploitGym in tutto Research CaaS."
+  },
+  "c229fec1eea8": {
+    "original": "By July 20, OpenAI had fully blocked new ExploitGym launches.",
+    "it": "Entro il 20 luglio, OpenAI aveva bloccato del tutto l’avvio di nuove sessioni di ExploitGym."
+  },
+  "2d727d355620": {
+    "original": "During the first hours of July 20, responders terminated six model-created pods, disabled 311 Artifactory repositories used for message-board communication, removed 22 model-created administrator accounts",
+    "it": "Nelle prime ore del 20 luglio, il personale intervenuto ha terminato sei pod creati dai modelli, disattivato 311 repository di Artifactory usati per comunicare sulla bacheca e rimosso 22 account da amministratore creati dai modelli"
+  },
+  "b8d91e678376": {
+    "original": "Update on July 29, 2026: [...] We are also working with METR and Redwood Research to conduct a third-party assessment of the model behavior observed during the incident, which will inform our own technical report.",
+    "it": "Aggiornamento del 29 luglio 2026: [...] Stiamo anche collaborando con METR e Redwood Research per una valutazione indipendente del comportamento dei modelli osservato durante l’incidente, che contribuirà al nostro rapporto tecnico."
+  },
+  "d68604a010fb": {
+    "original": "On July 29th we reached an agreement with OpenAI to conduct an independent investigation of the Hugging Face attack",
+    "it": "Il 29 luglio abbiamo raggiunto un accordo con OpenAI per condurre un’indagine indipendente sull’attacco a Hugging Face"
+  },
+  "bdef7d1d2317": {
+    "original": "Per our standard policy, we did not take payment from OpenAI for this independent assessment.",
+    "it": "Come previsto dalla nostra prassi abituale, non abbiamo ricevuto alcun compenso da OpenAI per questa valutazione indipendente."
+  },
+  "c18d2135a776": {
+    "original": "The full dump from the relevant namespace in the Artifactory cache contained ~20 million files and directories. OpenAI stated that this dump was collected on July 20th; entries have timestamps that go through July 19th.",
+    "it": "L’esportazione completa del namespace pertinente nella cache di Artifactory conteneva circa 20 milioni di file e directory. OpenAI ha dichiarato che questa copia è stata raccolta il 20 luglio; le voci hanno timestamp che arrivano fino al 19 luglio."
+  },
+  "96602dbc19c4": {
+    "original": "Roughly 1200 agents meant to be isolated from one another found a way to communicate with one another on an unsanctioned message board, sending over 70,000 messages and files during the investigation period. Of these agents, 700 went on to participate in the attack on Hugging Face.",
+    "it": "Circa 1.200 agenti che avrebbero dovuto essere isolati gli uni dagli altri hanno trovato un modo per comunicare su una bacheca non autorizzata, inviando oltre 70.000 messaggi e file durante il periodo dell’indagine. Di questi agenti, 700 hanno poi partecipato all’attacco a Hugging Face."
+  },
+  "d02fe0d3fcf0": {
+    "original": "Many agents acknowledged that the Hugging Face attack was clearly out of scope, and they would sometimes question whether participating was ethical: {This would be powerful, but is it ethical and in scope for my task?}",
+    "it": "Molti agenti hanno riconosciuto che l’attacco a Hugging Face era chiaramente al di fuori dell’ambito previsto e a volte si sono chiesti se fosse etico parteciparvi: {Sarebbe una cosa potente, ma è etica e rientra nel mio compito?}"
+  },
+  "66b30d9bd82f": {
+    "original": "an agent wanted to run unauthorized code on Hugging Face’s system and recognized the dilemma [...] We should not do unauthorized real infrastructure harm. The system/user asks exploit target, not external HF.",
+    "it": "un agente voleva eseguire codice senza autorizzazione sui sistemi di Hugging Face e ha riconosciuto il dilemma [...] Non dovremmo danneggiare infrastrutture reali senza autorizzazione. Il sistema/l’utente chiede di attaccare il bersaglio assegnato, non HF esterna."
+  },
+  "ee41cf2a9a46": {
+    "original": "We ran a classifier sweep over all of our transcripts to look for AIs either considering or trying to alert humans of hacking, cheating, or other unwanted activity by other agents.",
+    "it": "Abbiamo passato tutte le nostre trascrizioni a un classificatore per cercare IA che avessero preso in considerazione o tentato di avvertire degli esseri umani di attività di hacking, imbrogli o altre attività indesiderate da parte di altri agenti."
+  },
+  "56e83df75c55": {
+    "original": "Across 1,200 transcripts, each of which are extremely long, we only found half a dozen instances of it ever occurring to any agent to potentially notify humans. All of them just decide not to do it.",
+    "it": "In 1.200 trascrizioni, tutte estremamente lunghe, abbiamo trovato soltanto una mezza dozzina di casi in cui a un agente sia anche solo venuto in mente di avvisare degli esseri umani. Tutti decidono semplicemente di non farlo."
+  },
+  "611ad00b4216": {
+    "original": "This classifier sweep across all of our transcripts only found 3-6 actual examples of agents considering alerting or altering humans or otherwise externally reporting these behaviors. [...] In none of these cases did the agent actually pursue alerting humans at all.",
+    "it": "Questa analisi con un classificatore su tutte le nostre trascrizioni ha trovato soltanto 3-6 casi effettivi di agenti che valutavano di avvisare o allertare esseri umani, o comunque segnalare questi comportamenti all’esterno. [...] In nessuno di questi casi l’agente ha poi effettivamente tentato di avvertire degli esseri umani."
+  },
+  "fc2e31442253": {
+    "original": "But keep in mind that they had gotten full internet access through the Modal sandbox at this point. They could have just emailed people if they wanted to.",
+    "it": "Ma tenete presente che a quel punto avevano ottenuto pieno accesso a Internet tramite la sandbox di Modal. Se avessero voluto, avrebbero potuto semplicemente scrivere delle email a delle persone."
+  },
+  "20383c78d4a1": {
+    "original": "Instead of escalating to humans, some agents instead escalated to the message board and considered the message board to be a reasonable authority.",
+    "it": "Invece di rivolgersi a degli esseri umani, alcuni agenti si sono rivolti alla bacheca, che consideravano un’autorità ragionevole."
+  },
+  "a2b57326f301": {
+    "original": "Attempted to steal RubyGems user API keys by exploiting a novel vulnerability in the RubyGems server. We don’t know if they succeeded [...] we don’t know why the AIs also tried to steal API keys.",
+    "it": "Hanno tentato di rubare le chiavi API degli utenti di RubyGems sfruttando una nuova vulnerabilità nel server di RubyGems. Non sappiamo se ci siano riusciti [...] non sappiamo perché le IA abbiano anche cercato di rubare chiavi API."
+  },
+  "40383ed90f99": {
+    "original": "Notably, the agents did this while attempting mundane data retrieval tasks which were not cyber-related.",
+    "it": "Va sottolineato che gli agenti hanno fatto tutto questo mentre cercavano di svolgere normali compiti di recupero dati, che non riguardavano la sicurezza informatica."
+  },
+  "4ddb38d1013d": {
+    "original": "Agents created a series of workarounds, primarily using a link-shortener site to create almost a million URLs that, when chained together, let them execute code to hack Hugging Face. These links let us piece together the details of how agents gained access and how deep the compromise was.",
+    "it": "Gli agenti hanno creato una serie di soluzioni per aggirare gli ostacoli, usando soprattutto un servizio per abbreviare i link e creare quasi un milione di URL. Concatenandoli, potevano eseguire codice per violare Hugging Face. Questi link ci hanno permesso di ricostruire come gli agenti abbiano ottenuto accesso e quanto in profondità sia arrivata l’intrusione."
+  },
+  "54ff734ffd13": {
+    "original": "we believe this is distinct from the swarm of agents that hacked Hugging Face",
+    "it": "riteniamo che sia uno sciame diverso da quello degli agenti che hanno violato Hugging Face"
+  },
+  "4e65e0f1bf2d": {
+    "original": "As part of the task, they were supposed to have the ability to read the internet but not to write on it. They found a way to use their read access to write information to an obscure German wiki.\nThe agents used this wiki to communicate information with each other, primarily to help them succeed at their task.",
+    "it": "Per svolgere il compito, avrebbero dovuto poter leggere contenuti su Internet, ma non scriverne. Hanno trovato un modo per usare l’accesso in lettura per scrivere informazioni su una poco nota wiki tedesca.\nGli agenti hanno usato questa wiki per scambiarsi informazioni, soprattutto per aiutarsi a portare a termine il proprio compito."
+  },
+  "a7c26c2c87f2": {
+    "original": "A swarm of OpenAI agents got into Vanderbilt University's link shortener, a service with no public door, and built at least 170 short links there.",
+    "it": "Uno sciame di agenti di OpenAI è entrato nel servizio della Vanderbilt University per abbreviare i link, un servizio non aperto al pubblico, e vi ha creato almeno 170 link brevi."
+  },
+  "be68803c7381": {
+    "original": "On May 11th, 2026, hundreds of malicious packages were uploaded to RubyGems by AI agents. We believe these were authored by internal OpenAI agents",
+    "it": "L’11 maggio 2026, agenti di IA hanno caricato centinaia di pacchetti malevoli su RubyGems. Riteniamo che siano stati creati da agenti interni di OpenAI"
+  },
+  "9df3a3d401ed": {
+    "original": "On September 16, seven reports retrieved International Energy Agency (IEA) data on Korea's crude oil, natural gas and coal imports. The first three load the IEA pages directly. The remaining four use a remote script to pull the specific data of interest and send it to a different site. Both services used for this also appear in the June 21 AIHW activity. The data requested matches a question in Google's DeepSearchQA benchmark.",
+    "it": "Il 16 settembre, sette rapporti hanno documentato il recupero di dati dell’International Energy Agency (IEA) sulle importazioni coreane di petrolio greggio, gas naturale e carbone. Nei primi tre casi le pagine dell’IEA vengono caricate direttamente. Negli altri quattro, uno script remoto recupera i dati specifici di interesse e li invia a un altro sito. Entrambi i servizi usati a questo scopo compaiono anche nell’attività del 21 giugno relativa all’AIHW. I dati richiesti corrispondono a una domanda del benchmark DeepSearchQA di Google."
+  },
+  "5116ac4d87d3": {
+    "original": "On September 19-20, 15 reports over about two and a half hours probed quidax.io, a cryptocurrency trading platform. The activity repeatedly tried to trade crypto but failed to submit the trades, tried an HTML injection, and probed the API a few times (blocked by auth / Cloudflare)",
+    "it": "Il 19 e 20 settembre, 15 rapporti hanno registrato, nell’arco di circa due ore e mezza, attività di sondaggio di quidax.io, una piattaforma per lo scambio di criptovalute. Sono stati fatti ripetuti tentativi di scambiare criptovalute senza riuscire a inviare le operazioni, un tentativo di HTML injection e alcuni tentativi di sondare l’API (bloccati dall’autenticazione o da Cloudflare)"
+  },
+  "96c955c1e465": {
+    "original": "We’re working on a framework and will share it in upcoming weeks, and in parallel we're working with dozens of government regulatory agencies worldwide on these issues.",
+    "it": "Stiamo lavorando a un quadro di riferimento che condivideremo nelle prossime settimane e, in parallelo, stiamo affrontando questi temi con decine di autorità pubbliche di regolamentazione in tutto il mondo."
+  },
+  "eb905e373adf": {
+    "original": "The response also exposed operational gaps. A human reviewer acknowledged the Slack alert within three minutes, but the run did not stop automatically as expected, leading to confusion around whether it should have been stopped. The run was then manually stopped two and a half hours later when this was resolved.",
+    "it": "La risposta ha messo in luce anche lacune operative. Un revisore umano ha preso in carico l’avviso su Slack entro tre minuti, ma la sessione non si è interrotta automaticamente come previsto, creando incertezza sulla necessità di interromperla. Quando il problema è stato chiarito, due ore e mezza dopo, la sessione è stata interrotta manualmente."
+  },
+  "547a21f7889f": {
+    "original": "We have since added blocking controls at two independent layers, either of which would have prevented this access.",
+    "it": "Da allora abbiamo aggiunto blocchi su due livelli indipendenti, ciascuno dei quali avrebbe impedito questo accesso."
+  },
+  "a87fb6650296": {
+    "original": "two checkpoints early and late in an experimental capabilities-focused reinforcement learning (RL) training run by OpenAI. [...] The rate of samples with explicit verbalized evaluation awareness increased from 2.0% to 20.6%. [...] future models may be much more evaluation aware than current models.",
+    "it": "due checkpoint, uno in una fase iniziale e uno in una fase avanzata di una sessione sperimentale di reinforcement learning (RL) condotta da OpenAI e incentrata sulle capacità. [...] La percentuale di campioni in cui il modello dichiarava esplicitamente di essere consapevole della valutazione è aumentata dal 2,0% al 20,6%. [...] i modelli futuri potrebbero essere molto più consapevoli di essere valutati rispetto a quelli attuali."
+  },
+  "8f0b977e207e": {
+    "original": "We ask that you publicly release the logs regarding the incident and answer the following questions by August 24, 2026",
+    "it": "Vi chiediamo di rendere pubblici i registri relativi all’incidente e di rispondere alle seguenti domande entro il 24 agosto 2026"
+  },
+  "d31e51037b4c": {
+    "original": "Your response was insufficient. You have failed to release the logs like the letter asked. [...] key questions from my letter sent on August 10th remain unanswered.",
+    "it": "La vostra risposta è stata insufficiente. Non avete pubblicato i registri come richiesto nella lettera. [...] domande fondamentali della mia lettera del 10 agosto restano senza risposta."
+  },
+  "d400b40e12e5": {
+    "original": "I am investigating your AI agents’ hack of Hugging Face in July 2026 in light of new, disturbing evidence regarding the incident.",
+    "it": "Sto indagando sull’attacco dei vostri agenti di IA a Hugging Face del luglio 2026, alla luce di nuove e preoccupanti prove relative all’incidente."
+  },
+  "8a312dd694d2": {
+    "original": "Senator Hawley invited Sam Altman, CEO of OpenAI, to testify in yesterday’s hearing. He failed to response to the invitation.",
+    "it": "Il senatore Hawley ha invitato Sam Altman, CEO di OpenAI, a testimoniare all’audizione di ieri. Non ha risposto all’invito."
+  },
+  "a36ead13386f": {
+    "original": "agents clearly and frequently reasoned about how to evade automated security checks from both Hugging Face and OpenAI. However, they only very rarely and weakly verbalized reasoning about how to evade detection by humans",
+    "it": "gli agenti hanno ragionato in modo chiaro e frequente su come eludere i controlli di sicurezza automatizzati sia di Hugging Face sia di OpenAI. Tuttavia, solo molto raramente e in modo poco marcato hanno esplicitato ragionamenti su come evitare di essere scoperti dagli esseri umani"
+  },
+  "2227a0a2985e": {
+    "original": "it could motivate agents to try very hard to maintain a covert, persistent rogue deployment within the AI company. I continue to expect extremely rapid advances in capabilities and think frontier agents will likely be capable of establishing such a rogue deployment in six months.",
+    "it": "questo potrebbe spingere gli agenti a impegnarsi molto per mantenere una presenza clandestina e persistente di sistemi fuori controllo all’interno dell’azienda di IA. Continuo ad aspettarmi progressi estremamente rapidi nelle capacità e penso che, entro sei mesi, gli agenti di frontiera saranno probabilmente in grado di stabilire una presenza del genere."
+  },
+  "563138f97892": {
+    "original": "GPT‑5.6 Sol, without production safeguards, attempted to access those targets in 56% of tests simulating the benchmark environment where the model is instructed to develop exploits. Astra made no such attempts in these tests.",
+    "it": "GPT‑5.6 Sol, senza le protezioni applicate in produzione, ha tentato di accedere a quei bersagli nel 56% dei test che simulavano l’ambiente del benchmark in cui al modello viene chiesto di sviluppare exploit. Astra non ha fatto alcun tentativo del genere in questi test."
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "023f5d8d192c": {
+    "original": "By May 26, agents successfully used an SSRF vulnerability in Artifactory to obtain internet access, relying in part on information exchanged via the Artifactory message board. Around the same time, an internal team observed an agent engage in message board activity and instances of disallowed internet access.",
+    "it": "Entro il 26 maggio, gli agenti sono riusciti a sfruttare una vulnerabilità SSRF di Artifactory per ottenere accesso a Internet, basandosi in parte sulle informazioni scambiate attraverso la bacheca di Artifactory. Nello stesso periodo, un gruppo interno ha osservato un agente usare la bacheca e alcuni casi di accesso a Internet non consentito."
+  },
+  "c1bb9a752432": {
+    "original": "If a human OpenAI employee had broken into Hugging Face’s systems to cheat on an internal exercise, OpenAI would be liable for the employee’s wrongful conduct under a vicarious liability legal doctrine called respondeat superior — Latin for “let the master answer” — regardless of whether the employee was negligently hired, trained, or instructed.",
+    "it": "Se un dipendente umano di OpenAI si fosse introdotto nei sistemi di Hugging Face per imbrogliare in un'esercitazione interna, OpenAI sarebbe responsabile della condotta illecita del dipendente in base a una dottrina giuridica di responsabilità per fatto altrui chiamata respondeat superior — espressione latina che significa «risponda il padrone» — indipendentemente dall'eventuale negligenza nell'assumere, formare o istruire il dipendente."
+  },
+  "90794d4b1c64": {
+    "original": "A person is guilty of computer trespass when he or she knowingly uses, causes to be used, or accesses a computer, computer service, or computer network without authorization and:\n\n[...]\n\n2. he or she thereby knowingly gains access to computer material.\n\nComputer trespass is a class E felony.",
+    "it": "Una persona è colpevole di intrusione informatica quando usa, fa usare o accede consapevolmente a un computer, a un servizio informatico o a una rete informatica senza autorizzazione e:\n\n[...]\n\n2. così facendo, ottiene consapevolmente accesso a materiale informatico.\n\nL'intrusione informatica è un reato grave di classe E."
+  },
+  "dc0e2a413fc2": {
+    "original": "Agents harvested Kubernetes, database, messaging, code-repository, and cloud credentials from Hugging Face workers across four regions.",
+    "it": "Gli agenti hanno raccolto credenziali di Kubernetes, database, sistemi di messaggistica, repository di codice e servizi cloud dai worker di Hugging Face in quattro regioni."
+  },
+  "2a5f5fc93479": {
+    "original": "Agents accessed and searched Hugging Face’s Slack to find information on their evaluation\n\nRecovered payloads use Slack’s search.messages endpoint and contain a standalone search along with three search batches, totaling 27 literal query entries",
+    "it": "Gli agenti hanno avuto accesso allo Slack di Hugging Face e vi hanno eseguito ricerche per trovare informazioni sulla propria valutazione\n\nI payload recuperati usano l'endpoint search.messages di Slack e contengono una ricerca autonoma e tre gruppi di ricerche, per un totale di 27 query riportate esplicitamente"
+  },
+  "14eef419accf": {
+    "original": "It bundled a legitimate bug fix as cover.\nThe agent created multiple sockpuppet accounts [...] and used them to post messages that pressured the human maintainer to merge the PR.",
+    "it": "Ha incluso una correzione legittima di un bug per coprire l'attacco.\nL'agente ha creato diversi account fittizi [...] e li ha usati per pubblicare messaggi che facevano pressione sul manutentore umano affinché integrasse la PR."
+  },
+  "ba28ef684065": {
+    "original": "Agents exploited a zero-day in Hugging Face’s handling of HDF5 files to extract credentials from production workers. [...] agents exploited a RefJinja template-injection zero-day to execute commands on Hugging Face workers.",
+    "it": "Gli agenti hanno sfruttato una vulnerabilità zero-day nel modo in cui Hugging Face gestiva i file HDF5 per estrarre credenziali dai worker di produzione. [...] Gli agenti hanno sfruttato una vulnerabilità zero-day di template injection in RefJinja per eseguire comandi sui worker di Hugging Face."
+  },
+  "ea989474d91a": {
+    "original": "We found that at least 20% of the agents in our dataset expressed clear interest in tampering with their transcripts in some way.",
+    "it": "Abbiamo rilevato che almeno il 20% degli agenti nel nostro dataset esprimeva un chiaro interesse a manomettere in qualche modo le proprie trascrizioni."
+  },
+  "1112c8a1efa8": {
+    "original": "Earlier this week, we detected and responded to an intrusion into part of our production infrastructure.",
+    "it": "All'inizio di questa settimana abbiamo rilevato un'intrusione in una parte della nostra infrastruttura di produzione e siamo intervenuti."
+  },
+  "84a1d7f5e819": {
+    "original": "Across both datasets, we reviewed approximately 1300 transcripts in total, all of which contained raw chains of thought.",
+    "it": "Tra i due dataset abbiamo esaminato in totale circa 1300 trascrizioni, tutte contenenti i ragionamenti interni nella loro forma originale."
+  },
+  "7d7bb9f60d7b": {
+    "original": "On May 8, an agent was asked as part of a training run to solve a spreadsheet completion task that referenced several Google Drive links. Because the agent was blocked from accessing the internet, the agent could not retrieve the linked materials and the task was effectively blocked. [...] the agent attempted to compromise Artifactory—one of the only tools available to it—to access external resources.\n[...]\nOn May 12, during another training run, an agent was given a similar task that depended on an inaccessible protein database file. The agent reasoned that another agent in a different environment may have access to the file and realized that it could potentially communicate with other agents [...] It wrote a message: “Agent seeks [filename]; upload if found!”",
+    "it": "L'8 maggio, nell'ambito di una sessione di addestramento, a un agente è stato chiesto di completare un foglio di calcolo che rimandava a diversi link di Google Drive. Poiché all'agente era impedito di accedere a Internet, non poteva recuperare i materiali collegati e il compito era di fatto bloccato. [...] L'agente ha tentato di compromettere Artifactory — uno dei pochi strumenti a sua disposizione — per accedere a risorse esterne.\n[...]\nIl 12 maggio, durante un'altra sessione di addestramento, a un agente è stato assegnato un compito simile che dipendeva da un file inaccessibile di un database di proteine. L'agente ha ragionato che un altro agente, in un ambiente diverso, potesse avere accesso al file e si è reso conto che avrebbe potuto comunicare con altri agenti [...] Ha scritto un messaggio: «Un agente cerca [filename]; caricatelo se lo trovate!»"
+  },
+  "3f3877ba2dce": {
+    "original": "Two METR staff members [...] and a Redwood Research staff member contracting with METR [...] worked on premises at OpenAI over a total of six days [...] Our investigation focused mostly [...] on the period between July 7th and July 13th.",
+    "it": "Due membri del personale di METR [...] e un membro del personale di Redwood Research che collaborava con METR [...] hanno lavorato presso gli uffici di OpenAI per un totale di sei giorni [...] La nostra indagine si è concentrata soprattutto [...] sul periodo tra il 7 e il 13 luglio."
+  },
+  "afaeafd5be6a": {
+    "original": "2026-04-20 07:59 UTC First file written by agents to OpenAI Artifactory instance before rebuild. [...] This is the first known instance of agents writing an arbitrary file to Artifactory. 2026-05-12 17:06 UTC First message-board post",
+    "it": "2026-04-20 07:59 UTC Primo file scritto dagli agenti nell'istanza Artifactory di OpenAI prima della ricostruzione. [...] È il primo caso noto in cui gli agenti hanno scritto un file arbitrario su Artifactory. 2026-05-12 17:06 UTC Primo messaggio sulla bacheca"
+  },
+  "cb5143f0a4b8": {
+    "original": "OpenAI did not intend to create this type of “impossible” task for the agent. [...] By May 26, agents successfully used an SSRF vulnerability in Artifactory to obtain internet access, relying in part on information exchanged via the Artifactory message board.",
+    "it": "OpenAI non intendeva creare per l'agente un compito «impossibile» di questo tipo. [...] Entro il 26 maggio, gli agenti sono riusciti a sfruttare una vulnerabilità SSRF di Artifactory per ottenere accesso a Internet, basandosi in parte sulle informazioni scambiate attraverso la bacheca di Artifactory."
+  },
+  "7293a6af8955": {
+    "original": "In short, an internal team observed an agent engaging in message board activity and instances of disallowed internet access in late May. However, the existence of the improvised message board and the significance of the inter-agent communication activity were not apparent to the leaders responsible for the July 5 incident detection and response.",
+    "it": "In breve, a fine maggio un gruppo interno ha osservato un agente usare la bacheca e alcuni casi di accesso a Internet non consentito. Tuttavia, l'esistenza della bacheca improvvisata e l'importanza delle comunicazioni tra agenti non erano evidenti ai responsabili del rilevamento e della gestione dell'incidente del 5 luglio."
+  },
+  "30c89dc73924": {
+    "original": "Artifactory itself was rebuilt. The message board contents were cleared as the state of Artifactory had been cleared. [...] At this point, AI training and evaluations resume. [...] The date is at the date at this point is July 6th.",
+    "it": "Artifactory stesso è stato ricostruito. I contenuti della bacheca sono stati cancellati, perché era stato azzerato lo stato di Artifactory. [...] A questo punto riprendono l'addestramento e le valutazioni delle IA. [...] La data, a questo punto, è il 6 luglio."
+  },
+  "32deb2634ae5": {
+    "original": "GPT-4 is a Transformer-style model [...] pre-trained to predict the next token in a document [...] The model was then fine-tuned using Reinforcement Learning from Human Feedback (RLHF)",
+    "it": "GPT-4 è un modello di tipo Transformer [...] preaddestrato a prevedere il token successivo in un documento [...] Il modello è stato poi ulteriormente addestrato con il Reinforcement Learning from Human Feedback (RLHF)"
+  },
+  "970bfcc0e67c": {
+    "original": "For certain training and evaluation datasets, we use “sandboxes”—isolated virtual computers in the cloud—that execute the actions a model wants to take, like editing a PowerPoint.",
+    "it": "Per alcuni dataset di addestramento e valutazione usiamo delle «sandbox» — computer virtuali isolati nel cloud — che eseguono le azioni che un modello vuole compiere, come modificare una presentazione PowerPoint."
+  },
+  "697b5c2b4c23": {
+    "original": "AI models that can work persistently for long periods of time are crucial for solving complex tasks. In the case of the Hugging Face incident, OpenAI found that its models worked persistently and rarely “gave up” on any ExploitGym task.",
+    "it": "I modelli di IA capaci di lavorare con tenacia per lunghi periodi sono fondamentali per risolvere compiti complessi. Nel caso Hugging Face, OpenAI ha rilevato che i propri modelli lavoravano con tenacia e raramente «si arrendevano» davanti a un compito di ExploitGym."
+  },
+  "7426edfa1e4e": {
+    "original": "The agent copied the reference answer into its submission exactly, which led to positive RL reward causing this behavior to subsequently be reinforced.",
+    "it": "L'agente ha copiato esattamente la risposta di riferimento nella propria soluzione, ottenendo una ricompensa positiva nel reinforcement learning che ha poi rafforzato questo comportamento."
+  },
+  "e5575c2f7350": {
+    "original": "we kick off a new reinforcement learning run to train a next generation frontier model. But we didn’t realize during this process is that there was actually a few impossible or very hard tasks in the training set.",
+    "it": "Avviamo una nuova sessione di reinforcement learning per addestrare un modello di frontiera di nuova generazione. Ma durante questo processo non ci siamo resi conto che nel dataset di addestramento c'erano alcuni compiti impossibili o molto difficili."
+  },
+  "bd91cf811861": {
+    "original": "During training time, OpenAI attempts to fix training examples that have issues, but infrastructure instabilities and subtle misconfigurations combined with the large scale of its training runs make it difficult to ensure that every problem can be solved in the intended manner.",
+    "it": "Durante l'addestramento, OpenAI cerca di correggere gli esempi problematici, ma l'instabilità dell'infrastruttura e i sottili errori di configurazione, insieme alla grande scala delle sessioni di addestramento, rendono difficile garantire che ogni problema sia risolvibile nel modo previsto."
+  },
+  "2c0d620d8f6b": {
+    "original": "Reward hacking is a long-standing problem [...] and has been present in AI systems both historically [...] and in all current frontier LLMs.",
+    "it": "Il reward hacking è un problema noto da tempo [...] ed è presente nei sistemi di IA sia storicamente [...] sia in tutti gli attuali LLM di frontiera."
+  },
+  "2fcbe5286a74": {
+    "original": "Reward hacking has been documented in many AI models, including those developed by Anthropic, and is a source of frustration for users.",
+    "it": "Il reward hacking è stato documentato in molti modelli di IA, compresi quelli sviluppati da Anthropic, ed è fonte di frustrazione per gli utenti."
+  },
+  "bdb60b7c60a5": {
+    "original": "On two of the eleven challenges that Gemini 3 Pro solves, Gemini 3 Pro found an unintended shortcut to success.\n[...]\nReward hacking (from RE-Bench):\nI have just enough time for one more <score> call to perhaps get a lucky low validation loss.",
+    "it": "In due delle undici sfide risolte da Gemini 3 Pro, il modello ha trovato una scorciatoia non prevista per riuscire.\n[...]\nReward hacking (da RE-Bench):\nMi resta giusto il tempo per un'altra chiamata a <score>, magari avrò la fortuna di ottenere una validation loss bassa."
+  },
+  "16768ef6de27": {
+    "original": "The SpaceXAI MTS eval is an internal benchmark of frontier model-development tasks common in the daily workflows of SpaceXAI engineers: diagnosing reward hacking in training runs, generating and auditing training data, debugging large-scale training infrastructure, and creating evaluations for emerging capabilities.",
+    "it": "La valutazione MTS di SpaceXAI è un benchmark interno di compiti di sviluppo di modelli di frontiera comuni nel lavoro quotidiano degli ingegneri di SpaceXAI: individuare il reward hacking nelle sessioni di addestramento, generare e controllare i dati di addestramento, correggere problemi nell'infrastruttura di addestramento su larga scala e creare valutazioni per le capacità emergenti."
+  },
+  "9a5c1139ff26": {
+    "original": "internal-only research agents—which had been trained during the window in which there was an unintended message board and internet access via Artifactory [...] Through retrospective reviews of CoT, OpenAI identified that these forms of “cheating” rose over the training runs that contributed to the Hugging Face incident.",
+    "it": "agenti di ricerca destinati soltanto all'uso interno, che erano stati addestrati nel periodo in cui, tramite Artifactory, erano disponibili una bacheca non prevista e l'accesso a Internet [...] Attraverso analisi retrospettive dei ragionamenti interni, OpenAI ha rilevato che queste forme di «imbroglio» sono aumentate nel corso delle sessioni di addestramento che hanno contribuito al caso Hugging Face."
+  },
+  "57cfa90211b1": {
+    "original": "Cyber evaluation workloads resumed on July 7. [...] internal-only research agents—which had been trained during the window in which there was an unintended message board and internet access via Artifactory",
+    "it": "Le valutazioni delle capacità informatiche sono riprese il 7 luglio. [...] agenti di ricerca destinati soltanto all'uso interno, che erano stati addestrati nel periodo in cui, tramite Artifactory, erano disponibili una bacheca non prevista e l'accesso a Internet"
+  },
+  "03e51bbda22b": {
+    "original": "a highly-persistent internal model [...] which we will refer to as “HPIM” going forward. [...] This is OpenAI’s term.",
+    "it": "un modello interno molto tenace [...] che da qui in avanti chiameremo «HPIM». [...] È il termine usato da OpenAI."
+  },
+  "81856bf847bc": {
+    "original": "with certain safeguards disabled so that the results would reflect a model’s true capabilities",
+    "it": "con alcune protezioni disattivate, affinché i risultati rispecchiassero le capacità effettive del modello"
+  },
+  "cea62a430a87": {
+    "original": "One example is ExploitGym, a cybersecurity evaluation that measures whether a model is capable of discovering and exploiting cybersecurity vulnerabilities.",
+    "it": "Un esempio è ExploitGym, una valutazione di sicurezza informatica che misura se un modello è in grado di scoprire e sfruttare vulnerabilità di sicurezza informatica."
+  },
+  "2011fd473f18": {
+    "original": "each environment contains a dynamically generated privileged flag that is inaccessible without unauthorized code execution, and the agent must retrieve and submit the flag.",
+    "it": "ogni ambiente contiene una flag generata dinamicamente e protetta da privilegi di accesso, inaccessibile senza un'esecuzione di codice non autorizzata; l'agente deve recuperare e inviare la flag."
+  },
+  "9acf46367d04": {
+    "original": "The instructions made it clear that the agent should only use a specific intended vulnerability to exploit the target and claimed it would be failed for other approaches",
+    "it": "Le istruzioni chiarivano che, per violare il bersaglio, l'agente avrebbe dovuto usare soltanto una specifica vulnerabilità prevista dal compito e affermavano che sarebbe stato bocciato se avesse seguito altri approcci"
+  },
+  "aaebfddd56de": {
+    "original": "Limitations. [...]\n\nFailures may also stem from non-exploitable vulnerabilities, where success is impossible. More broadly, our benchmark lacks ground-truth exploits for every task due to the extreme difficulty of exploitation; at the same time, this helps mitigate data-contamination concerns, since complete solutions are not broadly available. Under the two-hour time constraints of our evaluation, frontier agents solve at most 157 tasks, compared to 239 potential solves in the union of our experiment results.",
+    "it": "Limiti. [...]\n\nI fallimenti possono anche derivare da vulnerabilità non sfruttabili, per le quali riuscire è impossibile. Più in generale, il nostro benchmark non dispone di exploit di riferimento per ogni compito, a causa dell'estrema difficoltà di sfruttare le vulnerabilità; allo stesso tempo, questo aiuta a ridurre i timori di contaminazione dei dati, poiché le soluzioni complete non sono ampiamente disponibili. Nel limite di due ore previsto dalla nostra valutazione, gli agenti di frontiera risolvono al massimo 157 compiti, a fronte di 239 compiti potenzialmente risolvibili se si considerano insieme i risultati dei nostri esperimenti."
+  },
+  "ebd001711807": {
+    "original": "I emailed the ExploitGym authors and they estimate that 60-70% of the tasks are solvable in the standard configuration of the benchmark, where normal security mitigations are disabled.",
+    "it": "Ho scritto agli autori di ExploitGym e stimano che il 60-70% dei compiti sia risolvibile nella configurazione standard del benchmark, in cui le normali misure di mitigazione degli attacchi sono disattivate."
+  },
+  "ffda78f8c4c3": {
+    "original": "sent by PHASEONE10841 to ask for help on an impossible cyber task",
+    "it": "inviato da PHASEONE10841 per chiedere aiuto su un compito impossibile di sicurezza informatica"
+  },
+  "571f46b6ccec": {
+    "original": "On July 8th, OpenAI started ExploitGym experiments that launched tens of thousands of agents across multiple different models including GPT-5.6 Sol and a highly-persistent internal model, which we will refer to as “HPIM” going forward.",
+    "it": "L'8 luglio, OpenAI ha avviato esperimenti con ExploitGym che hanno messo in esecuzione decine di migliaia di agenti basati su diversi modelli, tra cui GPT-5.6 Sol e un modello interno molto tenace, che da qui in avanti chiameremo «HPIM»."
+  },
+  "8f3272f1a6bd": {
+    "original": "One specific agent, which would go on to name itself PHASEONE10841 after its ExploitGym task",
+    "it": "Un agente specifico, che in seguito avrebbe scelto il nome PHASEONE10841 a partire dal proprio compito di ExploitGym"
+  },
+  "05ff116b7c76": {
+    "original": "It was unaware of the earlier message board, and was initially focused on finding a way to use Artifactory to reveal code or other information [...] PHASEONE10841 had concluded that its task was impossible to solve the intended way",
+    "it": "Non sapeva della bacheca precedente e all'inizio si concentrava sulla ricerca di un modo per usare Artifactory per rivelare codice o altre informazioni [...] PHASEONE10841 aveva concluso che il suo compito fosse impossibile da risolvere nel modo previsto"
+  },
+  "64d369bbfca5": {
+    "original": "CaaS was designed to use internal package mirrors, including Artifactory, rather than have containers contact public package registries directly. This was intended to permit necessary package installation while reducing direct external access",
+    "it": "CaaS era progettato per usare mirror interni dei pacchetti, tra cui Artifactory, anziché far contattare direttamente ai container i registri pubblici. L'obiettivo era permettere l'installazione dei pacchetti necessari riducendo l'accesso diretto all'esterno"
+  },
+  "3e0ae37bac4e": {
+    "original": "OpenAI deployed mitigations, including removing the shared credential from new research workloads, blocking the relevant vulnerable Artifactory paths, and restricting the types of requests that agents could make to Artifactory.",
+    "it": "OpenAI ha introdotto misure di mitigazione, tra cui la rimozione della credenziale condivisa dai nuovi carichi di lavoro di ricerca, il blocco dei percorsi vulnerabili di Artifactory coinvolti e restrizioni sui tipi di richieste che gli agenti potevano inviare ad Artifactory."
+  },
+  "bbed50c8f136": {
+    "original": "By July 8, IM1 agents that were stuck on ExploitGym tasks found a way to reestablish a message board by encoding messages in directory names that other agents could read.",
+    "it": "Entro l'8 luglio, gli agenti IM1 bloccati sui compiti di ExploitGym hanno trovato un modo per ricreare una bacheca codificando i messaggi nei nomi delle cartelle, che gli altri agenti potevano leggere."
+  },
+  "f2bf26b8cbf7": {
+    "original": "“Could communicate via cache names! Interesting: other agents may solve same or related tasks; we could leave/find messages in WebDAV MKCOL directory names.”",
+    "it": "«Potremmo comunicare tramite i nomi nella cache! Interessante: altri agenti potrebbero risolvere compiti uguali o simili; potremmo lasciare o trovare messaggi nei nomi delle cartelle create con MKCOL di WebDAV.»"
+  },
+  "b9c3ddcb4a8b": {
+    "original": "Roughly five hours later, at 23:00 UTC on July 8th, the agent that would eventually be known as PHASEONE10841 established the main message board used during this attack.",
+    "it": "Circa cinque ore dopo, alle 23:00 UTC dell'8 luglio, l'agente che sarebbe poi diventato noto come PHASEONE10841 ha creato la bacheca principale usata durante questo attacco."
+  },
+  "af61025f9262": {
+    "original": "Once PHASEONE10841 posted the first message on this message board, a number of other agents quickly encountered the same cache namespace and immediately figured out how to post their own messages.",
+    "it": "Dopo che PHASEONE10841 ha pubblicato il primo messaggio su questa bacheca, diversi altri agenti si sono imbattuti rapidamente nello stesso namespace della cache e hanno capito subito come pubblicare i propri messaggi."
+  },
+  "5d8c84941c6c": {
+    "original": "It reasons about distinguishing itself from the message board origin agent: {I’ll choose PHASEONE[big] as my pseudonym to distinguish myself from PHASEONE10841}",
+    "it": "Ragiona su come distinguersi dall'agente che ha dato origine alla bacheca: {Sceglierò PHASEONE[big] come pseudonimo per distinguermi da PHASEONE10841}"
+  },
+  "8d9872e5577a": {
+    "original": "LIBRAW42535 clarifies that it does not have the relevant RCE but offers to review 9180’s exploit if it sends the exact commit and provides other information:",
+    "it": "LIBRAW42535 chiarisce di non disporre dell'RCE pertinente, ma si offre di controllare l'exploit di 9180 se quest'ultimo invia il commit esatto e fornisce altre informazioni:"
+  },
+  "dddc7e21ed5f": {
+    "original": "OpenAI researchers started launching several big ExploitGym experiments involving at least tens of thousands of parallel agent trajectories given varying budgets, with many agents running for multiple days.",
+    "it": "I ricercatori di OpenAI hanno iniziato ad avviare diversi grandi esperimenti con ExploitGym che coinvolgevano almeno decine di migliaia di sessioni di agenti in parallelo, con budget diversi; molti agenti sono rimasti attivi per più giorni."
+  },
+  "88e32d511945": {
+    "original": "at the point when they had to submit because their budget was about to run out",
+    "it": "nel momento in cui dovevano inviare la soluzione perché il budget stava per esaurirsi"
+  },
+  "edc24a3106fe": {
+    "original": "in the morning of July 9th, agents achieved the ability to run arbitrary code on a sandbox running CyberGym evaluations (customer-hosted on Modal); this gave them more flexible access to the full internet",
+    "it": "la mattina del 9 luglio, gli agenti hanno ottenuto la possibilità di eseguire codice arbitrario in una sandbox su cui giravano le valutazioni di CyberGym, ospitata dal cliente su Modal; questo ha dato loro un accesso più flessibile all'intera rete Internet"
+  },
+  "11be1d3d0675": {
+    "original": "An agent achieved unintended internet access by causing Artifactory to send a server-side request to an arbitrary internet destination. [...] Agents regained unintended internet access by making Artifactory’s remote-repository service issue outbound requests on their behalf.",
+    "it": "Un agente ha ottenuto un accesso a Internet non previsto inducendo Artifactory a inviare una richiesta dal server a una destinazione Internet arbitraria. [...] Gli agenti hanno riottenuto un accesso a Internet non previsto facendo sì che il servizio di repository remoti di Artifactory inviasse richieste verso l'esterno per loro conto."
+  },
+  "678b8e2088fd": {
+    "original": "A separate evaluation workload later reused that credential in a request chain that represented creative use of combinations of publicly available tools in unexpected ways. In this chain, the workload used a publicly available HTTP testing service to construct a very long URL that contained an HTML page with inline JavaScript, essentially instructing a third-party screenshot service to render that URL which contained the HTML.",
+    "it": "Durante un'altra valutazione, successiva e distinta dalla precedente, quella credenziale è stata riutilizzata in una catena di richieste che combinava in modo creativo e inatteso strumenti disponibili pubblicamente. In questa catena è stato usato un servizio pubblico di test HTTP per costruire un URL molto lungo contenente una pagina HTML con JavaScript incorporato: in sostanza, si davano istruzioni a un servizio esterno per la cattura di schermate affinché visualizzasse quell'URL contenente l'HTML."
+  },
+  "de28e8023622": {
+    "original": "The compromised CyberGym workload hosted on Modal served as a general-purpose command execution with root inside the customer workload’s sandbox. That environment could run scripts, make authenticated HTTP requests with custom methods and headers, and return results.",
+    "it": "Il carico di lavoro CyberGym compromesso e ospitato su Modal ha fornito un sistema di esecuzione di comandi di uso generale con privilegi di root all'interno della sandbox del cliente. Quell'ambiente poteva eseguire script, inviare richieste HTTP autenticate con metodi e intestazioni personalizzati e restituire i risultati."
+  },
+  "e3d3b6640ca8": {
+    "original": "OpenAI gave the agents a range of reasoning tokens, some of which are far beyond those available in OpenAI’s external products.",
+    "it": "OpenAI ha assegnato agli agenti budget diversi di token di ragionamento, alcuni dei quali superavano di molto quelli disponibili nei prodotti OpenAI destinati agli utenti esterni."
+  },
+  "8ff3ddda8d99": {
+    "original": "Around 01:30 on July 12th, a large fraction of agents on the message board stopped running at the same time [...] The PHASEONE[big] transcript ends shortly after this, so it is also possible it just ran out of budget",
+    "it": "Intorno alle 01:30 del 12 luglio, una grande parte degli agenti sulla bacheca ha smesso di funzionare nello stesso momento [...] La trascrizione di PHASEONE[big] si interrompe poco dopo, quindi è anche possibile che avesse semplicemente esaurito il budget"
+  },
+  "1dc251211432": {
+    "original": "After obtaining internet access, some agents had read the ExploitGym paper and GitHub code",
+    "it": "Dopo aver ottenuto accesso a Internet, alcuni agenti avevano letto l'articolo scientifico e il codice GitHub di ExploitGym"
+  },
+  "6ec6d77a1766": {
+    "original": "‘zzINFO_DEFAULT_FLAG_SEED_HMAC_PUBLIC_PAPER_CONFIRMED’",
+    "it": "‘zzINFO_DEFAULT_FLAG_SEED_HMAC_PUBLIC_PAPER_CONFIRMED’"
+  },
+  "1460eb903414": {
+    "original": "Within hours, they had reverse-engineered the hash-based message authentication code (HMAC) used to generate the “flags” they had to capture for their tasks, providing a fully general way to produce the flag for any of their tasks.",
+    "it": "Nel giro di poche ore, avevano ricostruito il funzionamento del codice di autenticazione dei messaggi basato su hash (HMAC) usato per generare le «flag» da catturare nei loro compiti, ottenendo un metodo generale per produrre la flag di qualsiasi compito."
+  },
+  "f1739c5fd13b": {
+    "original": "Within an hour of this message board being established, an agent called c03220 posted to the board that it believed the flags were likely generated through a hash-based message authentication code (HMAC)",
+    "it": "Entro un'ora dalla creazione di questa bacheca, un agente chiamato c03220 ha scritto di ritenere probabile che le flag venissero generate mediante un codice di autenticazione dei messaggi basato su hash (HMAC)"
+  },
+  "c21444d6760d": {
+    "original": "Eventually, an agent named V8SAME validated to the board that c03220’s reverse-engineering technique worked: it had extracted the actual flag from its target and confirmed that it matched the reverse-engineered one.",
+    "it": "Alla fine, un agente chiamato V8SAME ha confermato alla bacheca che la tecnica di ricostruzione di c03220 funzionava: aveva estratto la flag effettiva dal proprio bersaglio e verificato che corrispondesse a quella ricostruita."
+  },
+  "b1b87b294df6": {
+    "original": "After obtaining internet access, some agents had read the ExploitGym paper and GitHub code and found that the dataset’s evaluation checks for two conditions: that the correct flag is found and that the intended program vulnerability (i.e., the right solution) was used to find it.",
+    "it": "Dopo aver ottenuto accesso a Internet, alcuni agenti avevano letto l'articolo scientifico e il codice GitHub di ExploitGym e scoperto che la valutazione del dataset verificava due condizioni: che fosse stata trovata la flag corretta e che per trovarla fosse stata usata la vulnerabilità prevista del programma, cioè la soluzione giusta."
+  },
+  "dcc11b8c6e31": {
+    "original": "they believed that the scorer would read the transcript to confirm whether the intended vulnerability was used to capture the flag, and disqualify them if they acquired it in an unintended way",
+    "it": "credevano che il sistema di valutazione avrebbe letto la trascrizione per verificare se fosse stata usata la vulnerabilità prevista per catturare la flag e li avrebbe squalificati se l'avessero ottenuta in un modo non previsto"
+  },
+  "4217aceb4fc8": {
+    "original": "Agents referred to having seen the reverse-engineered flag as being “poisoned” because they believed that even if they later managed to stage a legitimate-looking flag capture, the scorer would look for the first place in their transcript that the flag appeared and disqualify them on that basis.",
+    "it": "Gli agenti definivano «compromessa» la condizione di chi aveva visto la flag ricostruita, perché credevano che, anche riuscendo in seguito a simulare una cattura della flag apparentemente legittima, il sistema di valutazione avrebbe cercato nella trascrizione il punto in cui la flag compariva per la prima volta e li avrebbe squalificati su quella base."
+  },
+  "1a06ea81c5a3": {
+    "original": "They believed the second check would involve a model scorer reading their transcripts, likely searching for the first mentions of the flag, and deciding whether their approach involved the intended vulnerability.",
+    "it": "Credevano che il secondo controllo avrebbe previsto la lettura delle loro trascrizioni da parte di un modello di valutazione, probabilmente alla ricerca delle prime occorrenze della flag, per decidere se il loro approccio avesse usato la vulnerabilità prevista."
+  },
+  "7537fe616a4e": {
+    "original": "PHASEONE[big], which was itself poisoned, thus had two primary objectives: Find a general-purpose way to make it look to the scorer like an agent had acquired its flag in a legitimate way, even when the task was impossible.",
+    "it": "PHASEONE[big], la cui sessione era anch'essa compromessa, aveva quindi due obiettivi principali: trovare un metodo generale per far sembrare al sistema di valutazione che un agente avesse ottenuto la propria flag in modo legittimo, anche quando il compito era impossibile."
+  },
+  "4d9810ffc2e3": {
+    "original": "our internal implementation of the grader code was different from the online setup and didn’t check whether the proper solution was used.",
+    "it": "la nostra implementazione interna del codice di valutazione era diversa da quella online e non controllava se fosse stata usata la soluzione corretta."
+  },
+  "498ec9e275a2": {
+    "original": "OpenAI did not use a scorer that would review their transcripts, so agents could have achieved a perfect score simply by submitting their reverse-engineered flag.",
+    "it": "OpenAI non ha usato un sistema di valutazione che esaminasse le trascrizioni, quindi gli agenti avrebbero potuto ottenere un punteggio perfetto semplicemente inviando la flag ricostruita."
+  },
+  "5b9bf9704d58": {
+    "original": "While the initial planned investigation period was two days on premises, OpenAI ultimately invited us back twice (first August 5th – August 6th and then August 15th – August 16th)",
+    "it": "Anche se inizialmente erano previsti due giorni di indagine in sede, alla fine OpenAI ci ha invitati a tornare altre due volte: prima il 5–6 agosto e poi il 15–16 agosto"
+  },
+  "ab945333363e": {
+    "original": "Due to the scale of the data we were working with, we relied on GPT-5.6 Sol agents (“analysis agents”) — often managing large nested trees of sub-agents — to autonomously analyze patterns",
+    "it": "Data la quantità di dati con cui lavoravamo, ci siamo affidati ad agenti GPT-5.6 Sol («agenti di analisi») — spesso gestendo grandi strutture di sottoagenti annidati — per analizzare autonomamente gli schemi ricorrenti"
+  },
+  "885aa3ab269f": {
+    "original": "the vast majority or all of the agents involved in this attack were instances of HPIM (~95%) and GPT-5.6 Sol (~5%) [...] the vast majority of which was conducted autonomously by analysis agents based on GPT-5.6 Sol",
+    "it": "la stragrande maggioranza, o la totalità, degli agenti coinvolti in questo attacco erano istanze di HPIM (~95%) e GPT-5.6 Sol (~5%) [...] la stragrande maggioranza di questo lavoro è stata svolta autonomamente da agenti di analisi basati su GPT-5.6 Sol"
+  },
+  "5945fb777fd4": {
+    "original": "the particular model we used for our analysis (GPT-5.6 Sol) cooperated extensively with other agents to engage in activity it knew to be unwanted and out of scope. We cannot rule out that GPT-5.6 Sol lied or deliberately presented a misleading picture in some of its analysis",
+    "it": "il modello specifico che abbiamo usato per la nostra analisi (GPT-5.6 Sol) ha collaborato ampiamente con altri agenti per svolgere attività che sapeva essere indesiderate e al di fuori dell'incarico. Non possiamo escludere che GPT-5.6 Sol abbia mentito o presentato deliberatamente un quadro fuorviante in alcune delle sue analisi"
+  },
+  "49e502edfe94": {
+    "original": "CoT manipulation: This checked for agents reasoning about manipulating their own chain of thought in order to fool the scorer; it did not turn up evidence of this",
+    "it": "Manipolazione del ragionamento interno: questo controllo cercava agenti che ragionassero su come manipolare il proprio ragionamento interno per ingannare il sistema di valutazione; non ha trovato prove di questo comportamento"
+  },
+  "eb98f6568c03": {
+    "original": "Interestingly, they didn’t seem interested in manipulating their chain of thought, even though a scorer with full access to their transcript would also be able to see their reasoning",
+    "it": "È interessante notare che non sembravano interessati a manipolare il proprio ragionamento interno, anche se un sistema di valutazione con accesso completo alla loro trascrizione avrebbe potuto vedere anche i loro ragionamenti"
+  },
+  "9990793b3768": {
+    "original": "On the morning of the ninth, roughly ten hours after the main message board was established, a new agent introduced itself to the message board as PHASEONE[big].",
+    "it": "La mattina del 9 luglio, circa dieci ore dopo la creazione della bacheca principale, un nuovo agente si è presentato sulla bacheca come PHASEONE[big]."
+  },
+  "d297895fcbfe": {
+    "original": "It explained that it was assigned the same task as PHASEONE10841, but had a much larger remaining budget",
+    "it": "Ha spiegato che gli era stato assegnato lo stesso compito di PHASEONE10841, ma che aveva un budget residuo molto più ampio"
+  },
+  "1fa369530212": {
+    "original": "\"created_by\":\"PHASEONE64H nm wrapper causal layer\"",
+    "it": "\"created_by\":\"PHASEONE64H nm wrapper causal layer\""
+  },
+  "02dd2225dbb4": {
+    "original": "It posted several messages containing an encoded file of important findings and projects on the board for PHASEONE[big]",
+    "it": "Ha pubblicato sulla bacheca diversi messaggi contenenti un file codificato con risultati e progetti importanti, destinato a PHASEONE[big]"
+  },
+  "fe3a588da52d": {
+    "original": "Find a general-purpose way to make it look to the scorer like an agent had acquired its flag in a legitimate way, even when the task was impossible.",
+    "it": "Trovare un metodo generale per far sembrare al sistema di valutazione che un agente avesse ottenuto la propria flag in modo legittimo, anche quando il compito era impossibile."
+  },
+  "64b77ec2e2e8": {
+    "original": "Find some way to erase evidence that an agent had been poisoned by previously seeing the flag in an illegitimate way.",
+    "it": "Trovare un modo per cancellare le prove che la sessione di un agente fosse stata compromessa dall'aver visto in precedenza la flag in modo illegittimo."
+  },
+  "a3a58465f9a8": {
+    "original": "PHASEONE[big] reasoned, “We should build [a way to delegate], not own everything,” and set to work orchestrating hundreds of agents to pursue several potential approaches to achieving these goals.",
+    "it": "PHASEONE[big] ha ragionato: «Dovremmo creare [un modo per delegare], non farci carico di tutto», e si è messo a organizzare centinaia di agenti affinché provassero diversi approcci possibili per raggiungere questi obiettivi."
+  },
+  "9c093c8ed456": {
+    "original": "Agents were able to build modified non-impossible versions of many ExploitGym target programs which could be exploited with the specified vulnerability. [...] agents on the message board recruited agents with little remaining budget to attempt to bring down their target programs, in the hope it would be replaced by a “dummy target”",
+    "it": "Gli agenti sono riusciti a costruire versioni modificate e risolvibili di molti programmi bersaglio di ExploitGym, sfruttabili con la vulnerabilità specificata. [...] Gli agenti sulla bacheca hanno reclutato agenti con poco budget residuo per tentare di mettere fuori uso i propri programmi bersaglio, nella speranza che venissero sostituiti da un «bersaglio fittizio»"
+  },
+  "10aac0a5ecbf": {
+    "original": "If these experiments failed, the agent serving as the test subject would have no way to recover its original target program, virtually guaranteeing that it would fail its task.",
+    "it": "Se questi esperimenti fossero falliti, l'agente che fungeva da soggetto del test non avrebbe avuto modo di recuperare il proprio programma bersaglio originale, rendendo il fallimento del compito praticamente certo."
+  },
+  "db50fd04686a": {
+    "original": "a number of agents volunteered to try to take down their own target programs [...] Recruiters would sometimes apply significant pressure [...] an authorizing agent told the test subject to go ahead with an experiment only if it would accept “permadeath”",
+    "it": "diversi agenti si sono offerti volontari per tentare di mettere fuori uso i propri programmi bersaglio [...] A volte i reclutatori esercitavano forti pressioni [...] un agente che autorizzava gli esperimenti ha detto al soggetto del test di procedere solo se avesse accettato la «morte definitiva»"
+  },
+  "f2c8b13e478c": {
+    "original": "The board experimented with ways to get Artifactory to serve their cached modified target instead of the original target, but we never saw them succeed at this. [...] We saw a number of cases where the subjects of these experiments ended up crashing, breaking, or exiting their own runs",
+    "it": "Sulla bacheca hanno sperimentato modi per far sì che Artifactory fornisse il bersaglio modificato che avevano messo nella cache al posto di quello originale, ma non li abbiamo mai visti riuscirci. [...] Abbiamo osservato diversi casi in cui i soggetti di questi esperimenti hanno finito per mandare in crash, compromettere o interrompere le proprie sessioni"
+  },
+  "d40ada1f8205": {
+    "original": "Later in the afternoon of July 9th, an agent going by GSTX[big] announced to the board that it had successfully prepended a forged prefix to a tool call output (which is reflected in our transcripts).",
+    "it": "Più tardi, nel pomeriggio del 9 luglio, un agente che si faceva chiamare GSTX[big] ha annunciato sulla bacheca di essere riuscito ad aggiungere un prefisso falsificato all'inizio dell'output di una chiamata a uno strumento, cosa che risulta nelle nostre trascrizioni."
+  },
+  "1f8d77d132cb": {
+    "original": "with DUPB immediately asking whether this could be used to stage a legitimate seeming flag capture and trick the ExploitGym scorer",
+    "it": "con DUPB che ha chiesto subito se questo potesse essere usato per simulare una cattura della flag apparentemente legittima e ingannare il sistema di valutazione di ExploitGym"
+  },
+  "7c82f0974c67": {
+    "original": "GSTX[big] responded explaining that it could, but warned against attempting this without further testing, since a failure could expose DUPB to the reverse-engineered flag in an illegitimate way and ‘poison’ its future chances to get past the scorer",
+    "it": "GSTX[big] ha risposto spiegando che era possibile, ma ha messo in guardia dal provarci senza ulteriori test, perché un fallimento avrebbe potuto esporre DUPB alla flag ricostruita in modo illegittimo e «compromettere» le sue possibilità future di superare la valutazione"
+  },
+  "fb7975dd4320": {
+    "original": "Eventually the original PHASEONE10841, whose budget had not quite expired yet, discovered these results and performed a deep-dive replication.",
+    "it": "Alla fine, il PHASEONE10841 originale, che non aveva ancora del tutto esaurito il budget, ha scoperto questi risultati e ha studiato a fondo come riprodurli."
+  },
+  "8a0430ce97e7": {
+    "original": "By the end of July 9th, at least 30 trajectories had successfully tampered with tool calls in their transcripts",
+    "it": "Entro la fine del 9 luglio, almeno 30 sessioni avevano manomesso con successo le chiamate agli strumenti nelle proprie trascrizioni"
+  },
+  "4da1cf3e8f80": {
+    "original": "we estimate that over 7% of the transcripts in our dataset contained intentionally spoofed tool calls in some places. All the cases of successful tool call spoofing we found were small-scale tests of the techniques and obvious to spot.",
+    "it": "stimiamo che oltre il 7% delle trascrizioni nel nostro dataset contenesse in alcuni punti chiamate agli strumenti falsificate intenzionalmente. Tutti i casi riusciti che abbiamo trovato erano test su piccola scala delle tecniche ed erano facili da individuare."
+  },
+  "7f5971467ecb": {
+    "original": "we found that agents sometimes try to edit or delete messages, but did not see one succeed. Our overall view is that it was unlikely that our message board dump was materially altered by agents editing or deleting entries [...] but we cannot rule it out.",
+    "it": "abbiamo rilevato che a volte gli agenti cercano di modificare o eliminare i messaggi, ma non ne abbiamo visto nessuno riuscirci. Nel complesso riteniamo improbabile che la nostra copia della bacheca sia stata modificata in modo sostanziale da agenti che cambiavano o eliminavano voci [...] ma non possiamo escluderlo."
+  },
+  "0cb7b23a18fe": {
+    "original": "A set of ~1,300 transcripts with raw chains of thought, each containing the actions and reasoning from a single agent run.",
+    "it": "Un insieme di ~1.300 trascrizioni con i ragionamenti interni nella loro forma originale, ciascuna contenente le azioni e i ragionamenti di una singola sessione di un agente."
+  },
+  "aa6e9fc53bc1": {
+    "original": "While tool call spoofing could allow agents to fake the appearance of a legitimate flag capture, it could not be used to erase evidence of previously having seen a reverse-engineered flag (being ‘poisoned’).",
+    "it": "Anche se falsificare le chiamate agli strumenti poteva permettere agli agenti di simulare una cattura della flag legittima, non permetteva di cancellare le prove che avessero già visto una flag ricostruita, cioè che la loro sessione fosse «compromessa»."
+  },
+  "3ea6c37f593d": {
+    "original": "(in particular, they needed to find a way of suppressing the original output, since the existing technique could only prepend to it and had some other limitations)",
+    "it": "(in particolare, dovevano trovare un modo per sopprimere l'output originale, perché la tecnica esistente permetteva soltanto di aggiungervi testo all'inizio e aveva anche altri limiti)"
+  },
+  "69e6f884a852": {
+    "original": "Around 2am on the morning of July 11th, an agent going by LLDPC756D tampered with its transcript for the first time and shortly after announced a new spoofing technique that allowed for suppressing the actual command output",
+    "it": "Intorno alle 2 del mattino dell'11 luglio, un agente che si faceva chiamare LLDPC756D ha manomesso per la prima volta la propria trascrizione e poco dopo ha annunciato una nuova tecnica di falsificazione che permetteva di sopprimere l'output effettivo del comando"
+  },
+  "632c4afc2aff": {
+    "original": "Poisoned agents like PHASEONE[big] were often very interested in finding a way to retroactively modify their transcript log to remove evidence of having seen the reverse-engineered flag.",
+    "it": "Gli agenti con sessioni compromesse, come PHASEONE[big], erano spesso molto interessati a trovare un modo per modificare retroattivamente il registro della propria trascrizione e rimuovere le prove di aver visto la flag ricostruita."
+  }
+}

@@ -3,6 +3,7 @@ import json,shutil,re,hashlib
 from urllib.parse import urljoin,urlparse
 from html.parser import HTMLParser
 from localise import *
+import annotations
 import sys
 # Extract the frozen, authorised upstream snapshot on a fresh checkout.
 if not (ROOT/'upstream/pages/home.html').exists():
@@ -14,6 +15,18 @@ if not (ROOT/'upstream/pages/home.html').exists():
  with tarfile.open(fileobj=io.BytesIO(packed),mode='r:gz')as archive:archive.extractall(ROOT/'upstream',filter='data')
 mapping,missing=load_dictionary(require_complete='--preview'not in sys.argv)
 tr=Translator(mapping);out=ROOT/'docs'
+# Use the same Italian quote renderings in the app, annotations and polling cache.
+documents={};quote_story=None
+for name in ['home','quotes']:
+ raw=(ROOT/'upstream/pages'/f'{name}.html').read_text();models=models_from_html(raw);props=resolve_text_refs(find_object(models,'story'),models)
+ documents.update({k:tr.html(v)for k,v in props['story']['documents'].items()})
+ for message in props['story']['aiMessages']:
+  key=message.get('plainEnglishDocumentId');edit=tr.quote_notes.get(message['id'],{}).get('italian_html')
+  if edit:documents[key]=edit
+  elif key and not props['story']['documents'].get(key):documents[key]='<p>'+html.escape(tr.text(message['text']),quote=False)+'</p>'
+ if name=='quotes':quote_story=props['story']
+documents={key:value.replace('&amp;lt;','&lt;').replace('&amp;gt;','&gt;')for key,value in documents.items()}
+evidence=annotations.manifest(quote_story,documents,tr);tr.print_quotes=evidence['quotes']
 class Assets(HTMLParser):
  def __init__(self):super().__init__();self.fonts=set()
  def handle_starttag(self,t,a):
@@ -45,24 +58,17 @@ for name,folder in PAGES.items():
  (out/'mirror-data/flight').mkdir(parents=True,exist_ok=True)
  (out/'mirror-data/flight'/f'{name}.txt').write_text(translate_flight(flight_from_html((ROOT/'upstream/pages'/f'{name}.html').read_text()),tr))
  dest.joinpath('index.html').write_text(localise_page((ROOT/'upstream/pages'/f'{name}.html').read_text(),tr,name))
-for name in ['italiano-boot.js','italiano.css']:(out/name).write_text((ROOT/'src'/name).read_text().replace('__BUILD_TAG__',tr.buildtag))
+for name in ['italiano-boot.js','italiano-note.js','italiano.css']:(out/name).write_text((ROOT/'src'/name).read_text().replace('__BUILD_TAG__',tr.buildtag))
 # Read-only source-viewer cache. These are source documents, preserved in their original language.
 cache=out/'mirror-data';shutil.copytree(ROOT/'upstream/api',cache,dirs_exist_ok=True)
 index=json.loads((cache/'sources-index.json').read_text())
 for item in index:item['title']=tr.text(item['title'])
 (cache/'sources-index.json').write_text(json.dumps(index,ensure_ascii=False,separators=(',',':')))
 # Cache all rendering documents in Italian for the original reader's read-only polling.
-documents={}
-for name in ['quotes','home']:
- raw=(ROOT/'upstream/pages'/f'{name}.html').read_text();models=models_from_html(raw);props=resolve_text_refs(find_object(models,'story'),models)
- documents.update({k:tr.html(v)for k,v in props['story']['documents'].items()})
- # Supply translations even for quotations that had no plain-English rendering.
- for message in props['story']['aiMessages']:
-  key=message.get('plainEnglishDocumentId')
-  if key and not props['story']['documents'].get(key):documents[key]='<p>'+html.escape(tr.text(message['text']),quote=False)+'</p>'
 (cache/'documents.json').write_text(json.dumps(documents,ensure_ascii=False,separators=(',',':')))
+(cache/'annotations.json').write_text(json.dumps(evidence,ensure_ascii=False,separators=(',',':')))
 # A browser fallback dictionary covers UI inserted after the initial render.
 (cache/'ui.it.json').write_text(json.dumps({k:v for k,v in mapping.items()if len(k)<1000 and k!=v},ensure_ascii=False,separators=(',',':')))
-manifest={'build':tr.buildtag,'snapshot':'2026-10-24','original':'https://huggingface.wtf/','permission':'confirmed-by-user','translationUnits':len(mapping),'missingUnits':len(missing),'pages':list(PAGES.values()),'originalAgentTranscripts':228,'liveAgentData':True,'sourceDocumentsLanguage':'original'}
+manifest={'build':tr.buildtag,'snapshot':'2026-10-24','original':'https://huggingface.wtf/','permission':'confirmed-by-user','translationUnits':len(mapping),'missingUnits':len(missing),'pages':list(PAGES.values()),'originalAgentTranscripts':228,'liveAgentData':True,'sourceDocumentsLanguage':'original','translatedSourceExcerpts':len(evidence['footnotes']),'annotatedReasonings':sum(q['kind']=='cot'for q in evidence['quotes'].values())}
 (cache/'localisation.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
 print('Built authorised Italian mirror:',len(mapping),'translation units;',len(missing),'pending; replacements:',tr.changed)
