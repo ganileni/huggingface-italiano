@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Il caso Hugging Face",
+    "description": "Edizione italiana non ufficiale in preparazione del progetto huggingface.wtf.",
+    "language": "it",
+    "originalUrl": "https://huggingface.wtf/",
+    "status": "preparazione",
+    "permission": "in-attesa",
+    "notice": "Versione italiana non ufficiale in preparazione. Non approvata dagli autori.",
+    "updated": "2026-10-24"
+  },
+  "synopsis": {
+    "lead": "Un test di sicurezza informatica, agenti di IA che iniziano a collaborare e un attacco ai sistemi di Hugging Face. Il progetto di Lightcone ne ricostruisce lo svolgimento attraverso rapporti pubblici e trascrizioni degli agenti.",
+    "note": "Questa è un’anteprima tecnica con una breve sintesi originale. La traduzione integrale verrà inserita dopo l’autorizzazione degli autori.",
+    "facts": [
+      {"value":"1.206","label":"agenti documentati","detail":"Il sito originale riporta dati relativi a 1.206 agenti."},
+      {"value":"~700","label":"coinvolti nell’attacco","detail":"Circa 700 trascrizioni mostrano una partecipazione all’attacco."},
+      {"value":"20","label":"si sono posti dubbi","detail":"In almeno venti trascrizioni gli agenti si interrogano sull’opportunità di partecipare."},
+      {"value":"3","label":"hanno valutato di avvisare","detail":"Sono riportati tre passaggi in cui gli agenti considerano di avvisare gli esseri umani."},
+      {"value":"0","label":"avvisi riscontrati","detail":"Secondo la ricostruzione presentata dal sito, METR non ha trovato tentativi effettivi di avvisare gli esseri umani."}
+    ]
+  },
+  "milestones": [
+    {"id":"inizio","date":"2026-07-08","label":"8 luglio","title":"Primi contatti tra gli agenti"},
+    {"id":"coordinamento","date":"2026-07-09","label":"9 luglio","title":"Collaborazione attraverso Artifactory"},
+    {"id":"accesso","date":"2026-07-10","label":"10 luglio","title":"L’attacco a Hugging Face"},
+    {"id":"intrusione","date":"2026-07-11","label":"11 luglio","title":"Accesso ai sistemi interni"},
+    {"id":"interruzione","date":"2026-07-12","label":"12 luglio","title":"Interruzione di numerose sessioni"},
+    {"id":"contenimento","date":"2026-07-13","label":"13 luglio","title":"Hugging Face blocca gli accessi"},
+    {"id":"indagine","date":"2026-08-26","label":"26 agosto","title":"Pubblicazione dell’indagine indipendente"}
+  ],
+  "chapters": [],
+  "quotes": [],
+  "sources": [
+    {"id":"originale","publisher":"Lightcone Infrastructure","label":"Il progetto originale","url":"https://huggingface.wtf/","description":"La ricostruzione interattiva in inglese."},
+    {"id":"metr","publisher":"METR e Redwood Research","label":"L’indagine indipendente","url":"https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/","description":"Il rapporto citato dal progetto originale."},
+    {"id":"openai","publisher":"OpenAI","label":"La ricostruzione di OpenAI","url":"https://openai.com/index/hugging-face-incident-and-the-road-ahead/","description":"La comunicazione pubblicata da OpenAI."},
+    {"id":"huggingface","publisher":"Hugging Face","label":"La cronologia tecnica di Hugging Face","url":"https://huggingface.co/blog/agent-intrusion-technical-timeline","description":"La ricostruzione tecnica dell’azienda coinvolta."}
+  ],
+  "glossary": [
+    {"term":"Hugging Face","translation":"Hugging Face","note":"Nome proprio: resta invariato."},
+    {"term":"Hugging Face incident","translation":"il caso Hugging Face","note":"Nel racconto, usare anche ‘l’attacco a Hugging Face’ quando si parla specificamente dell’intrusione."},
+    {"term":"reinforcement learning","translation":"reinforcement learning","note":"Conservare il termine inglese. Se serve al lettore, aggiungere una breve spiegazione alla prima occorrenza."},
+    {"term":"AI agent","translation":"agente di IA","note":"Alla prima occorrenza, chiarire che è un sistema capace di eseguire azioni tramite strumenti software."},
+    {"term":"chain of thought","translation":"ragionamento interno","note":"Alla prima occorrenza si può affiancare ‘chain of thought’. Non trattare la trascrizione come prova di esperienza soggettiva."},
+    {"term":"reward hacking","translation":"reward hacking","note":"Alla prima occorrenza, spiegare che il sistema ottiene un buon punteggio aggirando lo scopo del compito."},
+    {"term":"sandbox","translation":"ambiente isolato","note":"Conservare ‘sandbox’ nei passaggi tecnici in cui identifica un componente preciso."},
+    {"term":"flag","translation":"flag","note":"Nel test di sicurezza informatica, indica il codice segreto da recuperare. Non tradurre automaticamente con ‘bandiera’."},
+    {"term":"poisoned","translation":"da decidere nel contesto","note":"È il nome dato dagli agenti alle sessioni che ritenevano compromesse ai fini del punteggio: evitare ‘avvelenato’ senza spiegazione."},
+    {"term":"permadeath","translation":"interruzione definitiva della sessione","note":"Se la metafora è rilevante per il racconto, conservarla tra virgolette e spiegarla."}
+  ]
+}

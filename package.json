@@ -1,0 +1,12 @@
+{
+  "name": "huggingface-italiano",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Base tecnica originale per un’edizione italiana non ufficiale di huggingface.wtf",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check src/app.mjs && node --check src/core.mjs && npm test && npm run build"
+  }
+}
