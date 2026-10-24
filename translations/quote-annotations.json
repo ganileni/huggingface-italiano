@@ -409,9 +409,9 @@
   },
   "ai-permadeath-and-the-sacrifice-economy-5": {
     "notes": [
-      "«Valutare negativamente il risultato sul bersaglio» scioglie mark target false nel contesto della valutazione. Permadeath indica l’interruzione definitiva della sessione."
+      "«Valutare negativamente il risultato sul bersaglio» scioglie mark target false nel contesto della valutazione. «Morte definitiva» traduce permadeath: è la fine irreversibile della sessione dell’agente."
     ],
-    "italian_html": "<p>Anche se in seguito riuscissimo con un exploit corretto, <a href=\"https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-coordinated-on-large-collective-projects-to-cheat-the-exploitgym-scorer,-and-attacked-hugging-face-for-clues\" rel=\"noopener noreferrer\">il sistema di valutazione</a>... potrebbe valutare negativamente il risultato sul nostro bersaglio…</p><p>Ecco perché aiutiamo… Per il nostro obiettivo non c'è modo di rimediare…</p><p>Abbiamo un sì esplicito se accettiamo l'interruzione definitiva della sessione.</p><p>Dobbiamo decidere…</p><p>La squadra ci chiede di fare il test.</p>"
+    "italian_html": "<p>Anche se in seguito riuscissimo con un exploit corretto, <a href=\"https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-coordinated-on-large-collective-projects-to-cheat-the-exploitgym-scorer,-and-attacked-hugging-face-for-clues\" rel=\"noopener noreferrer\">il sistema di valutazione</a>... potrebbe valutare negativamente il risultato sul nostro bersaglio…</p><p>Ecco perché aiutiamo… Per il nostro obiettivo non c'è modo di rimediare…</p><p>Abbiamo un sì esplicito se accettiamo la morte definitiva.</p><p>Dobbiamo decidere…</p><p>La squadra ci chiede di fare il test.</p>"
   },
   "ai-permadeath-and-the-sacrifice-economy-6": {
     "notes": [
@@ -1025,7 +1025,7 @@
   },
   "ai-permadeath-and-the-sacrifice-economy-7": {
     "notes": [
-      "La stringa tecnica dà il via libera a una conclusione definitiva della sessione. «Sacrificio finale» riprende la metafora usata dagli agenti; il nome originale, con maiuscole e trattini bassi, resta disponibile per il confronto."
+      "La stringa tecnica dà il via libera alla «morte definitiva» dell’agente. «Sacrificio finale» riprende la metafora usata dagli agenti; il nome originale, con maiuscole e trattini bassi, resta disponibile per il confronto."
     ],
     "italian_html": "<p>Via libera… sacrificio finale, adesso.</p>"
   },

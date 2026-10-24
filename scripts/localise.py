@@ -104,7 +104,7 @@ class Translator:
   self.mapping=mapping;self.normalised={re.sub(r'\s+',' ',k):v for k,v in mapping.items()};self.changed=0;self.page='home'
   self.quote_notes=load_quote_notes();self.passages=load_passages();self.print_quotes={}
   self.italian_overrides={q['italian_html']for q in self.quote_notes.values()if q.get('italian_html')}
-  files=['scripts/localise.py','scripts/js-tokens.mjs','scripts/build-mirror.py','scripts/annotations.py','src/italiano-boot.js','src/italiano-note.js','src/italiano.css','translations/quote-annotations.json','translations/review-story-joins.json']
+  files=['scripts/localise.py','scripts/js-tokens.mjs','scripts/build-mirror.py','scripts/annotations.py','scripts/diagram-transform.json','src/italiano-boot.js','src/italiano-note.js','src/italiano-link.js','src/italiano.css','src/italiano-diagram.css','src/italiano-links.css','translations/quote-annotations.json','translations/quote-links.json','translations/review-story-joins.json']
   self.buildtag=hashlib.sha256((json.dumps(mapping,sort_keys=True,ensure_ascii=False)+''.join((ROOT/p).read_text()for p in files if(ROOT/p).exists())).encode()).hexdigest()[:12]
  def print_prefixes(self):return sorted((k for k in self.mapping if len(k)>30),key=len,reverse=True)
  def text(self,value):
@@ -263,6 +263,9 @@ def translate_js(source,tr,filename=''):
   result=result.replace(marker,'[L,F]=(0,n.useState)(!0),U=')
  if filename=='116-c105742fa80c9a50.js':
   result=result.replace('"1,200":"all"','"1,200":"all","1.200":"all"').replace(r's=/\b(1,200|1200|',r's=/\b(1[.,]200|1200|')
+  for edit in json.loads((ROOT/'scripts/diagram-transform.json').read_text()):
+   if result.count(edit['old'])!=1:raise ValueError('Diagram markup changed upstream')
+   result=result.replace(edit['old'],edit['new'])
  return result
 
 def localise_page(source,tr,name):
@@ -278,7 +281,8 @@ def localise_page(source,tr,name):
  source=source[:first]+encoded+source[first:]
  source=tr.html(source)
  # Early boot handles source caches and navigation before any original JS executes.
- boot=f'<link rel="stylesheet" href="{BASE}/italiano.css?it={tr.buildtag}"><script src="{BASE}/italiano-boot.js?it={tr.buildtag}"></script><script defer src="{BASE}/italiano-note.js?it={tr.buildtag}"></script>'
+ boot=''.join(f'<link rel="stylesheet" href="{BASE}/{css}?it={tr.buildtag}">'for css in ['italiano.css','italiano-diagram.css','italiano-links.css'])
+ boot+=f'<script src="{BASE}/italiano-boot.js?it={tr.buildtag}"></script><script defer src="{BASE}/italiano-note.js?it={tr.buildtag}"></script><script defer src="{BASE}/italiano-link.js?it={tr.buildtag}"></script>'
  source=source.replace('<head>','<head>'+boot,1)
  banner='<div class="it-edition-bar" aria-label="Edizione italiana"><span>Versione italiana non ufficiale</span><a href="https://huggingface.wtf/" target="_blank" rel="noopener noreferrer">Originale Lightcone ↗</a><button type="button" class="it-speech-button"'+(' hidden=""'if name!='home'else '')+' aria-pressed="false">Ascolta in italiano</button></div>'
  source=re.sub(r'(<body[^>]*>)',lambda m:m[1]+banner,source,count=1)

@@ -32,6 +32,24 @@ def load_quote_notes():
  path=ROOT/'translations/quote-annotations.json'
  return json.loads(path.read_text())if path.exists()else{}
 
+def quote_glossary(story,documents,tr):
+ """Keep the original glossary destinations and the translated definitions."""
+ result={}
+ for item in json.loads((ROOT/'translations/quote-links.json').read_text()):
+  key='glossary-'+re.sub(r'[^a-z0-9]+','-',item['label'].lower()).strip('-')
+  definition=documents.get(key)
+  if not definition:
+   definition='<h2>'+html.escape(tr.text(item['label']))+'</h2>'+''.join('<p>'+html.escape(tr.text(item[k]))+'</p>'for k in ['short','more']if item[k])
+  heading=re.search(r'<h[1-6]\b[^>]*>(.*?)</h[1-6]>',definition,re.S)
+  label=plain(heading[1])if heading else tr.text(item['label'])
+  body=definition[:heading.start()]+definition[heading.end():]if heading else definition
+  terms=list(dict.fromkeys(item['italian']+[tr.text(t)for t in item['match']]+[label]))
+  result[key]={'id':key,'label':label,'href':item['href'],'html':body,'terms':terms,'english':item['match']}
+ return result
+
+def linked_glossary_terms(value,glossary):
+ return [key for key,item in glossary.items()if any(re.search(r'(?<!\w)'+re.escape(term)+r'(?!\w)',value,re.I)for term in item['english'])]
+
 def render_quote_notes(quote):
  notes=[]
  if quote.get('madeUp'):
@@ -43,16 +61,17 @@ def render_quote_notes(quote):
  return notes
 
 def manifest(story,documents,tr):
- editorial=load_quote_notes();quotes={};sources={s['id']:s for s in story['sources']}
+ editorial=load_quote_notes();quotes={};sources={s['id']:s for s in story['sources']};glossary=quote_glossary(story,documents,tr)
  for q in story['aiMessages']:
   source=sources.get(q.get('sourceId'),{})
   original=q['text'];rendering=documents[q['plainEnglishDocumentId']]
   old_rendering=story['documents'].get(q['plainEnglishDocumentId'],'')or original
   entry={'id':q['id'],'kind':q['type'],'original':original,'originalPlain':plain(original),'italianHtml':rendering,'italianPlain':plain(rendering),'englishPlain':plain(old_rendering),'legacyItalianPlain':plain(tr.html(old_rendering)),'paraphrased':q.get('paraphrased',False),'madeUp':q.get('madeUp',False),'notes':editorial.get(q['id'],{}).get('notes',[]),'sourceTitle':tr.text(source.get('title')or source.get('name')or q.get('sourceId','')),'sourceUrl':source.get('url')or next((n.get('url')for n in q.get('notes',[])if n.get('url')),''),'locator':q.get('locator','')}
   entry['translationNotes']=render_quote_notes(entry)
+  entry['glossaryIds']=linked_glossary_terms(original+' '+plain(old_rendering),glossary)
   if not editorial.get(q['id'],{}).get('notes'):raise ValueError('Missing quote annotation: '+q['id'])
   quotes[q['id']]=entry
- return {'quotes':quotes,'footnotes':load_passages()}
+ return {'quotes':quotes,'footnotes':load_passages(),'glossary':glossary}
 
 def original_details(original):
  return '<details class="it-original-disclosure"><summary>Originale inglese</summary><blockquote lang="en">'+html.escape(original)+'</blockquote></details>'

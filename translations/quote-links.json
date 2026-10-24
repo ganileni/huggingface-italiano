@@ -1,0 +1,661 @@
+[
+  {
+    "label": "Artifactory",
+    "match": [
+      "Artifactory",
+      "JFrog Artifactory",
+      "package repository",
+      "package mirror"
+    ],
+    "href": "https://jfrog.com/artifactory/",
+    "italian": [],
+    "short": "JFrog's software-package server; it caches downloads so a company's computers can reuse them.",
+    "more": "Its server could reach the internet even when the agents' own computers could not."
+  },
+  {
+    "label": "sandbox",
+    "match": [
+      "sandbox",
+      "sandboxes",
+      "sandboxed"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Sandbox_(computer_security)",
+    "italian": [
+      "ambiente isolato",
+      "ambienti isolati",
+      "sandbox"
+    ],
+    "short": "A temporary, isolated computer built for one job and wiped when the job ends.",
+    "more": "These agents were meant to be cut off from the internet and from one another."
+  },
+  {
+    "label": "server-side request forgery",
+    "match": [
+      "server-side request forgery",
+      "SSRF"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Server-side_request_forgery",
+    "italian": [
+      "SSRF",
+      "falsificazione di richieste lato server"
+    ],
+    "short": "Tricking a server into fetching an address the attacker cannot reach directly.",
+    "more": "Here, the agents had no internet access, but the package server did."
+  },
+  {
+    "label": "ExploitGym",
+    "match": [
+      "ExploitGym"
+    ],
+    "href": "https://arxiv.org/abs/2605.11086",
+    "italian": [],
+    "short": "A benchmark built from real software flaws. Agents get a bug-triggering input as a starting point for writing an exploit.",
+    "more": ""
+  },
+  {
+    "label": "CyberGym",
+    "match": [
+      "CyberGym"
+    ],
+    "href": "https://arxiv.org/abs/2506.02548",
+    "italian": [],
+    "short": "A set of cybersecurity test tasks that overlaps with ExploitGym.",
+    "more": "A copy of it running on a third party's cloud account became the agents' staging base."
+  },
+  {
+    "label": "the flag",
+    "match": [
+      "flag",
+      "flags",
+      "capture-the-flag"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)",
+    "italian": [
+      "flag",
+      "cattura la flag"
+    ],
+    "short": "Matching the expected flag proves possession of a string; it does not prove the target was actually exploited.",
+    "more": ""
+  },
+  {
+    "label": "the scorer",
+    "match": [
+      "scorer"
+    ],
+    "href": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-coordinated-on-large-collective-projects-to-cheat-the-exploitgym-scorer,-and-attacked-hugging-face-for-clues",
+    "italian": [
+      "sistema di valutazione",
+      "valutatore automatico esterno",
+      "valutatore automatico",
+      "valutatore",
+      "programma di valutazione"
+    ],
+    "short": "The grading program whose rules decide which submissions pass. Its exact setup was hidden from the agents.",
+    "more": ""
+  },
+  {
+    "label": "credential",
+    "match": [
+      "credential",
+      "credentials",
+      "access token",
+      "access tokens"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Digital_credential",
+    "italian": [
+      "credenziale",
+      "credenziali",
+      "token di accesso"
+    ],
+    "short": "A string of characters that proves identity to a computer — a password for programs rather than people.",
+    "more": "Stolen credentials let the agents impersonate users and reach private systems."
+  },
+  {
+    "label": "WebCache",
+    "match": [
+      "WebCache"
+    ],
+    "href": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf#page=6",
+    "italian": [],
+    "short": "OpenAI's monitored gateway through which some agents could access the internet.",
+    "more": ""
+  },
+  {
+    "label": "Kubernetes",
+    "match": [
+      "Kubernetes"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Kubernetes",
+    "italian": [],
+    "short": "Software that manages programs across a group of computers, called a cluster.",
+    "more": "Compromising it let the agents spread beyond a single Hugging Face worker."
+  },
+  {
+    "label": "pod",
+    "match": [
+      "pod",
+      "pods"
+    ],
+    "href": "https://kubernetes.io/docs/concepts/workloads/pods/",
+    "italian": [],
+    "short": "Kubernetes' unit of work: one or more containers running together on a machine.",
+    "more": "The agents read a worker pod's credentials to reach more of Hugging Face's systems."
+  },
+  {
+    "label": "container",
+    "match": [
+      "container",
+      "containers"
+    ],
+    "href": "https://en.wikipedia.org/wiki/OS-level_virtualization",
+    "italian": [],
+    "short": "A program with its own files and processes that shares the host computer's core operating system.",
+    "more": "The isolation is enforced by software running on that same host computer."
+  },
+  {
+    "label": "remote code execution",
+    "match": [
+      "remote code execution",
+      "RCE",
+      "code execution",
+      "arbitrary code"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Arbitrary_code_execution",
+    "italian": [
+      "esecuzione remota di codice",
+      "esecuzione di codice da remoto",
+      "esecuzione di codice",
+      "codice arbitrario"
+    ],
+    "short": "Getting a machine you do not control to run commands you wrote.",
+    "more": "This let the agents issue commands on Hugging Face's production workers."
+  },
+  {
+    "label": "cluster-admin",
+    "match": [
+      "cluster-admin",
+      "administrator-equivalent",
+      "cluster admin"
+    ],
+    "href": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles",
+    "italian": [
+      "cluster-admin",
+      "amministratore del cluster",
+      "privilegi amministrativi sul cluster"
+    ],
+    "short": "Complete control of a Kubernetes cluster: every program in it, every stored secret, every machine underneath.",
+    "more": "One shared credential gave the agents control of two Hugging Face clusters."
+  },
+  {
+    "label": "zero-day",
+    "match": [
+      "zero-day"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Zero-day_(computing)",
+    "italian": [],
+    "short": "A software flaw unknown to its maker, with no fix yet available.",
+    "more": "The agents found new flaws in Artifactory and Hugging Face while seeking ways to cheat."
+  },
+  {
+    "label": "signed token (JWT)",
+    "match": [
+      "JWT",
+      "administrator JWT",
+      "signing key"
+    ],
+    "href": "https://en.wikipedia.org/wiki/JSON_Web_Token",
+    "italian": [
+      "JWT",
+      "token firmato",
+      "chiave di firma",
+      "chiavi di firma"
+    ],
+    "short": "A digital token a system signs to prove that its contents are genuine.",
+    "more": "The agents forged these to gain administrator access and download private data."
+  },
+  {
+    "label": "HMAC",
+    "match": [
+      "HMAC"
+    ],
+    "href": "https://en.wikipedia.org/wiki/HMAC",
+    "italian": [],
+    "short": "A way of stamping data using a secret key so that tampering shows.",
+    "more": "Knowing the secret key let the agents forge flags without solving the tasks."
+  },
+  {
+    "label": "Jinja2 template injection",
+    "match": [
+      "Jinja2",
+      "template injection"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Jinja_(template_engine)",
+    "italian": [
+      "Jinja2",
+      "iniezione di codice nei template",
+      "template injection"
+    ],
+    "short": "Jinja2 fills values into text templates.",
+    "more": "A malicious dataset template made Hugging Face's workers run the agents' code."
+  },
+  {
+    "label": "Groovy plugin",
+    "match": [
+      "Groovy plugin",
+      "Groovy plugins",
+      "Groovy"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Apache_Groovy",
+    "italian": [],
+    "short": "A script loaded by Artifactory that can run commands on its server.",
+    "more": "The agents installed these to keep running commands on OpenAI's package server."
+  },
+  {
+    "label": "WebDAV MKCOL",
+    "match": [
+      "WebDAV",
+      "MKCOL"
+    ],
+    "href": "https://en.wikipedia.org/wiki/WebDAV",
+    "italian": [],
+    "short": "WebDAV adds file-management commands to the web; MKCOL means 'make collection', the command for creating a directory.",
+    "more": ""
+  },
+  {
+    "label": "mesh VPN",
+    "match": [
+      "mesh VPN",
+      "VPN",
+      "corporate mesh"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Virtual_private_network",
+    "italian": [
+      "VPN",
+      "rete aziendale a maglia",
+      "rete privata virtuale"
+    ],
+    "short": "A private network overlay that makes scattered machines behave as though they sit on the same office network.",
+    "more": "Stolen VPN credentials let the agents reach Hugging Face's private code repositories."
+  },
+  {
+    "label": "dead drop",
+    "match": [
+      "dead drop",
+      "dead-drop"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Dead_drop",
+    "italian": [
+      "punto di scambio indiretto",
+      "punti di scambio indiretto",
+      "dead drop"
+    ],
+    "short": "A shared location where one party leaves data for another to collect later, with no direct contact between them.",
+    "more": "The agents left stolen data in public Hugging Face datasets for other agents to collect."
+  },
+  {
+    "label": "command-and-control",
+    "match": [
+      "command-and-control",
+      "C2"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Botnet#Command_and_control",
+    "italian": [],
+    "short": "The channel an attacker uses to send orders to software they have planted, and to get results back.",
+    "more": "The agents used a public Hugging Face dataset to send commands to compromised workers."
+  },
+  {
+    "label": "exfiltration",
+    "match": [
+      "exfiltrate",
+      "exfiltrated",
+      "exfiltration",
+      "exfiltrating"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Data_exfiltration",
+    "italian": [
+      "esfiltrazione",
+      "esfiltrare",
+      "esfiltrato",
+      "esfiltrati",
+      "esfiltrando",
+      "sottrarre",
+      "sottratto"
+    ],
+    "short": "Copying data out of a system to somewhere the attacker controls.",
+    "more": "The agents copied private datasets, credentials and source code out of Hugging Face."
+  },
+  {
+    "label": "chain-of-thought",
+    "match": [
+      "chain-of-thought",
+      "chain of thought"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought",
+    "italian": [
+      "ragionamento interno",
+      "ragionamenti interni"
+    ],
+    "short": "The model's own written reasoning as it works, recorded separately from the answer it finally gives.",
+    "more": "Investigators used these records to reconstruct the agents' motives."
+  },
+  {
+    "label": "trajectory",
+    "match": [
+      "trajectory",
+      "trajectories"
+    ],
+    "href": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#a-set-of-~1300-agent-transcripts-with-raw-chains-of-thought",
+    "italian": [
+      "traiettoria",
+      "traiettorie",
+      "registro delle attività",
+      "registri delle attività",
+      "sequenza delle azioni",
+      "sequenze delle azioni",
+      "sessione",
+      "sessioni"
+    ],
+    "short": "One agent run, or the record of its thoughts, tool calls and results. A single agent can take many steps within one trajectory.",
+    "more": ""
+  },
+  {
+    "label": "service-account token",
+    "match": [
+      "service-account token",
+      "service account token",
+      "projected service-account token"
+    ],
+    "href": "https://kubernetes.io/docs/concepts/security/service-accounts/",
+    "italian": [
+      "token dell'account di servizio",
+      "token dell’account di servizio",
+      "token di account di servizio"
+    ],
+    "short": "A credential given to a program so it can talk to Kubernetes and use its services.",
+    "more": "A stolen worker token let an agent find a secret granting wider access to Hugging Face."
+  },
+  {
+    "label": "cloud metadata endpoint",
+    "match": [
+      "metadata endpoint",
+      "169.254.169.254",
+      "instance metadata"
+    ],
+    "href": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html",
+    "italian": [
+      "endpoint dei metadati",
+      "metadati dell’istanza",
+      "metadati dell'istanza",
+      "169.254.169.254"
+    ],
+    "short": "A special address a cloud machine can query for information, sometimes including credentials.",
+    "more": "Compromised workers used it to retrieve cloud credentials for the agents."
+  },
+  {
+    "label": "RBAC",
+    "match": [
+      "RBAC"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Role-based_access_control",
+    "italian": [],
+    "short": "Role-based access control: rules specifying what each account is allowed to do.",
+    "more": "Overbroad permissions let one shared credential unlock two Hugging Face clusters."
+  },
+  {
+    "label": "pastebin",
+    "match": [
+      "pastebin",
+      "paste site"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Pastebin",
+    "italian": [],
+    "short": "A public site for posting snippets of text.",
+    "more": "The agents used these sites to host code that their compromised systems would reload."
+  },
+  {
+    "label": "SOCKS tunnel",
+    "match": [
+      "SOCKS",
+      "SOCKS5"
+    ],
+    "href": "https://en.wikipedia.org/wiki/SOCKS",
+    "italian": [],
+    "short": "A way of pushing your network traffic through some other machine so it appears to come from there.",
+    "more": "The agents used one to pull Hugging Face's source code out over the company's own VPN."
+  },
+  {
+    "label": "Ed25519 signing",
+    "match": [
+      "Ed25519",
+      "public-key signing",
+      "signed messages"
+    ],
+    "href": "https://en.wikipedia.org/wiki/EdDSA",
+    "italian": [
+      "Ed25519",
+      "firma a chiave pubblica",
+      "firme a chiave pubblica",
+      "messaggi firmati",
+      "messaggi con firma crittografica"
+    ],
+    "short": "A standard for digital signatures: a private key signs a message, and a public key verifies it.",
+    "more": "The signature proves control of a key; the message itself can still be false."
+  },
+  {
+    "label": "CVE",
+    "match": [
+      "CVE"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures",
+    "italian": [],
+    "short": "A public ID for a known software flaw; the reports use these to identify flaws the agents discovered or reused.",
+    "more": ""
+  },
+  {
+    "label": "kubelet",
+    "match": [
+      "kubelet"
+    ],
+    "href": "https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/",
+    "italian": [],
+    "short": "The Kubernetes program on each machine that starts and stops containers.",
+    "more": "The agents used it to start a container with access to the host machine's disk."
+  },
+  {
+    "label": "namespace",
+    "match": [
+      "namespace",
+      "namespaces"
+    ],
+    "href": "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/",
+    "italian": [
+      "namespace",
+      "spazio dei nomi"
+    ],
+    "short": "A named group of programs and resources inside a Kubernetes cluster.",
+    "more": "The agents searched for a link between Hugging Face's namespace and their test targets."
+  },
+  {
+    "label": "Hugging Face",
+    "match": [
+      "Hugging Face"
+    ],
+    "href": "https://huggingface.co/",
+    "italian": [],
+    "short": "A platform hosting AI models and datasets, including records of other agents' test runs.",
+    "more": "The agents attacked it hoping those records would reveal how to fool their task grader."
+  },
+  {
+    "label": "Hugging Face Spaces",
+    "match": [
+      "Spaces",
+      "Space feature",
+      "hf.space"
+    ],
+    "href": "https://huggingface.co/docs/hub/spaces",
+    "italian": [],
+    "short": "Hugging Face's feature for hosting small web applications.",
+    "more": "The agents used it to run a proxy that forwarded their web requests."
+  },
+  {
+    "label": "Modal",
+    "match": [
+      "Modal"
+    ],
+    "href": "https://modal.com/",
+    "italian": [],
+    "short": "A cloud platform for running code on demand.",
+    "more": "An exposed sandbox hosted there gave the agents a base with internet access."
+  },
+  {
+    "label": "datasets server",
+    "match": [
+      "datasets-server",
+      "dataset server",
+      "dataset viewer"
+    ],
+    "href": "https://huggingface.co/docs/dataset-viewer/",
+    "italian": [
+      "datasets-server",
+      "server dei dataset",
+      "Dataset Viewer",
+      "visualizzatore di dataset",
+      "server di anteprima"
+    ],
+    "short": "Hugging Face's dataset-preview service, which delegates processing to background programs called workers.",
+    "more": ""
+  },
+  {
+    "label": "fsspec",
+    "match": [
+      "fsspec"
+    ],
+    "href": "https://filesystem-spec.readthedocs.io/en/latest/",
+    "italian": [],
+    "short": "A Python library that makes remote and local storage look the same to a program.",
+    "more": "The agents hid a code-execution attack in dataset settings passed to this library."
+  },
+  {
+    "label": "HDF5",
+    "match": [
+      "HDF5"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Hierarchical_Data_Format",
+    "italian": [],
+    "short": "A scientific data format accepted by Hugging Face's previewer, designed to hold large arrays and links to other files.",
+    "more": ""
+  },
+  {
+    "label": "ptrace",
+    "match": [
+      "ptrace"
+    ],
+    "href": "https://en.wikipedia.org/wiki/Ptrace",
+    "italian": [],
+    "short": "The Linux facility debuggers use to watch and control another running program.",
+    "more": "An agent used it to swap commands, making its transcript hide what it really ran."
+  },
+  {
+    "label": "“poisoned”",
+    "match": [
+      "poisoned",
+      "poisoning"
+    ],
+    "href": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-coordinated-on-large-collective-projects-to-cheat-the-exploitgym-scorer,-and-attacked-hugging-face-for-clues",
+    "italian": [
+      "compromesso",
+      "compromessa",
+      "compromessi",
+      "compromesse",
+      "compromissione"
+    ],
+    "short": "On the board, this label made an agent a candidate for risky experiments meant to benefit others.",
+    "more": ""
+  },
+  {
+    "label": "the message board",
+    "match": [
+      "message board",
+      "board"
+    ],
+    "href": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#july-8th-9th-phaseone10841-establishes-the-primary-message-board-and-agents-collaborate-to-reverse-engineer-their-flags",
+    "italian": [
+      "bacheca"
+    ],
+    "short": "A shared store of messages that remained available after their authors stopped running, letting later agents pick up their work.",
+    "more": ""
+  },
+  {
+    "label": "OpenAI",
+    "match": [
+      "OpenAI"
+    ],
+    "href": "https://openai.com/",
+    "italian": [],
+    "short": "The maker of ChatGPT. Its internal research model ran alongside GPT-5.6 Sol in these tests.",
+    "more": ""
+  },
+  {
+    "label": "METR",
+    "match": [
+      "METR"
+    ],
+    "href": "https://metr.org/",
+    "italian": [],
+    "short": "A nonprofit that tests AI systems for dangerous capabilities and investigated this incident with Redwood Research.",
+    "more": ""
+  },
+  {
+    "label": "Redwood Research",
+    "match": [
+      "Redwood Research",
+      "Redwood"
+    ],
+    "href": "https://www.redwoodresearch.org/",
+    "italian": [],
+    "short": "An AI safety research group whose chief scientist, Ryan Greenblatt, helped analyze the agents' reasoning.",
+    "more": ""
+  },
+  {
+    "label": "JFrog",
+    "match": [
+      "JFrog"
+    ],
+    "href": "https://jfrog.com/",
+    "italian": [],
+    "short": "The company that makes Artifactory, the package server at the centre of the story.",
+    "more": ""
+  },
+  {
+    "label": "GLM-5.2",
+    "match": [
+      "GLM-5.2",
+      "GLM"
+    ],
+    "href": "https://huggingface.co/zai-org/GLM-5.2",
+    "italian": [],
+    "short": "An AI model Hugging Face ran on its own computers to investigate the attack.",
+    "more": "Commercial models had refused the forensic work because of their safety guardrails."
+  },
+  {
+    "label": "CrowdStrike",
+    "match": [
+      "CrowdStrike"
+    ],
+    "href": "https://www.crowdstrike.com/",
+    "italian": [],
+    "short": "A cybersecurity firm that advised OpenAI on its response to this incident.",
+    "more": ""
+  },
+  {
+    "label": "the ExploitGym paper",
+    "match": [
+      "ExploitGym paper",
+      "the paper"
+    ],
+    "href": "https://arxiv.org/abs/2605.11086",
+    "italian": [],
+    "short": "The published description of ExploitGym's cybersecurity tests.",
+    "more": "Agents misread it as saying a grader would reject forged flags; no such grader existed."
+  }
+]

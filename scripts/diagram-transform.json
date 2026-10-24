@@ -1,0 +1,14 @@
+[
+  {
+    "old": "(0,n.jsx)(\"text\",{className:\"internet-route-label\",x:e.x,y:e.labelAbove?e.y-19-8:e.y+19+16,children:e.label})",
+    "new": "(0,n.jsx)(\"text\",{className:\"internet-route-label\",x:e.x,y:e.labelAbove?e.y-19-8:e.y+19+16,children:e.label.split(\"\\n\").map((a,r)=>(0,n.jsx)(\"tspan\",{x:e.x,dy:r?\"1.05em\":0,children:a},r))})"
+  },
+  {
+    "old": "{id:\"artifactory\",x:112,y:160,step:0,...h}",
+    "new": "{id:\"artifactory\",x:112,y:160,step:0,...h,labelAbove:!0}"
+  },
+  {
+    "old": "{id:\"artifactory\",x:168,y:160,step:1,...h}",
+    "new": "{id:\"artifactory\",x:168,y:160,step:1,...h,labelAbove:!0}"
+  }
+]

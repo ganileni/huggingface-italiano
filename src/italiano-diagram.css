@@ -1,6 +1,7 @@
 /* Compact labels retain their full explanation in the native tooltip. */
 .internet-route{container-type:inline-size}
 .internet-route .internet-route-label{font-size:16px;paint-order:stroke;stroke:var(--reader-bg,#10171e);stroke-width:3px;stroke-linejoin:round}
+.internet-route .internet-route-label[x="44"]{transform:translateX(10px)}
 .internet-route .internet-route-zone-label{font-size:13px;letter-spacing:.06em}
 .internet-route-strip-label{max-width:12ch;font-size:12px;line-height:1.25;white-space:pre-line;text-wrap:balance}
 @container (max-width:470px){

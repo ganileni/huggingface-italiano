@@ -51,6 +51,14 @@ class Localisation(unittest.TestCase):
    self.assertEqual(entry['original'],passage);self.assertTrue(entry['it'])
   translated=[v for v in manifest['footnotes'].values()if v['it']!=v['original']]
   self.assertEqual(len(translated),190) # Two literal identifiers/code strings need no translation.
+ def test_translated_quotes_keep_glossary_destinations(self):
+  data=json.loads((ROOT/'docs/mirror-data/annotations.json').read_text())
+  quote=data['quotes']['ai-transcript-tampering-2']
+  self.assertIn('glossary-poisoned',quote['glossaryIds'])
+  term=data['glossary']['glossary-poisoned']
+  self.assertTrue(term['href'].startswith('https://metr.org/'))
+  self.assertTrue(term['html']);self.assertIn('compromesso',term['terms'])
+  self.assertIn('glossary-the-flag',data['quotes']['ai-c03220-hmac-flag-forgery-1']['glossaryIds'])
  def test_reviewed_quote_renderings_are_used_consistently(self):
   story=props('quotes',True)['story'];cache=json.loads((ROOT/'docs/mirror-data/documents.json').read_text())
   edits=annotations.load_quote_notes()

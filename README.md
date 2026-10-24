@@ -61,3 +61,9 @@ Gli estratti delle footnote sono disponibili in italiano, con l’originale ingl
 ## Seconda revisione
 
 I report della lettura monolingue, svolta prima di consultare gli originali, e le decisioni successive sono raccolti in [revisioni/2026-10-24](revisioni/2026-10-24/README.md).
+
+## Link esterni e leggibilità
+
+Il controllo **Link in italiano**, attivo al primo accesso, apre le pagine web esterne tramite Google Translate. La scelta viene salvata nel browser; disattivandolo si ripristinano gli URL originali. PDF, archivi e altri file conservano il collegamento diretto al documento originale. Google Translate può richiedere controlli di accesso o non riuscire a tradurre alcune pagine.
+
+I termini collegati nelle citazioni mantengono il riferimento del glossario originale e aprono una definizione italiana accessibile. I rimandi coprono 51 voci e 104 citazioni. I diagrammi usano etichette concise su più righe e un font proporzionato allo spazio disponibile.

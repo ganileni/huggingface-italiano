@@ -58,7 +58,7 @@ for name,folder in PAGES.items():
  (out/'mirror-data/flight').mkdir(parents=True,exist_ok=True)
  (out/'mirror-data/flight'/f'{name}.txt').write_text(translate_flight(flight_from_html((ROOT/'upstream/pages'/f'{name}.html').read_text()),tr))
  dest.joinpath('index.html').write_text(localise_page((ROOT/'upstream/pages'/f'{name}.html').read_text(),tr,name))
-for name in ['italiano-boot.js','italiano-note.js','italiano.css']:(out/name).write_text((ROOT/'src'/name).read_text().replace('__BUILD_TAG__',tr.buildtag))
+for name in ['italiano-boot.js','italiano-note.js','italiano-link.js','italiano.css','italiano-diagram.css','italiano-links.css']:(out/name).write_text((ROOT/'src'/name).read_text().replace('__BUILD_TAG__',tr.buildtag))
 # Read-only source-viewer cache. These are source documents, preserved in their original language.
 cache=out/'mirror-data';shutil.copytree(ROOT/'upstream/api',cache,dirs_exist_ok=True)
 index=json.loads((cache/'sources-index.json').read_text())

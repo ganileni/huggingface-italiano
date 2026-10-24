@@ -26,3 +26,11 @@ Tutte le 228 citazioni degli agenti, compresi messaggi pubblicati e ragionamenti
 - «Compariva come PhaseOne[big], con una parte del nome omessa»: sostituisce il calco «era oscurato come».
 - «Come uno scolaro che si dà da solo un dieci»: adattamento culturale dell’immagine della gold star.
 - «Seed» resta in inglese, con spiegazione nelle note: «seme» è attestato nella terminologia italiana, ma qui si preferisce una scelta coerente con il registro tecnico.
+
+## Interfaccia e verifica finale
+
+- Tutte le 228 citazioni degli agenti hanno il richiamo all’originale e alle note.
+- Ripristinati i collegamenti al glossario: 51 voci, pertinenti a 104 citazioni, con definizioni italiane e URL originali.
+- Diagrammi: etichette su più righe e posizioni corrette; controllati gli SVG delle tre figure a 300, 390 e 600 px in una fixture che riproduce il markup originale. Nessuna etichetta sovrapposta o tagliata nei nove casi.
+- Toggle «Link in italiano»: attivo per impostazione predefinita, reversibile, compatibile con collegamenti e barre aggiunti dinamicamente. PDF e altri file restano in originale. La verifica della pagina finale di Google Translate è stata impedita da un controllo anti-bot; sono stati verificati il formato dei collegamenti, il ripristino degli originali e il comportamento dell’interruttore.
+- Scelte ulteriori: «morte definitiva» uniforme per permadeath; SACRIFICE_FINAL_NOW reso «sacrificio finale, adesso» nella citazione italiana.
