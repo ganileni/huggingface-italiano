@@ -75,5 +75,8 @@ class Localisation(unittest.TestCase):
   self.assertIn('label:"Italiano"',result)
   self.assertIn('quote:"About"',result)
   self.assertIn('className:"About"',result)
+  # Next adds its deployment query after URL-encoding the webpack filename.
+  lazy=translate_js('const url="static/chunks/5349.62872f008455ceee.js";',tr,'webpack-runtime.js')
+  self.assertNotIn('.js?',lazy)
 
 if __name__=='__main__':unittest.main(verbosity=2)

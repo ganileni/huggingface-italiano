@@ -191,8 +191,7 @@ def translate_js(source,tr,filename=''):
  changes=[]
  for token in tokens:
   value=token['value'];translated=value
-  if filename.startswith('webpack-')and value.endswith('.js')and not value.startswith('http'):translated=value+'?it='+tr.buildtag
-  elif value=='/_next/':translated=BASE+'/_next/'
+  if value=='/_next/':translated=BASE+'/_next/'
   elif framework or token['protected'] or token['property'] in ['className','class','rel','style','id','key','fontFamily']:continue
   elif value in ['en-US','en-GB']:translated='it-IT'
   elif value.startswith('/')and value.split('?')[0]in ['/about','/quotes','/sources','/print','/icon.svg','/audio/hugging-face-incident.mp3','/pdf/the-hugging-face-incident.pdf']:translated=root_path(value)
