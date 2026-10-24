@@ -1,0 +1,20 @@
+{
+  "original": "https://huggingface.wtf/",
+  "snapshot": "2026-10-24",
+  "bytes": 23277324,
+  "sha256": "892ba1e461862c0249b53af37873a0fdf2b90c4070aef0d853e34f318a0ef6db",
+  "parts": [
+    "snapshot.tar.gz.part-000",
+    "snapshot.tar.gz.part-001",
+    "snapshot.tar.gz.part-002",
+    "snapshot.tar.gz.part-003",
+    "snapshot.tar.gz.part-004",
+    "snapshot.tar.gz.part-005",
+    "snapshot.tar.gz.part-006",
+    "snapshot.tar.gz.part-007",
+    "snapshot.tar.gz.part-008",
+    "snapshot.tar.gz.part-009",
+    "snapshot.tar.gz.part-010",
+    "snapshot.tar.gz.part-011"
+  ]
+}
