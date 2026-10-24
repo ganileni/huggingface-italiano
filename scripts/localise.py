@@ -7,6 +7,8 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='/huggingface-italiano'
 PAGES={'home':'','quotes':'quotes','sources':'sources','about':'about','print':'print'}
 VISIBLE_ATTRS={'title','aria-label','alt','placeholder','data-footnote-explanation','data-glossary-label','data-tooltip'}
+CODE_KEYS={'id','kind','status','tagType','basis','timing','family','workId','agentId','sourceId','messageId','documentId','plainEnglishDocumentId','type','className','key'}
+CODE_IDENTIFIERS=None
 
 class FlightScripts(HTMLParser):
  def __init__(self):super().__init__(convert_charrefs=False);self.inside=False;self.parts=[]
@@ -135,6 +137,7 @@ class Translator:
      result[3]['children']=[banner]+previous
    return result
   if not isinstance(value,str):return value
+  if key in CODE_KEYS:return value
   if value.startswith('$'):return value
   if value.startswith('/')or value.startswith('https://huggingface.wtf/'):return root_path(value)
   if re.match(r'\s*<(?:[a-zA-Z]|!--)',value):return self.html(value)
@@ -182,6 +185,10 @@ def translate_flight(source,tr):
  return re.sub(r'dpl=dpl_[A-Za-z0-9]+','it='+tr.buildtag,''.join(out))
 
 def translate_js(source,tr,filename=''):
+ global CODE_IDENTIFIERS
+ if CODE_IDENTIFIERS is None:
+  CODE_IDENTIFIERS=set()
+  for asset in (ROOT/'upstream/assets/_next/static/chunks').rglob('*.js'):CODE_IDENTIFIERS.update(re.findall(r'\b([A-Za-z_$][\w$]*)\s*:',asset.read_text()))
  if filename.startswith(('pdf.worker','1255-','4bd1b696-','6815-','54a60aa6-','6be7e44c-','polyfills-','main-app-')):return re.sub(r'dpl=dpl_[A-Za-z0-9]+','it='+tr.buildtag,source)
  import subprocess
  parsed=subprocess.run(['node',str(ROOT/'scripts/js-tokens.mjs')],input=source,text=True,capture_output=True)
@@ -198,7 +205,8 @@ def translate_js(source,tr,filename=''):
  for token in tokens:
   value=token['value'];translated=value
   if value=='/_next/':translated=BASE+'/_next/'
-  elif framework or token['protected'] or token['property'] in ['className','class','rel','style','id','key','fontFamily']:continue
+  elif framework or token['protected'] or token.get('isKey') or token['property'] in CODE_KEYS|{'class','rel','style','fontFamily'}:continue
+  elif value in CODE_IDENTIFIERS and token['property'] not in VISIBLE_ATTRS|{'children','label','name','text','summary','description','detail'}:continue
   elif value in ['en-US','en-GB']:translated='it-IT'
   elif value.startswith('/')and value.split('?')[0]in ['/about','/quotes','/sources','/print','/icon.svg','/audio/hugging-face-incident.mp3','/pdf/the-hugging-face-incident.pdf']:translated=root_path(value)
   elif value=='/'and token['property']=='href'and token.get('direct'):translated=BASE+'/'
@@ -211,7 +219,14 @@ def translate_js(source,tr,filename=''):
  # Acorn offsets count UTF-16 code units. Slice through a UTF-16 representation to preserve emoji.
  raw=source.encode('utf-16-le')
  for start,end,value in sorted(changes,reverse=True):raw=raw[:start*2]+value.encode('utf-16-le')+raw[end*2:]
- return raw.decode('utf-16-le')
+ result=raw.decode('utf-16-le')
+ if filename=='5349.62872f008455ceee.js':
+  marker='[L,F]=(0,n.useState)(!1),U='
+  if result.count(marker)!=1:raise ValueError('Quote language default has changed upstream')
+  result=result.replace(marker,'[L,F]=(0,n.useState)(!0),U=')
+ if filename=='116-c105742fa80c9a50.js':
+  result=result.replace('"1,200":"all"','"1,200":"all","1.200":"all"').replace(r's=/\b(1,200|1200|',r's=/\b(1[.,]200|1200|')
+ return result
 
 def localise_page(source,tr,name):
  flight=translate_flight(flight_from_html(source),tr)

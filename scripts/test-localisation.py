@@ -78,6 +78,8 @@ class Localisation(unittest.TestCase):
   # Next adds its deployment query after URL-encoding the webpack filename.
   lazy=translate_js('const url="static/chunks/5349.62872f008455ceee.js";',tr,'webpack-runtime.js')
   self.assertNotIn('.js?',lazy)
+  identifiers=translate_js('const groups={reported:[],keys:["reported"]};',tr,'interface.js')
+  self.assertIn('keys:["reported"]',identifiers)
  def test_embedded_json_remains_valid(self):
   script="""import{parse}from'acorn';import{readFileSync,readdirSync,statSync}from'node:fs';import{join}from'node:path';let count=0;function walk(n){if(!n||typeof n!=='object')return;if(n.type==='CallExpression'&&n.callee?.type==='MemberExpression'&&n.callee.object?.name==='JSON'&&n.callee.property?.name==='parse'&&n.arguments[0]?.type==='Literal'&&typeof n.arguments[0].value==='string'){JSON.parse(n.arguments[0].value);count++;}for(const v of Object.values(n)){if(Array.isArray(v))v.forEach(walk);else if(v&&typeof v.type==='string')walk(v);}}function visit(p){for(const n of readdirSync(p)){const q=join(p,n);if(statSync(q).isDirectory())visit(q);else if(/\\.js$/.test(n))walk(parse(readFileSync(q,'utf8'),{ecmaVersion:'latest'}));}}visit('docs/_next');if(count<6)throw Error('Embedded data not found');"""
   result=subprocess.run(['node','--input-type=module','-e',script],cwd=ROOT,text=True,capture_output=True)
