@@ -40,6 +40,7 @@ GitHub Actions costruisce, verifica e pubblica il sito ad ogni modifica a `main`
 - `translations/catalogue.json`: unità di traduzione con testo originale e contesto.
 - `translations/output-*.json`: traduzioni per identificativo.
 - `translations/manual.json` e `review-story*.json`: scelte condivise e correzioni di revisione.
+- `translations/astra-style.json`: revisione dei tempi verbali e dello stile delle schede degli agenti e dei tooltip.
 - `scripts/localise.py`: trasformazioni che separano traduzione, dati e prove originali.
 - `src/italiano-boot.js`: adattamento della navigazione e delle letture di dati a un sito statico, più lettura vocale italiana.
 - l’archivio suddiviso in `upstream/snapshot.tar.gz.part-*`: copia congelata delle risorse pubbliche utilizzate, acquisita il 24 ottobre 2026 per la riproduzione autorizzata.

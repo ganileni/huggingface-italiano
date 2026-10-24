@@ -77,6 +77,8 @@ def load_dictionary(require_complete=True):
  missing=[x['id']for x in catalogue if x['id']not in translated]
  if require_complete and missing:raise ValueError(f'{len(missing)} translation units missing')
  mapping={x['en']:translated[x['id']]for x in catalogue if x['id']in translated}
+ style=ROOT/'translations/astra-style.json'
+ if style.exists():mapping.update(json.loads(style.read_text()))
  manual=ROOT/'translations/manual.json'
  if manual.exists():mapping.update(json.loads(manual.read_text()))
  review=ROOT/'translations/review-story.json'
