@@ -31,7 +31,7 @@
     return details;
   }
   function install(data){
-    const passages=new Map(Object.values(data.footnotes).map(p=>[passageKey(p.original),p]));
+    const passages=new Map(Object.values(data.footnotes).map(p=>[passageKey(p.original).replace(/\s/g,''),p]));
     let dialog,returnFocus;
     const openQuote=(id,trigger)=>{
       const quote=data.quotes[id];if(!quote)return;
@@ -71,13 +71,17 @@
     function process(){
       // Native source links retain the exact English passage for matching in the source viewer.
       for(const region of document.querySelectorAll('[role="region"][aria-label="Nota"],[role="region"][aria-label="Footnote"]')){
-        const quote=region.querySelector('blockquote:not(.it-original-text):not([lang="en"])');if(!quote)continue;
-        const passage=data.footnotes[normalise(quote.innerText)]||passages.get(passageKey(quote.innerText));if(!passage)continue;
-        if(quote.dataset.itPassage===passage.id&&normalise(quote.textContent)===normalise(passage.it))continue;
-        quote.dataset.itPassage=passage.id;
-        quote.replaceChildren(element('p',{},passage.it));quote.lang='it';
-        region.querySelector('.it-original-disclosure')?.remove();
-        quote.after(originalDisclosure(passage.original));
+        const quote=region.querySelector('blockquote:not(.it-original-text):not(.it-footnote-translation):not([lang="en"])');if(!quote)continue;
+        const passage=data.footnotes[normalise(quote.textContent)]||passages.get(passageKey(quote.textContent).replace(/\s/g,''));
+        let translated=region.querySelector('.it-footnote-translation');
+        if(!passage){quote.hidden=false;translated?.remove();region.querySelector('.it-footnote-original')?.remove();continue;}
+        // Keep React's original nodes intact so a reused popup can change source safely.
+        quote.hidden=true;
+        if(translated?.dataset.itPassage===passage.id)continue;
+        translated?.remove();region.querySelector('.it-footnote-original')?.remove();
+        translated=element('blockquote',{lang:'it','class':quote.className+' it-footnote-translation'});
+        translated.dataset.itPassage=passage.id;translated.append(element('p',{},passage.it));quote.before(translated);
+        const original=originalDisclosure(passage.original);original.classList.add('it-footnote-original');quote.after(original);
       }
       if(location.pathname.includes('/sources'))return;
       for(const root of document.querySelectorAll('[data-message-id]')){
@@ -87,12 +91,17 @@
         if([...root.querySelectorAll('[data-message-id]')].some(child=>child.getAttribute('data-message-id')===id))continue;
         const scope=root.closest('[data-embedded-quotes]')||root;
         const originalSelected=[...scope.querySelectorAll('button[aria-pressed="true"]')].some(button=>button.textContent.trim()==='Originale');
-        const body=root.querySelector('.quote-transcript,.quote-marked,.spoken-quote,[data-quote-body]');
+        const body=root.querySelector(':is(.quote-transcript,.quote-marked,.spoken-quote,[data-quote-body]):not(.it-quote-translation)');
         const current=body?quoteKey(body.textContent):'';
         const known=[quote.originalPlain,quote.englishPlain,quote.legacyItalianPlain].map(quoteKey);
+        let translated=body?.parentElement.querySelector(':scope > .it-quote-translation')||root.querySelector('.it-quote-translation');
         if(body&&!originalSelected&&known.includes(current)&&current!==quoteKey(quote.italianPlain)){
-          body.replaceChildren(safeFragment(quote.italianHtml));body.lang='it';
-        }
+          body.hidden=true;
+          if(translated?.dataset.itQuote!==id){
+            translated?.remove();translated=element('div',{'class':body.className+' it-quote-translation',lang:'it'});
+            translated.dataset.itQuote=id;translated.append(safeFragment(quote.italianHtml));body.before(translated);
+          }
+        }else{if(body)body.hidden=false;translated?.remove();}
         if(quote.kind==='cot'&&!root.querySelector(':scope > .it-quote-note-ref')){
           const reference=element('sup',{'class':'it-quote-note-ref'});
           reference.append(element('a',{href:'#nota-traduzione-'+id,'aria-haspopup':'dialog','aria-controls':'it-translation-dialog'},'Originale e note di traduzione'));
@@ -102,7 +111,7 @@
     }
     let scheduled=false;
     const schedule=()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;process();});};
-    new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true,characterData:true});
+    new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['aria-pressed','data-message-id']});
     process();
     const requested=location.hash.startsWith('#nota-traduzione-')?location.hash.slice('#nota-traduzione-'.length):'';
     if(requested)openQuote(requested);
